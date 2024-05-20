@@ -1,0 +1,31 @@
+<div class='flexBox' >
+
+  <div *ngIf='!isOpen' (click)="setIsOpen($event)" class="menuBtn" style="padding-top: 30px">
+    <span class="material-symbols-outlined">
+menu
+</span>
+  </div>
+  <img src="./assets/images/download%20(1).png" alt="msailing" class="imgnavbar">
+  <div [ngClass]="{'menuActive': isOpen, 'menu': !isOpen}" id="menu">
+  <div class="menuContent">
+    <div *ngIf='isOpen'(click)="setIsOpen($event)" class="menuBtn" style="margin-top: 20px; scale: 1.2">
+ <span class="material-symbols-outlined">
+close
+</span>
+
+    </div>
+
+    <img src="./assets/images/download%20(1).png" alt="msailing" class="img">
+<a class='NavLinks' routerLink='/' (click)="setIsOpen($event)"  routerLinkActive="active">Главная</a>
+<a class='NavLinks' routerLink='/equipment' (click)="setIsOpen($event)" routerLinkActive="active">Экипировка</a>
+<a class='NavLinks' routerLink='/armament'  (click)="setIsOpen($event)" routerLinkActive="active">Вооружение</a>
+  <a class='NavLinks' routerLink='/covers'  (click)="setIsOpen($event)" routerLinkActive="active">Чехлы</a>
+  <a class='NavLinks' routerLink='/clothes'  (click)="setIsOpen($event)" routerLinkActive="active">Повседневная одежда</a>
+    <a class="NavLinks" routerLink="/boats"  (click)="setIsOpen($event)" routerLinkActive="active">Комплект вооружения Ilca</a>
+    <span style="color: #0437f3; margin-top: 20px; border-top: 1px solid black" >Связзаться с нами: <br>
+    <a style="margin-top-top: 10px"><p>+7-991-100-49-87</p></a></span>
+    <span style="padding: 10px; color: cadetblue">На данный момент все заказы можно оформить, связавшись с нами по номеру телефона, который указан в шапке и внизу сайта.</span>
+  </div>
+</div>
+</div>
+<div *ngIf="isOpen" class="overlay"></div>

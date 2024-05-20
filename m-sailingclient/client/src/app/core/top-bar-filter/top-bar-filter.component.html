@@ -1,0 +1,23 @@
+<div class="filters">
+  <div class="selectoption">
+    <select (change)="onTypeSelected($event)" class="option">
+      <option *ngFor="let type of types" [value]="type.value" [selected]="shopParams.type === type.value">{{type.name}}</option>
+    </select>
+  </div>
+  <div class="selectoption">
+    <select class="option" (change)="onSortedSelected($event)">
+      <option *ngFor="let sort of options" [value]="sort.value" [selected]="shopParams.sort === sort.value" class="option">{{sort.name}}</option>
+    </select>
+  </div>
+  <div class="selectoption" >
+    <select (change)="onTypeForBuySelected($event)" class="option">
+      <option *ngFor="let typeForBuy of typesForBuy" [value]="typeForBuy.value" [selected]="shopParams.typeForBuy === typeForBuy.value">{{typeForBuy.name}}</option>
+    </select>
+  </div>
+  <div class="search-container">
+    <input (keyup.enter)="onSearch()" class="search-input" #search type="text" placeholder="Поиск">
+    <span class="search-info">Поиск по названию: '{{shopParams.search}}'</span><br>
+    <button (click)="onSearch()" class="search-button">Искать</button>
+    <button (click)="onReset()" class="reset-button">Сбросить</button>
+  </div>
+</div>

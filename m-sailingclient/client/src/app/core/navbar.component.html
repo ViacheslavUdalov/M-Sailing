@@ -1,0 +1,9 @@
+<ng-container *ngIf="isSmallScreen; then smallScreenContent; else largeScreenContent"></ng-container>
+
+<ng-template #smallScreenContent>
+  <app-forsmall></app-forsmall>
+</ng-template>
+
+<ng-template #largeScreenContent>
+  <app-forfull></app-forfull>
+</ng-template>

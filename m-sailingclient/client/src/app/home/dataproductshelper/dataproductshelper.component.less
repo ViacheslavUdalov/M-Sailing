@@ -1,0 +1,108 @@
+.container {
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.firstblock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dataofequipment {
+  height: 400px;
+  width: 100%;
+  //padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //border: 1px solid green;
+  transition: background-color 1s ease, box-shadow 1s ease;
+}
+.dataofequipment:hover {
+  background-color: #eeeeee;
+  box-shadow: 0 0 20px black;
+  cursor: pointer;
+}
+.dataofequipment:hover img {
+  transform: scale(1.1);
+  transition: transform 1s ease;
+}
+.product-image {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 1s ease;
+}
+
+.products {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.nameofproduct {
+  width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.product-details {
+  display: flex;
+  padding: 10px; padding: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.price {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+@media screen and (max-width: 950px) {
+  .products {
+    flex-direction: column;
+  }
+  .product-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 1s ease;
+  }
+
+}
+@media screen and (max-width: 670px) {
+  .products {
+    flex-direction: column;
+  }
+  .product-image {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 1s ease;
+  }
+
+}

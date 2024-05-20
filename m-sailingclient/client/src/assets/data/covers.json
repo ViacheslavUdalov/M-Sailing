@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Devoti Sailing",
+    "type": "верхний",
+    "description": "Прочный водонепроницаемый чехол",
+    "price": 10000
+  },
+  {
+    "name": "Devoti Sailing",
+    "type": "для пера и шверта",
+    "description": "Прочный водонепроницаемый чехол",
+    "price": 10000
+  },
+  {
+    "name": "Devoti Sailing",
+    "type": "нижний",
+    "description": "Прочный водонепроницаемый чехол",
+    "price": 10000
+  }
+]

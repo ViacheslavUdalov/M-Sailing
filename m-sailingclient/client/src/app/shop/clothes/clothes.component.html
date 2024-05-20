@@ -1,0 +1,23 @@
+<app-top-bar-filter (getEquipment)="getClothes()" [shopParams]="shopParams"
+                    [types]="types" [options]="sortOptions" [typesForBuy]="typesForBuy" ></app-top-bar-filter>
+<div style="display: flex; justify-content: center" *ngIf="clothes.length === 0">Не найдено товаров с данным фильтром</div>
+<div class="products-container">
+  <div class="product-card" @animations *ngFor="let product of clothes" routerLink="/clothes/{{product.id}}">
+
+    <div class="product-image">
+      <img [src]="product.pictures" alt="Product Image">
+    </div>
+    <div class="product-details" >
+      <h3 class="product-name">{{ product.name }}</h3>
+      <p class="product-description">{{ product.description }}</p>
+      <p class="product-price" style="color: #34be02">{{ product.price }} Руб.</p>
+      <p class="product-type">Тип: {{ product.type }}</p>
+      <p class="product-type">Размеры: {{ product.size.join(', ') }}</p>
+      <p class="product-type">Цвета: {{ product.colors.join(', ') }}</p>
+    </div>
+
+  </div>
+</div>
+<div *ngIf="clothes.length > 0">
+  <app-pagination [currentPage]="shopParams.pageIndex" [pagesCount]="pagesCount" (pageChanged)="changePage($event)"></app-pagination>
+</div>

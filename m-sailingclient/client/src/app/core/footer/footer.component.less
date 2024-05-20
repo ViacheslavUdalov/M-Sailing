@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+justify-content: space-between;
+  align-items: center;
+}
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgcnt {
+  margin-right: 10px;
+width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.spandata {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 10px;
+}
+.main {
+  border-top: 1px solid green;
+  padding: 20px 10%;
+}
+@media screen and (max-width: 740px){
+  .container {
+   flex-direction: column;
+  }
+  .contacts {
+    padding: 10px;
+  }
+  .imgcnt {
+    margin-right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+}
