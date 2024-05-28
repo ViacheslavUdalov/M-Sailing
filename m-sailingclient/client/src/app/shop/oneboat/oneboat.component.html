@@ -7,9 +7,21 @@
         <h2 class="name">{{ boat.name }}</h2>
         <h3 class="textproduct" style="color: #34be02"><strong>Цена: </strong>  {{ boat.price }} Руб.</h3>
         <h3 class="textproduct"><strong>Тип: </strong>  {{ boat.type }}</h3>
-        <h3 class="textproduct"><strong>Наличие товара: </strong> <span [class.green]="boat.typeForBuy === 'Есть в наличии'" [class.red]="boat.typeForBuy === 'Под заказ'"> {{ boat.typeForBuy }}</span></h3>
+        <h3 class="textproduct"><strong>Наличие товара: </strong>  <span [class.green]="boat.typeForBuy === 'Есть в наличии'" [class.red]="boat.typeForBuy === 'Под заказ'">{{ boat.typeForBuy }}</span></h3>
         <span style="color: red">Что бы заказать данный товар, свяжитесь с нами в любом мессенджере по номеру телефона +7-991-100-49-87.</span>
-       <p style="margin-top: 20px">Все детали комлектации яхты вы можете узнать в у нас, связавшись с нами.</p>
+        <div class="buttons">
+          <div class="inside-buttons">
+            <button (click)="addItem(boat)" style="margin-right: 10px">Добавить в Корзину</button>
+
+            <a class="delete-button" *ngIf="isProductAddedToCart" (click)="removeFromCart(boat.id)"><span class="material-symbols-outlined">
+delete
+</span></a>
+          </div>
+          <span>Количество данного товара в корзине : {{quantityInBasket}}</span>
+          <a routerLink="/basket" style="font-size: smaller; margin-top: 5px">Перейти в корзину</a>
+        </div>
+
+
       </div>
     </div>
     <div >

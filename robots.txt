@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /basket/
+Disallow: /create-order/
+Disallow: /order-success/
+
+Allow: /
+
+Sitemap: https://localhost:5001/sitemap.xml

@@ -48,3 +48,10 @@ C:\Production\M-sailing\Api\obj\Debug\net7.0\refint\Api.dll
 C:\Production\M-sailing\Api\obj\Debug\net7.0\Api.pdb
 C:\Production\M-sailing\Api\obj\Debug\net7.0\Api.genruntimeconfig.cache
 C:\Production\M-sailing\Api\obj\Debug\net7.0\ref\Api.dll
+C:\Production\M-sailing\Api\bin\Debug\net7.0\Microsoft.Extensions.Configuration.dll
+C:\Production\M-sailing\Api\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Production\M-sailing\Api\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
+C:\Production\M-sailing\Api\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Production\M-sailing\Api\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Production\M-sailing\Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Production\M-sailing\Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll

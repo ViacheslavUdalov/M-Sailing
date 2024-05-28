@@ -5,6 +5,7 @@ import {animations} from "../../helpers/animations";
 import {Armament} from "../../models/armament";
 import {ActivatedRoute, Router} from "@angular/router";
 import { ShopParams } from 'src/app/models/shopParams';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-covers',
@@ -49,11 +50,18 @@ export class CoversComponent implements OnInit{
     {name: 'Под заказ', value: 'Под.заказ'}
   ]
   constructor(private shopService: ShopService, private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private metaService: Meta, private titleService: Title) {
     this.shopParams = this.shopService.getShopParams();
   }
 
   ngOnInit() {
+    this.titleService.setTitle('Магазин парусной экипировки и вооружения | M-sailing');
+    this.metaService.addTags([
+      { name: 'description', content: 'Интернет-магазин парусного и яхтенного вооружения. Лучшие бренды, отличные цены.' },
+      { name: 'keywords', content: 'чехлы для яхт, чехол для лазера, купить чехлы для яхт, купить чехол для лазера' },
+      { name: 'robots', content: 'index, follow' }
+    ]);
     this.route.queryParams.subscribe(params => {
       this.shopParams.type = params['type'] || '';
       this.shopParams.typeForBuy = params["typeForBuy"] || '';

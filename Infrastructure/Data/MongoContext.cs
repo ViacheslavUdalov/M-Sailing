@@ -6,14 +6,14 @@ namespace Infrastructure.Data;
 public class MongoDbContext : IMongoDbContext
 {
     private readonly IMongoDatabase _database;
-    public MongoDbContext(string connectionString, string databaseName)
+
+    public MongoDbContext(IMongoDatabase database)
     {
-        var client = new MongoClient(connectionString);
-        _database = client.GetDatabase(databaseName);
+        _database = database ?? throw new ArgumentNullException(nameof(database));
     }
 
-    public IMongoCollection<TEntity> GetCollection<TEntity>(string name)
+    public IMongoCollection<T> GetCollection<T>(string name)
     {
-        return _database.GetCollection<TEntity>(name);
+        return _database.GetCollection<T>(name);
     }
 }

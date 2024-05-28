@@ -1,14 +1,23 @@
-import {Component, HostListener} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
+import { BasketService } from 'src/app/basket/basket.service';
 
 @Component({
   selector: 'app-forsmall',
   templateUrl: './forsmall.component.html',
   styleUrls: ['./forsmall.component.less']
 })
-export class ForsmallComponent {
+export class ForsmallComponent implements OnInit {
 isOpen: boolean = false;
-constructor() {
-}
+  ItemsLength: number = 0;
+
+  constructor(private basketService: BasketService) {
+  }
+
+  ngOnInit(): void {
+    this.basketService.getCartItems().subscribe((data) => {
+      this.ItemsLength = data.length;
+    })
+  }
   setIsOpen(event: MouseEvent) {
     this.isOpen = !this.isOpen;
     if (this.isOpen) {

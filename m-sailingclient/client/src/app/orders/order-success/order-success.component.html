@@ -1,0 +1,25 @@
+<div *ngIf="orderData" class="order-success-container" style="margin-top: 50px; margin-bottom: 50px">
+  <div class="order-success-header">
+    <h1><span class="material-symbols-outlined">
+handshake
+</span><span style="margin-left: 10px">
+      Заказ успешно создан!
+      <span>Мы с вами свяжемся по номеру телефона, который вы оставили.</span>
+    </span></h1>
+    <p>Ваш номер заказа: {{ orderData.id }}</p>
+  </div>
+  <h3>Детали заказа:</h3>
+  <div class="order-items">
+    <div *ngFor="let item of orderData.products" class="order-item">
+      <img [src]="item.pictures" alt="{{ item.name }}" class="order-item-image">
+      <div class="order-item-details">
+        <div class="order-item-name">{{ item.name }}</div>
+        <div class="order-item-price">{{ item.price }} ₽</div>
+        <div class="order-item-quantity">Количество: {{ item.quantity }}</div>
+      </div>
+    </div>
+  </div>
+  <div class="order-total">
+    <p>Общая стоимость: {{ orderData.totalPrice }} ₽</p>
+  </div>
+</div>

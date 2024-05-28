@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {Equipment} from "../../models/equipment";
 import {ShopService} from "../shop.service";
 import {ActivatedRoute} from "@angular/router";
 import {Cover} from "../../models/cover";
 import {animations} from "../../helpers/animations";
 import { Armament } from 'src/app/models/armament';
+import { ProductToCreateOrder } from 'src/app/models/OrdersModels';
+import { BasketService } from 'src/app/basket/basket.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-onecover',
@@ -14,12 +16,23 @@ import { Armament } from 'src/app/models/armament';
 })
 export class OnecoverComponent implements OnInit {
   cover: Cover | undefined;
-  additional: Armament[] = [];
+  addition: Cover[] = [];
   id: string = '';
-  constructor(private shopService: ShopService, private activeRouter: ActivatedRoute) {
+  quantityInBasket: number = 0;
+  isProductAddedToCart: boolean = false
+  constructor(private shopService: ShopService,
+              private activeRouter: ActivatedRoute,
+              private basketService: BasketService,
+              private metaService: Meta, private titleService: Title) {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Магазин парусного и яхтенного вооружения, чехлов для яхт | M-sailing');
+    this.metaService.addTags([
+      { name: 'description', content: 'Интернет-магазин парусной экипировки, яхтенного вооружения, чехлов для яхт. Лучшие бренды, отличные цены.' },
+      { name: 'keywords', content: 'парусное вооружение, чехлы для яхт, яхтенное вооружение, купить чехол для парусной яхты, купить чехол лазера' },
+      { name: 'robots', content: 'index, follow' }
+    ]);
     this.activeRouter.paramMap.subscribe(params => {
       this.id = params.get('id') as string;
       this.getOneProduct();
@@ -32,15 +45,41 @@ export class OnecoverComponent implements OnInit {
     })
   }
   getEquipForHome() {
-    this.shopService.getRandomArmament().subscribe(data => {
-      this.additional = data;
+    this.shopService.getCovers().subscribe(data => {
+      this.addition = data.data.slice(0, 4) as Cover[];
     })
+  }
+  addItem(product : Cover) {
+    let productForOrder : ProductToCreateOrder = {
+      id : product.id,
+      name : product.name,
+      price : product.price,
+      pictures : product.pictures,
+      quantity: 1
+    }
+    this.basketService.addToCart(productForOrder, productForOrder.quantity);
+    this.updateRemoveButtonVisibility(product.id)
+    this.checkoutQuantity(product.id)
+  }
+  checkoutQuantity(id: string) {
+    this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
+  }
+  removeFromCart(productId: string) {
+    this.basketService.removeFromCart(productId);
+    this.updateRemoveButtonVisibility(productId)
+    this.checkoutQuantity(productId)
+  }
+  clearCart() {
+    this.basketService.clearCart()
+  }
+  updateRemoveButtonVisibility(productId: string) {
+    this.isProductAddedToCart = this.basketService.isProductInCart(productId);
   }
   clickToTop() {
     window.scroll({
       top: 0,
       left: 0,
-      behavior: 'smooth' // Делает скролл плавным
+      behavior: 'smooth'
     });
   }
 }

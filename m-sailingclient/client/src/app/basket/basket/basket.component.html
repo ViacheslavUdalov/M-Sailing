@@ -1,0 +1,21 @@
+<div *ngIf="cartItems.length === 0" class="empty-cart-message">Корзина пуста</div>
+
+<div class="cart-container">
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <img [src]="item.product.pictures" alt="{{ item.product.name }}">
+    <div class="product-name">{{ item.product.name }}</div>
+    <div class="product-price">Цена за штуку: {{ item.product.price }} ₽</div>
+    <div class="product-price">Цена Всего: {{ item.product.price * item.quantity }} ₽</div>
+    <div class="product-quantity">Количество: {{ item.quantity }}</div>
+    <div class="plus-minus">
+      <button (click)="increaseQuantity(item.product.id)">+</button>
+      <button (click)="decreaseQuantity(item.product.id)">-</button>
+    </div>
+    <button (click)="removeFromCart(item.product.id)">Удалить</button>
+    </div>
+</div>
+<div class="clear-cart-container">
+  <a routerLink="/create-order" *ngIf="cartItems.length !== 0" class="follow-to-order">Перейти к оформлению заказа</a>
+
+  <button (click)="clearCart()" class="clear-cart-button">Очистить корзину</button>
+</div>

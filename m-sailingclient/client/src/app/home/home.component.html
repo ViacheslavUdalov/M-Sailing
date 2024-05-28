@@ -1,25 +1,16 @@
 <div class="container">
   <div class="main">
-
     <div class="fir stblock" @animations>
-<!--      <h1 class="name-of-block">У нас вы можете найти парусную экипировку Sandiline, Zhik,-->
-<!--        а так же много других производителей.</h1>-->
-<!--      <div class="img-container" >-->
-<!--        <img src="./assets/images/photo_2024-04-01_15-48-42.jpg" alt="" class="imagesblocks">-->
-<!--      </div>-->
       <div class="img-containerone" >
-<!--        <img src="./assets/images/photo_2024-04-01_15-48-42.jpg" alt="" class="imagesblocks">-->
-        <h1 class="name-of-block">У нас вы можете найти парусную экипировку Sandiline, Zhik,
-          а так же многих других производителей.</h1>
-        <button class="button" routerLink='equipment'>Перейти в каталог.</button>
+        <h1 class="name-of-block"><h1>M-sailing </h1> Компания, у который вы
+          можете найти парусную экипировку Sandiline, Zhik
+          и других производителей, а так же яхтенное вооружение. Мы поставляем продукцию по всей России.</h1>
+<!--        <button class="button" routerLink='equipment'>Перейти в каталог.</button>-->
       </div>
       <div @animations>
         <app-dataproductshelper [data]="equipments" [title]="'/equipment'"></app-dataproductshelper>
       </div>
-
     </div>
-
-
     <div class="firstblock animate" appScrollAnimations>
       <h1 class="name-of-blocksec">Вооружение Для Яхты.</h1>
       <div class="img-container animate" appScrollAnimations>
@@ -27,10 +18,7 @@
         <img src="./assets/images/photo_2024-04-01_15-48-47.jpg" alt="" class="imagesblocks">
       </div>
   <app-dataproductshelper [data]="armament" [title]="'/armament'"></app-dataproductshelper>
-
     </div>
-
-
     <div class="firstblock animate" appScrollAnimations>
       <h1 class="name-of-blocksec">И многое другое.</h1>
       <div class="img-container animate" appScrollAnimations>
@@ -41,7 +29,3 @@
 
   </div>
 </div>
-
-
-
-

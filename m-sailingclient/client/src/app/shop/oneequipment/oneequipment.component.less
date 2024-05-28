@@ -1,5 +1,7 @@
+@color-primary: #007bff;
+
 .equipment-details {
-display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 
@@ -8,8 +10,56 @@ display: flex;
   margin-left: 10%;
 
 }
+.buttons {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+}
+.inside-buttons {
+  display: flex;
+  flex-direction: row;
+}
+.delete-button {
+  background-color: @color-primary;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid @color-primary;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 30px;
+  cursor: pointer;
+  color: white;
+}
+.delete-button:hover {
+  scale: 1.1;
+  background-color: blue;
+  transition: scale 0.5s ease, background-color 0.5s ease;
+}
+
+button {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  background-color: @color-primary;
+  border: 1px solid @color-primary;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  user-select: none;
+
+  &:hover {
+    background-color: darken(@color-primary, 10%);
+    border-color: darken(@color-primary, 10%);
+  }
+}
 .details {
-  width: 80%;
+  width: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,29 +109,29 @@ display: flex;
     width: 100%;
   }
   .equipment-image {
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
   }
 }
 @media (max-width: 650px) {
-.productdata {
-  flex-direction: column;
-}
+  .productdata {
+    flex-direction: column;
+  }
   .equipment-image {
     width: 100%;
     height: auto;
-  }
-  .name {
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    font-style: normal;
   }
   .details {
     width: 100%;
   }
 
+  .name {
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
   .description {
-  width: 100%;
+    width: 100%;
     word-wrap: break-word;
   }
 }

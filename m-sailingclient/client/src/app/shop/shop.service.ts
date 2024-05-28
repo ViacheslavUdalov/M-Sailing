@@ -47,9 +47,9 @@ export class ShopService {
         })
       )
   }
-  
+
 getEquipment(): Observable<IPagination> {
-return this.getItems('equipment')
+return this.getItems('main/equipment')
 }
 setShopParams(params: ShopParams) {
     this.shopParams = params;
@@ -59,40 +59,40 @@ getShopParams() {
 
 }
 getRandomEquipment() {
-return this.http.get<Equipment[]>(this.apiUrl + 'random-equipment')
+return this.http.get<Equipment[]>(this.apiUrl + 'main/random-equipment')
 }
  getRandomArmament() {
-   return this.http.get<Armament[]>(this.apiUrl + 'random-armament')
+   return this.http.get<Armament[]>(this.apiUrl + 'main/random-armament')
  }
   getCovers(): Observable<Pagination> {
-    return this.getItems('covers')
+    return this.getItems('main/covers')
   }
   getArmament() {
-    return this.getItems('armament')
+    return this.getItems('main/armament')
   }
-  
+
   getClothes() {
-    return this.getItems('clothes')
+    return this.getItems('main/clothes')
   }
   getBoats() {
-    return this.getItems('boats')
+    return this.getItems('main/boats')
   }
   getOneClothes(id: string) {
-   
-    return this.http.get<Clothes>(this.apiUrl + 'clothes/' + id)
+
+    return this.http.get<Clothes>(this.apiUrl + 'main/clothes/' + id)
   }
   getOneEquipment(id: string): Observable<Equipment> {
-    return this.http.get<Equipment>(this.apiUrl + 'equipment/' + id)
+    return this.http.get<Equipment>(this.apiUrl + 'main/equipment/' + id)
   }
   getOneCovers(id: string): Observable<Cover> {
-    return this.http.get<Cover>(this.apiUrl + 'covers/' + id)
+    return this.http.get<Cover>(this.apiUrl + 'main/covers/' + id)
   }
   getOneArmament(id: string) {
-    return this.http.get<Armament>(this.apiUrl + 'armament/' + id)
+    return this.http.get<Armament>(this.apiUrl + 'main/armament/' + id)
   }
   getOneboat(id: string) {
-    
-    return this.http.get<Boat>(this.apiUrl + 'boats/' + id)
+
+    return this.http.get<Boat>(this.apiUrl + 'main/boats/' + id)
   }
-  
+
 }

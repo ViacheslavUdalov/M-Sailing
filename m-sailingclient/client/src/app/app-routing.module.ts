@@ -12,6 +12,9 @@ import {ClothesComponent} from "./shop/clothes/clothes.component";
 import {OneequipmentComponent} from "./shop/oneequipment/oneequipment.component";
 import {EquipmentComponent} from "./shop/equipment/equipment.component";
 import {HomeComponent} from "./home/home.component";
+import { CreateOrderComponent } from './orders/create-order/create-order.component';
+import { BasketComponent } from './basket/basket/basket.component';
+import { OrderSuccessComponent } from './orders/order-success/order-success.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -25,7 +28,10 @@ const routes: Routes = [
   {path: 'armament/:id', component: OnearmamentComponent},
   {path: 'boats', component: BoatsComponent},
   {path: 'boats/:id', component: OneboatComponent},
-  {path: '**', redirectTo: 'not-found', pathMatch: "full"}
+  { path: 'create-order', component: CreateOrderComponent },
+  { path: 'basket', component: BasketComponent },
+  { path: 'order-success', component: OrderSuccessComponent },
+  {path: '**', redirectTo: '/', pathMatch: "full"}
 ];
 
 @NgModule({

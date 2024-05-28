@@ -9,10 +9,17 @@ import {HomeModule} from "./home/home.module";
 import {SharedModule} from "./shared/shared.module";
 import {ShopModule} from "./shop/shop.module";
 import {CoreModule} from "./core/core.module";
+import { CreateOrderComponent } from './orders/create-order/create-order.component';
+import { BasketComponent } from './basket/basket/basket.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { OrderSuccessComponent } from './orders/order-success/order-success.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CreateOrderComponent,
+    BasketComponent,
+    OrderSuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,7 +29,8 @@ import {CoreModule} from "./core/core.module";
     SharedModule,
     HomeModule,
     HttpClientModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ReactiveFormsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}

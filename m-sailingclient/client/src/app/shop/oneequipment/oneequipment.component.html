@@ -3,22 +3,36 @@
   <div class="details" @animations>
     <div class="productdata">
       <img [src]="equipment.pictures" alt="{{ equipment.name }}" class="equipment-image">
-    <div class="info">
-      <h2 class="name">{{ equipment.name }}</h2>
-      <h3 class="textproduct" style="color: #34be02"><strong>Цена: </strong>  {{ equipment.price }} Руб.</h3>
-      <h3 class="textproduct"><strong>Тип: </strong>  {{ equipment.type }}</h3>
-      <h3 class="textproduct"><strong>Размеры: </strong>  {{ equipment.size.join(', ') }}</h3>
-      <h3 class="textproduct"><strong>Цвета: </strong>  {{ equipment.color }}</h3>
-      <h3 class="textproduct"><strong>Наличие товара: </strong> <span [class.green]="equipment.typeForBuy === 'Есть в наличии'" [class.red]="equipment.typeForBuy === 'Под заказ'"> {{ equipment.typeForBuy }}</span></h3>
-      <span style="color: red">Что бы заказать данный товар, свяжитесь с нами в любом мессенджере по номеру телефона +7-991-100-49-87.</span>
-    </div>
+      <div class="info">
+        <h2 class="name">{{ equipment.name }}</h2>
+        <h3 class="textproduct" style="color: #34be02"><strong>Цена: </strong>  {{ equipment.price }} Руб.</h3>
+        <h3 class="textproduct"><strong>Тип: </strong>  {{ equipment.type }}</h3>
+        <h3 class="textproduct"><strong>Размеры: </strong>  {{ equipment.size.join(', ') }}</h3>
+        <h3 class="textproduct"><strong>Цвета: </strong>  {{ equipment.color }}</h3>
+        <h3 class="textproduct"><strong>Наличие товара: </strong>  <span [class.green]="equipment.typeForBuy === 'Есть в наличии'"
+                                                                         [class.red]="equipment.typeForBuy === 'Под заказ'">{{ equipment.typeForBuy }}</span></h3>
+        <span style="color: red">Что бы заказать данный товар, свяжитесь с нами в любом мессенджере по номеру телефона +7-991-100-49-87.</span>
+        <div class="buttons">
+          <div class="inside-buttons">
+            <button (click)="addItem(equipment)" style="margin-right: 10px">Добавить в Корзину</button>
+
+            <a class="delete-button" *ngIf="isProductAddedToCart" (click)="removeFromCart(equipment.id)"><span class="material-symbols-outlined">
+delete
+</span></a>
+          </div>
+          <span>Количество данного товара в корзине : {{quantityInBasket}}</span>
+          <a routerLink="/basket" style="font-size: smaller; margin-top: 5px">Перейти в корзину</a>
+        </div>
+
+
+      </div>
     </div>
     <div >
       <p class="description"><strong>Описание:</strong><br> {{ equipment.description }}</p>
     </div>
     <div>
       <h2>Похожие товары:</h2>
-   <app-dataproductshelper (click)="clickToTop()" [data]="additional" [title]="'/equipment'"></app-dataproductshelper>
+      <app-dataproductshelper (click)="clickToTop()" [data]="addition" [title]="'/equipment'"></app-dataproductshelper>
     </div>
   </div>
 

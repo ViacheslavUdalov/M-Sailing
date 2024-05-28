@@ -6,6 +6,7 @@ import {animations} from "../../helpers/animations";
 import {Armament} from "../../models/armament";
 import {ActivatedRoute, Router} from "@angular/router";
 import { ShopParams } from 'src/app/models/shopParams';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-clothes',
@@ -50,11 +51,18 @@ export class ClothesComponent implements OnInit{
     {name: 'Под заказ', value: 'Под.заказ'}
   ]
   constructor(private shopService: ShopService, private router: Router,
-              private route: ActivatedRoute) {
-    this.shopParams = this.shopService.getShopParams();
-  }
+              private route: ActivatedRoute,
+  private metaService: Meta, private titleService: Title) {
+  this.shopParams = this.shopService.getShopParams();
+}
 
-  ngOnInit() {
+ngOnInit() {
+  this.titleService.setTitle('Магазин парусной экипировки и одежды | M-sailing');
+  this.metaService.addTags([
+    { name: 'description', content: 'Интернет-магазин парусной экипировки и одежды для яхтинга. Лучшие бренды, отличные цены.' },
+    { name: 'keywords', content: 'Sandiline, Zhik, парусная одежда, купить одежду Sandiline, купить одежду Zhik'},
+    { name: 'robots', content: 'index, follow' }
+  ]);
     this.route.queryParams.subscribe(params => {
       this.shopParams.type = params['type'] || '';
       this.shopParams.typeForBuy = params["typeForBuy"] || '';
