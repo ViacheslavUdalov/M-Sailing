@@ -18,7 +18,7 @@ services:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb+srv://slava187115:GYUDuSQYI6GFkmVk@cluster0.gi5tyfq.mongodb.net/
-      ME_CONFIG_BASICAUTH: false
+      ME_CONFIG_BASICAUTH: null
 
   webapi:
     build:
