@@ -42,7 +42,6 @@ C:\Production\M-sailing\Api\obj\Debug\net7.0\staticwebassets.pack.json
 C:\Production\M-sailing\Api\obj\Debug\net7.0\staticwebassets.build.json
 C:\Production\M-sailing\Api\obj\Debug\net7.0\staticwebassets.development.json
 C:\Production\M-sailing\Api\obj\Debug\net7.0\scopedcss\bundle\Api.styles.css
-C:\Production\M-sailing\Api\obj\Debug\net7.0\Api.csproj.CopyComplete
 C:\Production\M-sailing\Api\obj\Debug\net7.0\Api.dll
 C:\Production\M-sailing\Api\obj\Debug\net7.0\refint\Api.dll
 C:\Production\M-sailing\Api\obj\Debug\net7.0\Api.pdb
@@ -55,3 +54,6 @@ C:\Production\M-sailing\Api\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Production\M-sailing\Api\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 C:\Production\M-sailing\Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Production\M-sailing\Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Production\M-sailing\Api\bin\Debug\net7.0\Api.staticwebassets.runtime.json
+C:\Production\M-sailing\Api\obj\Debug\net7.0\Api.sourcelink.json
+C:\Production\M-sailing\Api\obj\Debug\net7.0\Api.csproj.Up2Date

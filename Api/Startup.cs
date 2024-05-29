@@ -3,6 +3,7 @@ using Core.Entities;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Infrastructure.Services;
+using Microsoft.Extensions.FileProviders;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -72,14 +73,21 @@ public class Startup
             var collection = dbContext.GetCollection<BsonDocument>("Armament");
             collection.Find(FilterDefinition<BsonDocument>.Empty).FirstOrDefault();
             app.UseHttpsRedirection();
-            app.UseCors("CorsPolicy");
-            app.UseStaticFiles();
             app.UseRouting();
+            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), "Content")
+                    ), RequestPath = "/content"
+            });
+            app.UseCors("CorsPolicy");
+           
+          
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllers();
+                endpoints.MapFallbackToController("Index", "Fallback");
             });
         }
     }
