@@ -1,33 +1,25 @@
-version: '3.1'
+version: '3.8'
 
 services:
-
   mongo:
     image: mongo
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_PASSWORD: laser
+    volumes:
+      - mongo-data:/data/db
 
   mongo-express:
     image: mongo-express
     restart: always
     ports:
-      - 8081:8081
+      - 8082:8081
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_ADMINPASSWORD: laser
       ME_CONFIG_MONGODB_URL: mongodb+srv://slava187115:GYUDuSQYI6GFkmVk@cluster0.gi5tyfq.mongodb.net/
       ME_CONFIG_BASICAUTH: null
 
-  webapi:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "5000:80"
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__MongoDb=mongodb+srv://slava187115:GYUDuSQYI6GFkmVk@cluster0.gi5tyfq.mongodb.net/msailing
-    depends_on:
-      - mongo
+volumes:
+  mongo-data:

@@ -17,8 +17,8 @@
         "name": "Linux",
         "description": "SFTP folder",
 
-        "host": "77.221.159.86", "port": 22,
-        "user": "root", "password": "HA2KG3UAUW8v",
+        "host": "176.124.199.5", "port": 22,
+        "user": "root", "password": "4MuJFuxaeKbS",
 
         "dir": "/var/msailing",
         "mappings": {
