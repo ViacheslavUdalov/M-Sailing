@@ -30,8 +30,8 @@
 }
 
 .cart-item {
-  flex: 1 1 calc(33.333% - 40px); /* Три элемента в ряд с учетом gap */
-  max-width: calc(33.333% - 40px);
+  flex: 1 1 calc(33.333%); /* Три элемента в ряд с учетом gap */
+  max-width: calc(33.333%);
   box-sizing: border-box; /* Включаем padding и border в ширину */
   margin-bottom: 20px;
   padding: 15px;
@@ -104,7 +104,7 @@ flex-direction: row;
 
 @media (max-width: 768px) {
   .cart-item {
-    flex: 1 1 calc(50% - 40px); /* Два элемента в ряд на экранах до 768px */
+    flex: 1 1 calc(50% - 10px); /* Два элемента в ряд на экранах до 768px */
   }
 }
 

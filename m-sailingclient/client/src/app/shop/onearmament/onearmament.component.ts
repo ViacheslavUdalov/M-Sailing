@@ -5,7 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Armament} from "../../models/armament";
 import {animations} from "../../helpers/animations";
 import { BasketService } from 'src/app/basket/basket.service';
-import { ProductToCreateOrder } from 'src/app/models/OrdersModels';
+import { ProductToCreateOrder, ProductToCreateOrderWithId } from 'src/app/models/OrdersModels';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -41,7 +41,7 @@ export class OnearmamentComponent implements OnInit{
 
   }
   getOneProduct() {
-    this.shopService.getOneArmament(this.id).subscribe(data => {
+    this.shopService.getOneArmament(Number(this.id)).subscribe(data => {
       this.armament = data;
       this.updateRemoveButtonVisibility(this.armament.id)
       this.checkoutQuantity(this.armament.id)
@@ -52,11 +52,11 @@ export class OnearmamentComponent implements OnInit{
       this.additional = data;
     })
   }
-  checkoutQuantity(id: string) {
+  checkoutQuantity(id: number) {
     this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
   }
   addItem(product : Armament) {
-    let productForOrder : ProductToCreateOrder = {
+    let productForOrder : ProductToCreateOrderWithId = {
       id : product.id,
       name : product.name,
       price : product.price,
@@ -67,7 +67,7 @@ export class OnearmamentComponent implements OnInit{
     this.updateRemoveButtonVisibility(product.id)
     this.checkoutQuantity(product.id)
   }
-  removeFromCart(productId: string) {
+  removeFromCart(productId: number) {
     this.basketService.removeFromCart(productId);
     this.updateRemoveButtonVisibility(productId)
      this.checkoutQuantity(productId)
@@ -75,7 +75,7 @@ export class OnearmamentComponent implements OnInit{
   clearCart() {
     this.basketService.clearCart()
   }
-  updateRemoveButtonVisibility(productId: string) {
+  updateRemoveButtonVisibility(productId: number) {
     this.isProductAddedToCart = this.basketService.isProductInCart(productId);
   }
   clickToTop() {

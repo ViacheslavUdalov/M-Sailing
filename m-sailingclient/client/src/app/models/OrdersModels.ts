@@ -1,6 +1,14 @@
 // src/app/models/order.ts
 export interface ProductToCreateOrder {
-  id: string
+  name: string;
+  price: number;
+  size?: string;
+  color?: string;
+  pictures: string;
+  quantity: number;
+}
+export interface ProductToCreateOrderWithId {
+  id: number
   name: string;
   price: number;
   size?: string;
@@ -9,22 +17,23 @@ export interface ProductToCreateOrder {
   quantity: number;
 }
 
+
 export interface CreateOrderData {
-  id: string
+  id: number
   phoneNumber: string;
   address: Address;
   nameOfGetter: string;
-  products: ProductToCreateOrder[];
+  productToCreateOrder: ProductToCreateOrder[];
   totalPrice?: number;
 }
 interface Address  {
   region: string;
   city: string;
   street: string;
-  house: number;
+  house: string;
   corpus: string;
 }
 export interface CartItem {
-  product: ProductToCreateOrder;
+  product: ProductToCreateOrderWithId;
   quantity: number
 }

@@ -12,8 +12,6 @@ C:\Production\M-sailing\Api\bin\Release\net7.0\DnsClient.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.Extensions.Configuration.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.Extensions.Primitives.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.OpenApi.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\MongoDB.Bson.dll
@@ -57,3 +55,18 @@ C:\Production\M-sailing\Api\obj\Release\net7.0\refint\Api.dll
 C:\Production\M-sailing\Api\obj\Release\net7.0\Api.pdb
 C:\Production\M-sailing\Api\obj\Release\net7.0\Api.genruntimeconfig.cache
 C:\Production\M-sailing\Api\obj\Release\net7.0\ref\Api.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\armament.json
+C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\boats.json
+C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\clothes.json
+C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\covers.json
+C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\equipment.json
+C:\Production\M-sailing\Api\bin\Release\net7.0\Humanizer.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Mono.TextTemplating.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Npgsql.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\System.CodeDom.dll

@@ -31,9 +31,8 @@ public class CreateOrderController : BaseApiController
         {
             return BadRequest("Товар не найден.");
         }
-        createOrderData.Id = ObjectId.GenerateNewId().ToString();
         createOrderData.GetPrice();
-        await _orderRepository.AddAsync("Orders", createOrderData);
+        await _orderRepository.AddAsync(createOrderData);
         await _emailService.SendEmail(createOrderData);
         var message = FormatOrderMessage(createOrderData);
         await _telegramService.SendMessageAsync(message);
@@ -43,15 +42,16 @@ public class CreateOrderController : BaseApiController
     {
         var sb = new StringBuilder();
         sb.AppendLine($"📦 Новый заказ:");
+        sb.AppendLine($"Номер Заказа: {order.Id}");
         sb.AppendLine($"Телефон: {order.PhoneNumber}");
         sb.AppendLine($"Адрес: {order.Address.Region} {order.Address.City}" +
                       $" {order.Address.Street} {order.Address.House} {order.Address?.Corpus}");
         sb.AppendLine($"Получатель: {order.NameOfGetter}");
         sb.AppendLine($"Дата заказа: {order.OrderDate}");
         sb.AppendLine($"Продукты:");
-        foreach (var product in order.Products)
+        foreach (var product in order.ProductToCreateOrder)
         {
-            sb.AppendLine($"- {product.Name}: {product.Quantity} x {product.Price} = {product.Quantity * product.Price}");
+            sb.AppendLine($"- {product.Name}: {$"Размер - "} {product?.Size} {product.Quantity} x {product.Price} = {product.Quantity * product.Price}");
         }
         sb.AppendLine($"💵 Общая сумма: {order.TotalPrice}");
 

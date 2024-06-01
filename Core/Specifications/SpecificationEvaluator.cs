@@ -5,7 +5,7 @@ namespace Core.Specifications;
 
 public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
 {
- public static IMongoQueryable<TEntity> GetQuery(IMongoQueryable<TEntity> inputQuery, ISpecification<TEntity> specification)
+ public static IQueryable<TEntity> GetQuery(IQueryable<TEntity> inputQuery, ISpecification<TEntity> specification)
  {
   var query = inputQuery;
   if (specification.Criteria != null)

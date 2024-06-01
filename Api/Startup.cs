@@ -1,8 +1,10 @@
 using Api.Controllers;
+using Api.Helpers;
 using Core.Entities;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Infrastructure.Services;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -22,23 +24,12 @@ public class Startup
         {
             services.AddControllers();
             services.AddDirectoryBrowser();
-            services.AddSingleton<IMongoClient>(sp =>
-            {
-                var settings = MongoClientSettings.FromConnectionString(_configuration["MongoDB:ConnectionString"]);
-                return new MongoClient(settings);
-            });
-
-            services.AddSingleton(sp =>
-            {
-                var client = sp.GetRequiredService<IMongoClient>();
-                var database = client.GetDatabase(_configuration["MongoDB:DatabaseName"]);
-                return database;
-            });
-            services.AddSingleton<IMongoDbContext, MongoDbContext>();
+            services.AddDbContext<StoreContext>(x =>
+                x.UseNpgsql(_configuration.GetConnectionString("DefaultConnection")));
             services.AddTransient<IEmailService, EmailService>();
-            services.AddScoped(typeof(IProductsRepository<>), typeof(ProductsRepository<>));
+            services.AddScoped(typeof(IProductsRepository), typeof(ProductsRepository));
             services.AddScoped(typeof(IOrderRepository<>), typeof(OrderRepository<>));
-           
+            services.AddScoped<UrlResolver>();
             services.Configure<TelegramBotOptions>(_configuration.GetSection("TelegramBot"));
             var telegramBotOptions = new TelegramBotOptions();
             _configuration.GetSection("TelegramBot").Bind(telegramBotOptions);
@@ -69,9 +60,6 @@ public class Startup
             {
                 app.UseDeveloperExceptionPage();
             }
-            var dbContext = app.ApplicationServices.GetService<IMongoDbContext>();
-            var collection = dbContext.GetCollection<BsonDocument>("Armament");
-            collection.Find(FilterDefinition<BsonDocument>.Empty).FirstOrDefault();
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseStaticFiles();

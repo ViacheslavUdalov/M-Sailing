@@ -1,5 +1,6 @@
 using Core.Entities;
 using Core.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
@@ -7,42 +8,25 @@ namespace Infrastructure.Data;
 
 public class OrderRepository<T> : IOrderRepository<T> where T : BaseEntity
 {
-    private readonly IMongoDbContext _dbContext;
+    private readonly StoreContext _context;
 
-    public OrderRepository(IMongoDbContext dbContext)
+    public OrderRepository(StoreContext context)
     {
-        _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+        _context = context;
     }
-    public async Task<T> GetByIdAsync(string collectionName, string id)
+    public async Task<T> GetByIdAsync(string id)
     {
-        var collection = _dbContext.GetCollection<T>(collectionName);
-        if (!ObjectId.TryParse(id, out ObjectId objectId))
-        {
-            Console.WriteLine($"Invalid ObjectId format: {id}");
-            return null;
-        }
-        var filter = Builders<T>.Filter.Eq("_id", objectId);
-            
-        var cursor = await collection.FindAsync(filter);
-        var result = await cursor.FirstOrDefaultAsync();
-        if (result == null)
-        {
-            Console.WriteLine($"Document with id {id} not found in collection {collectionName}");
-        }
-
-        return result;
+        return await _context.Set<T>().FindAsync(id);
     }
 
-    public async Task<IReadOnlyList<T>> GetAllAsync(string collectionName)
+    public async Task<IReadOnlyList<T>> GetAllAsync()
     {
-        var collection = _dbContext.GetCollection<T>(collectionName);
-        var result = await collection.Find(_ => true).ToListAsync();
-        return result;
+        return await _context.Set<T>().ToListAsync();
     }
 
-    public async Task AddAsync(string collectionName, T entity)
+    public async Task AddAsync(T entity)
     {  
-        var collection = _dbContext.GetCollection<T>(collectionName);
-        await collection.InsertOneAsync(entity);
+        await _context.Set<T>().AddAsync(entity);
+        await _context.SaveChangesAsync();
     }
 }

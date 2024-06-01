@@ -9,147 +9,190 @@ namespace Api.Controllers;
 
 public class MainController: BaseApiController
 {
-    private readonly IProductsRepository<Product> _productsRepository;
-
-    public MainController(IProductsRepository<Product> productsRepository)
+    private readonly IProductsRepository _productsRepository;
+    private readonly UrlResolver _urlResolver;
+    
+    public MainController(IProductsRepository productsRepository,  UrlResolver urlResolver)
     {
         _productsRepository = productsRepository;
+        _urlResolver = urlResolver;
     }
-    [HttpGet("equipment")]
-    public async Task<ActionResult<Pagination<Product>>> GetAllEquipment([FromQuery] ProductSpecParams productSpecParams)
-    {
-        return await GetProductsByCategory("Equipment", productSpecParams);
-    }
-
+    
+    
     [HttpGet("random-equipment")]
-    public async Task<ActionResult<IReadOnlyList<Product>>> GetRandomEquipment()
+    public async Task<ActionResult<IReadOnlyList<Equipment>>> GetRandomEquipment()
     {
-        var equipment = await GetRandomProducts(4, "Equipment");
-        return Ok(equipment);
+        int count = 4;
+        var specFilters = new ProductSpecParams();
+        var spec = new ProductsWithFilterSpec<Equipment>(specFilters);
+        var totalItems = await _productsRepository.CountEquipAsync(spec);
+        var random = new Random();
+        var randomSkip = random.Next(0, totalItems - count);
+        var filters = new RandomSpec<Equipment>(randomSkip, count);
+        var products = await _productsRepository.ListEquipWithSpecAsync(filters);
+        foreach (var product in products)
+        {
+            product.Pictures = _urlResolver.Resolve(product.Pictures);
+        }
+        return Ok(products);
     }
     [HttpGet("random-armament")]
-    public async Task<ActionResult<IReadOnlyList<Product>>> GetRandomArmament()
+    public async Task<ActionResult<IReadOnlyList<Armament>>> GetRandomArmament()
     {
-        var armament = await GetRandomProducts(4, "Armament");
-        return Ok(armament);
-    }
-
-    [HttpGet("armament")]
-    public async Task<ActionResult<Pagination<Product>>> GetAllArmament([FromQuery] ProductSpecParams productSpecParams)
-    {
-        return await GetProductsByCategory("Armament", productSpecParams);
-    }
-    [HttpGet("covers")]
-    public async Task<ActionResult<Pagination<Product>>> GetAllCovers([FromQuery] ProductSpecParams productSpecParams)
-    {
-        return await GetProductsByCategory("Covers", productSpecParams);
-    }
-    [HttpGet("boats")]
-    public async Task<ActionResult<Pagination<Product>>> GetAllBoats([FromQuery] ProductSpecParams productSpecParams)
-    {
-        return await GetProductsByCategory("Boats", productSpecParams);
-    }
-    [HttpGet("clothes")]
-    public async Task<ActionResult<Pagination<Product>>> GetAllClothes([FromQuery] ProductSpecParams productSpecParams)
-    {
-        return await GetProductsByCategory("Clothes", productSpecParams);
-    }
-    
-    [HttpGet("equipment/{id}")]
-    public async Task<ActionResult<Product>> GetOneEquipment(string id)
-    {
-        if (string.IsNullOrEmpty(id))
+        int count = 4;
+        var specFilters = new ProductSpecParams();
+        var spec = new ProductsWithFilterSpec<Armament>(specFilters);
+        var countSpec = new ProductsWithFiltersCountSpec<Armament>(specFilters);
+        var totalItems = await _productsRepository.CountArmamAsync(countSpec);
+        var random = new Random();
+        var randomSkip = random.Next(0, totalItems - count);
+        var filters = new RandomSpec<Armament>(randomSkip, count);
+        var products = await _productsRepository.ListArmamWithSpecAsync(filters);
+        foreach (var product in products)
         {
-            return BadRequest();
+            product.Pictures = _urlResolver.Resolve(product.Pictures);
         }
-        var equipment =  await _productsRepository.GetByIdAsync("Equipment", id);
-        if (equipment is null)
-        {
-            return NotFound();
-        }
-        return equipment;
+        return Ok(products);
     }
-    
-    [HttpGet("boats/{id}")]
-    public async Task<ActionResult<Product>> GetOneBoats(string id)
-    {
-        if (string.IsNullOrEmpty(id))
-        {
-            return BadRequest();
-        }
-        var boats =  await _productsRepository.GetByIdAsync("Boats", id);
-        if (boats is null)
-        {
-            return NotFound();
-        }
-        return boats;
-    }
-      
-    [HttpGet("clothes/{id}")]
-    public async Task<ActionResult<Product>> GetOneClothes(string id)
-    {
-        if (string.IsNullOrEmpty(id))
-        {
-            return BadRequest();
-        }
-        var clothes =  await _productsRepository.GetByIdAsync("Clothes", id);
-        if (clothes is null)
-        {
-            return NotFound();
-        }
-        return clothes;
-    }
-    [HttpGet("armament/{id}")]
-    public async Task<ActionResult<Product>> GetOneArmament(string id)
-    {
-        if (string.IsNullOrEmpty(id))
-        {
-            return BadRequest();
-        }
-        var armament =  await _productsRepository.GetByIdAsync("Armament", id);
-        if (armament is null)
-        {
-            return NotFound();
-        }
-        return armament;
-    }
-    
-    [HttpGet("covers/{id}")]
-    public async Task<ActionResult<Product>> GetOneCover(string id)
-    {
-        if (string.IsNullOrEmpty(id))
-        {
-            return BadRequest();
-        }
-        var cover =  await _productsRepository.GetByIdAsync("Covers", id);
-        if (cover is null)
-        {
-            Console.WriteLine($"Document with id {id} not found in collection Covers");
-            return NotFound();
-        }
-        return cover;
-    }
-    private async Task<ActionResult<Pagination<Product>>> GetProductsByCategory(string category, ProductSpecParams productSpecParams)
+    [HttpGet("equipment")]
+    public async Task<ActionResult<Pagination<Equipment>>> GetAllEquipment([FromQuery] ProductSpecParams productSpecParams)
     {
         productSpecParams.TypeForBuy = productSpecParams.TypeForBuy?.Replace(".", " ");
         productSpecParams.Type = productSpecParams.Type?.Replace(".", " ");
-        var spec = new ProductsWithFilterSpec(productSpecParams);
-        var countSpec = new ProductsWithFiltersCountSpec(productSpecParams);
-        var totalItems = await _productsRepository.CountAsync(countSpec, category);
-        var products = await _productsRepository.ListWithSpecAsync(spec, category);
+        var spec = new ProductsWithFilterSpec<Equipment>(productSpecParams);
+        var countSpec = new ProductsWithFiltersCountSpec<Equipment>(productSpecParams);
+        var totalItems = await _productsRepository.CountEquipAsync(countSpec);
+        var products = await _productsRepository.ListEquipWithSpecAsync(spec);
+        foreach (var product in products)
+        {
+            product.Pictures = _urlResolver.Resolve(product.Pictures);
+        }
         return Ok(
-            new Pagination<Product>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
+            new Pagination<Equipment>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
     }
 
-    private async Task<IReadOnlyList<Product>> GetRandomProducts(int count, string collectionName)
+    [HttpGet("armament")]
+    public async Task<ActionResult<Pagination<Armament>>> GetAllArmament([FromQuery] ProductSpecParams productSpecParams)
     {
-        var specFilters = new ProductSpecParams();
-        var spec = new ProductsWithFilterSpec(specFilters);
-        var totalItems = await _productsRepository.CountAsync(spec, collectionName);
-        var random = new Random();
-        var randomSkip = random.Next(0, totalItems - count);
-        var filters = new RandomSpec(randomSkip, count);
-        var products = await _productsRepository.ListWithSpecAsync(filters, collectionName);
-        return products;
+        productSpecParams.TypeForBuy = productSpecParams.TypeForBuy?.Replace(".", " ");
+        productSpecParams.Type = productSpecParams.Type?.Replace(".", " ");
+        var spec = new ProductsWithFilterSpec<Armament>(productSpecParams);
+        var countSpec = new ProductsWithFiltersCountSpec<Armament>(productSpecParams);
+        var totalItems = await _productsRepository.CountArmamAsync(countSpec);
+        var products = await _productsRepository.ListArmamWithSpecAsync(spec);
+        foreach (var product in products)
+        {
+            product.Pictures = _urlResolver.Resolve(product.Pictures);
+        }
+        return Ok(
+            new Pagination<Armament>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
     }
+    [HttpGet("covers")]
+    public async Task<ActionResult<Pagination<Covers>>> GetAllCovers([FromQuery] ProductSpecParams productSpecParams)
+    {
+        productSpecParams.TypeForBuy = productSpecParams.TypeForBuy?.Replace(".", " ");
+        productSpecParams.Type = productSpecParams.Type?.Replace(".", " ");
+        var spec = new ProductsWithFilterSpec<Covers>(productSpecParams);
+        var countSpec = new ProductsWithFiltersCountSpec<Covers>(productSpecParams);
+        var totalItems = await _productsRepository.CountCoversAsync(countSpec);
+        var products = await _productsRepository.ListCoversWithSpecAsync(spec);
+        foreach (var product in products)
+        {
+            product.Pictures = _urlResolver.Resolve(product.Pictures);
+        }
+        return Ok(
+            new Pagination<Covers>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
+    }
+    [HttpGet("boats")]
+    public async Task<ActionResult<Pagination<Boats>>> GetAllBoats([FromQuery] ProductSpecParams productSpecParams)
+    {
+        productSpecParams.TypeForBuy = productSpecParams.TypeForBuy?.Replace(".", " ");
+        productSpecParams.Type = productSpecParams.Type?.Replace(".", " ");
+        var spec = new ProductsWithFilterSpec<Boats>(productSpecParams);
+        var countSpec = new ProductsWithFiltersCountSpec<Boats>(productSpecParams);
+        var totalItems = await _productsRepository.CountBoatsAsync(countSpec);
+        var products = await _productsRepository.ListBoatsWithSpecAsync(spec);
+        foreach (var product in products)
+        {
+            product.Pictures = _urlResolver.Resolve(product.Pictures);
+        }
+        return Ok(
+            new Pagination<Boats>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
+    }
+    [HttpGet("clothes")]
+    public async Task<ActionResult<Pagination<Clothes>>> GetAllClothes([FromQuery] ProductSpecParams productSpecParams)
+    {
+        productSpecParams.TypeForBuy = productSpecParams.TypeForBuy?.Replace(".", " ");
+        productSpecParams.Type = productSpecParams.Type?.Replace(".", " ");
+        var spec = new ProductsWithFilterSpec<Clothes>(productSpecParams);
+        var countSpec = new ProductsWithFiltersCountSpec<Clothes>(productSpecParams);
+        var totalItems = await _productsRepository.CountClothesAsync(countSpec);
+        var products = await _productsRepository.ListClothesWithSpecAsync(spec);
+        foreach (var product in products)
+        {
+            product.Pictures = _urlResolver.Resolve(product.Pictures);
+        }
+        return Ok(
+            new Pagination<Clothes>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
+    }
+    
+    [HttpGet("equipment/{id}")]
+    public async Task<ActionResult<Equipment>> GetOneEquipment(int id)
+    {
+        var equipment = await _productsRepository.GetEquipByIdAsync(id);
+        equipment.Pictures = _urlResolver.Resolve(equipment.Pictures);
+        if (equipment == null)
+        {
+            return NotFound();
+        }
+        return Ok(equipment);
+    }
+    
+    [HttpGet("boats/{id}")]
+    public async Task<ActionResult<Boats>> GetOneBoats(int id)
+    {
+        var boat = await _productsRepository.GetBoatsByIdAsync(id);
+        boat.Pictures = _urlResolver.Resolve(boat.Pictures);
+        if (boat == null)
+        {
+            return NotFound();
+        }
+        return Ok(boat);
+    }
+      
+    [HttpGet("clothes/{id}")]
+    public async Task<ActionResult<Clothes>> GetOneClothes(int id)
+    {
+        var clothes = await _productsRepository.GetClothesByIdAsync(id);
+        clothes.Pictures = _urlResolver.Resolve(clothes.Pictures);
+        if (clothes == null)
+        {
+            return NotFound();
+        }
+        return Ok(clothes);
+    }
+    [HttpGet("armament/{id}")]
+    public async Task<ActionResult<Armament>> GetOneArmament(int id)
+    {
+        var armament = await _productsRepository.GetArmamByIdAsync(id);
+        armament.Pictures = _urlResolver.Resolve(armament.Pictures);
+        if (armament == null)
+        {
+            return NotFound();
+        }
+        return Ok(armament);
+    }
+    
+    [HttpGet("covers/{id}")]
+    public async Task<ActionResult<Covers>> GetOneCover(int id)
+    {
+        var cover = await _productsRepository.GetCoversByIdAsync(id);
+        cover.Pictures = _urlResolver.Resolve(cover.Pictures);
+        if (cover == null)
+        {
+            return NotFound();
+        }
+        return Ok(cover);
+    }
+    
 }

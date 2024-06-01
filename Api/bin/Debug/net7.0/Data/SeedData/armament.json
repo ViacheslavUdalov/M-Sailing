@@ -1,0 +1,277 @@
+[
+  {
+  "Name": "Часы на Мачту.",
+  "Type": "вооружение",
+  "Description": "Громкий сигнал, большой экран циферблата и таймер с синхронизацией - залог старта в первых рядах.\n- пластиковый противоударный корпус\n- поворотный корпус для размещения часов на такелаже яхты\n- громкий сигнал\n- не тонут\n- мягкий легкий ремешок",
+  "Price": 11572,
+  "Colors": [
+    "Чёрный"
+  ],
+  "Pictures": "assets/productsimages/clock.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Гик Ilca",
+  "Type": "рангоут",
+  "Description": "Оснащен самыми передовыми блоками Harken. С ним ты точно можешь быть уверен, что клепки не вылетят в самый не подходящий момент.",
+  "Price": 35922,
+  "Pictures": "assets/productsimages/geek.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Система шкотового угла 2 блока (18мм) + веревки",
+  "Type": "вооружение",
+  "Description": "Система, с помощью которой ты точно сможешь натягивать парус одним мизинцем.",
+  "Price": 8080,
+  "Pictures": "assets/productsimages/clewangle.jpg",
+  "TypeForBuy": "Под заказ"
+},
+{
+  "Name": "Латы МК 2 Ilca 7",
+  "Type": "вооружение",
+  "Description": "Профилированные латы для лучшей формы паруса",
+  "Price": 4472,
+  "Pictures": "assets/productsimages/batten.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Парус Ilca 6",
+  "Type": "парус",
+  "Description": "Парус обладает радиальным покроем, для тех, кто хочет показать максильный результат в гонках.",
+  "Price": 72115,
+  "Pictures": "assets/productsimages/sailR.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Парус MK 2 Ilca 7",
+  "Type": "парус",
+  "Description": "Современный парус, которые позволит развить максимальную скорость на воде и конкурировать с сильнейшими соперниками.",
+  "Price": 78623,
+  "Pictures": "assets/productsimages/sailSjpg.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Шверт Ilca",
+  "Type": "вооружение",
+  "Description": "Шверт, который никогда не будет всплывать.",
+  "Price": 65742,
+  "Pictures": "assets/productsimages/shvert.jpg",
+  "TypeForBuy": "Под заказ"
+},
+{
+  "Name": "Перо руля Ilca",
+  "Type": "вооружение",
+  "Description": "Перо руля, которое будет помогать подруливать в выгодную сторону.",
+  "Price": 39579,
+  "Pictures": "assets/productsimages/perorula.jpg",
+  "TypeForBuy": "Под заказ"
+},
+{
+  "Name": "Баллерная коробка Ilca",
+  "Type": "вооружение",
+  "Description": "Балерная коробка, которая никогда не выпадет в самый неподходящий момент.",
+  "Price": 21960,
+  "Pictures": "assets/productsimages/baller.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Удлинитель",
+  "Type": "вооружение",
+  "Description": "Тонкий и легкий удлинитель (1,2 м) для максимальной чувствительности нагрузки на руле.",
+  "Price": 14493,
+  "Pictures": "assets/productsimages/udlinitel.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Румпель",
+  "Type": "вооружение",
+  "Description": "Прочный и надежный румпель для самых коварных ветров .",
+  "Price": 30858,
+  "Pictures": "assets/productsimages/rumpel.jpg",
+  "TypeForBuy": "Под заказ"
+},
+{
+  "Name": "Веревка на погон",
+  "Type": "вооружение",
+  "Description": "Дайнима, за счёт своей структуры, не тянется и хорошо крепится в стопоре, что позволяет лучше затягивать погон и точнее вести лодку.",
+  "Price": 1102,
+  "Pictures": "assets/productsimages/ropeForblock.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Двойной блок на погон",
+  "Type": "вооружение",
+  "Description": "Прочный и надежный блок, которого хватит на очень долгий срок и который не будет съезжать на центр погона.",
+  "Price": 7026,
+  "Pictures": "assets/productsimages/doubleblock.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Комплект для погона",
+  "Type": "вооружение",
+  "Description": "Выгоднее покупать, чем по-отдельности.",
+  "Price": 7560,
+  "Pictures": "assets/productsimages/traveller.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Флюгарка на мачту нижняя",
+  "Type": "вооружение",
+  "Description": "Флюгер для нижней части мачты, обхватывающий.",
+  "Price": 2575,
+  "Pictures": "assets/productsimages/flugernijniy.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Флюгарка на мачту Верхняя",
+  "Type": "вооружение",
+  "Description": "Флюгер для верхней части мачты, вставляющийя.",
+  "Price": 1762,
+  "Pictures": "assets/productsimages/flugerone.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Номера на парус Лазер 300ММ Красные и Чёрные",
+  "Type": "парус",
+  "Description": "Номера, вырезанные из прочного материала.",
+  "Price": 293,
+  "Pictures": "assets/productsimages/number.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Номера на парус Лазер 230ММ Красные и Чёрные 1ШТ",
+  "Type": "парус",
+  "Description": "Номера, вырезанные из прочного материала.",
+  "Price": 293,
+  "Pictures": "assets/productsimages/sailnumbertwothree.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Пробка в корму Laser",
+  "Type": "вооружение",
+  "Description": "Пробка на транец, диаметр 22мм.",
+  "Price": 727,
+  "Pictures": "assets/productsimages/probka.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Блок стопорной",
+  "Type": "вооружение",
+  "Description": "За счёт своей формы и трещётки, облегчает нагрузку на вашем шкоте, когда давление на парус становится очень высоким.",
+  "Price": 10540,
+  "Pictures": "assets/productsimages/ratchetblockone.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Машинка для гикоттяжки",
+  "Type": "вооружение",
+  "Description": "Позволит вам добирать гикоттяжку до любого положения с минимальным приложением сил.",
+  "Price": 23419,
+  "Pictures": "assets/productsimages/vangsystem.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Двойной блок на гикоттяжку",
+  "Type": "вооружение",
+  "Description": "Позволит вам добирать гикоттяжку до любого положения с минимальным приложением сил.",
+  "Price": 5123,
+  "Pictures": "assets/productsimages/vangdoubleblock.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Гриборк для гик-оттяжки",
+  "Type": "вооружение",
+  "Description": "Долговечный, надёжный грибок, который не оторвётся в нужный момент.",
+  "Price": 1023,
+  "Pictures": "assets/productsimages/vangcurvedkey.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Комплект верёвок для гик-оттяжки",
+  "Type": "вооружение",
+  "Description": "Долговечные, не тянущиеся верёвки, удобные для хвата руками, не режут пальцы, позволят максимально легко и просто добирать систему гик-оттяжки",
+  "Price": 1102,
+  "Pictures": "assets/productsimages/vangropeset.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Верхний блок гик-оттяжки",
+  "Type": "вооружение",
+  "Description": "Верхний блок берёт на себя очень большую нагрузку, с хорошим блоком вы сможете тонко чуствовать натяжение всей системы гик-оттяжки.",
+  "Price": 6148,
+  "Pictures": "assets/productsimages/vangtopblock.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Верхняя матча Карбон",
+  "Type": "рангоут",
+  "Description": "Карбоновая мачта, упругая, жёсткая, не сломается даже в самых суровых условиях.",
+  "Price": 72115,
+  "Pictures": "assets/productsimages/topmath.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Нижняя матча Ilca 7",
+  "Type": "рангоут",
+  "Description": "Нижняя мачта для класса Ilca 7.",
+  "Price": 33211,
+  "Pictures": "assets/productsimages/downmathseven.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Нижняя матча Ilca 6 Алюминиевая",
+  "Type": "рангоут",
+  "Description": "Нижняя мачта для класса Ilca 6, Алюминиевая.",
+  "Price": 24797,
+  "Pictures": "assets/productsimages/downmastsix.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Нижняя матча Ilca 6 Карбон",
+  "Type": "рангоут",
+  "Description": "Нижняя мачта для класса Ilca 6, Карбон.",
+  "Price": 131762,
+  "Pictures": "assets/productsimages/downmastsixcarbon.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Нижняя матча Ilca 4",
+  "Type": "рангоут",
+  "Description": "Нижняя мачта для класса Ilca 4.",
+  "Price": 25568,
+  "Pictures": "assets/productsimages/downmastsixcarbon.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Подставка под телегу для лазера.",
+  "Type": "вооружение",
+  "Description": "Подставка под телегу для лазера поможет вам устанавливать яхты друг на друга для транспортировки, при этом не оказывая воздействия на лодку.",
+  "Price": 5841,
+  "Pictures": "assets/productsimages/fortelega.jpeg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Парус Ilca 7 Китай в комплекте с латами",
+  "Type": "парус",
+  "Description": "Парус Ilca 7 Китай в комплекте с латами.",
+  "Price": 36369,
+  "Pictures": "assets/productsimages/sailSjpg.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Парус Ilca 6 Китай в комплекте с латами",
+  "Type": "парус",
+  "Description": "Парус Ilca 6 Китай в комплекте с латами.",
+  "Price": 33069,
+  "Pictures": "assets/productsimages/sailR.jpg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Парус Ilca 4 Китай в комплекте с латами",
+  "Type": "парус",
+  "Description": "Парус Ilca 4 Китай в комплекте с латами.",
+  "Price": 29756,
+  "Pictures": "assets/productsimages/ilcafour.png",
+  "TypeForBuy": "Есть в наличии"
+}
+]

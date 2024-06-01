@@ -9,22 +9,24 @@ import { BasketService } from '../basket.service';
 })
 export class BasketComponent {
   cartItems: CartItem[] = [];
-
+totalPrice: number = 0;
   constructor(private cartService: BasketService) {}
 
   ngOnInit(): void {
     this.cartService.getCartItems().subscribe(items => {
       this.cartItems = items;
+      console.log(this.cartItems)
+      items.map(item => this.totalPrice += item.product.price * item.quantity);
     });
   }
-  increaseQuantity(productId: string): void {
+  increaseQuantity(productId: number): void {
     this.cartService.increaseQuantity(productId);
   }
 
-  decreaseQuantity(productId: string): void {
+  decreaseQuantity(productId: number): void {
     this.cartService.decreaseQuantity(productId);
   }
-  removeFromCart(productId: string) {
+  removeFromCart(productId: number) {
     this.cartService.removeFromCart(productId);
   }
 

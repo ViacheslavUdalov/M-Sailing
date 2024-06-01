@@ -1,5 +1,5 @@
 export interface  Armament {
-  id: string,
+  id: number,
   name: string,
   type: string,
   description: string

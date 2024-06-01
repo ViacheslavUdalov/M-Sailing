@@ -4,7 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Cover} from "../../models/cover";
 import {animations} from "../../helpers/animations";
 import { Armament } from 'src/app/models/armament';
-import { ProductToCreateOrder } from 'src/app/models/OrdersModels';
+import { ProductToCreateOrder , ProductToCreateOrderWithId} from 'src/app/models/OrdersModels';
 import { BasketService } from 'src/app/basket/basket.service';
 import { Meta, Title } from '@angular/platform-browser';
 
@@ -40,7 +40,7 @@ export class OnecoverComponent implements OnInit {
     this.getEquipForHome();
   }
   getOneProduct() {
-    this.shopService.getOneCovers(this.id).subscribe(data => {
+    this.shopService.getOneCovers(Number(this.id)).subscribe(data => {
       this.cover = data;
     })
   }
@@ -50,7 +50,7 @@ export class OnecoverComponent implements OnInit {
     })
   }
   addItem(product : Cover) {
-    let productForOrder : ProductToCreateOrder = {
+    let productForOrder : ProductToCreateOrderWithId = {
       id : product.id,
       name : product.name,
       price : product.price,
@@ -61,10 +61,10 @@ export class OnecoverComponent implements OnInit {
     this.updateRemoveButtonVisibility(product.id)
     this.checkoutQuantity(product.id)
   }
-  checkoutQuantity(id: string) {
+  checkoutQuantity(id: number) {
     this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
   }
-  removeFromCart(productId: string) {
+  removeFromCart(productId: number) {
     this.basketService.removeFromCart(productId);
     this.updateRemoveButtonVisibility(productId)
     this.checkoutQuantity(productId)
@@ -72,7 +72,7 @@ export class OnecoverComponent implements OnInit {
   clearCart() {
     this.basketService.clearCart()
   }
-  updateRemoveButtonVisibility(productId: string) {
+  updateRemoveButtonVisibility(productId: number) {
     this.isProductAddedToCart = this.basketService.isProductInCart(productId);
   }
   clickToTop() {

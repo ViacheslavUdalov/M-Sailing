@@ -8,7 +8,7 @@
         <h3 class="textproduct" style="color: #34be02"><strong>Цена: </strong>  {{ boat.price }} Руб.</h3>
         <h3 class="textproduct"><strong>Тип: </strong>  {{ boat.type }}</h3>
         <h3 class="textproduct"><strong>Наличие товара: </strong>  <span [class.green]="boat.typeForBuy === 'Есть в наличии'" [class.red]="boat.typeForBuy === 'Под заказ'">{{ boat.typeForBuy }}</span></h3>
-        <span style="color: red">Что бы заказать данный товар, свяжитесь с нами в любом мессенджере по номеру телефона +7-991-100-49-87.</span>
+        <span style="color: red">Вы можете узнать информацию по Заказу данного товара по телефону +7-991-100-49-87.</span>
         <div class="buttons">
           <div class="inside-buttons">
             <button (click)="addItem(boat)" style="margin-right: 10px">Добавить в Корзину</button>

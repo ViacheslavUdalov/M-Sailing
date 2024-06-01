@@ -1,0 +1,56 @@
+[{
+  "Name": "Илка 6 Девотти макс. комплект с карбоном",
+  "Type": "полный комплект яхты",
+  "Description": "Данная комплектация яхты Ilca 6 представляется в максимальном комплекте.",
+  "Price": 1344010,
+  "Pictures": "assets/productsimages/ilcasixfull.png",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Илка 7 Девотти макс. комплект",
+  "Type": "полный комплект яхты",
+  "Description": "Данная комплектация яхты Ilca 7 представляется в максимальном комплекте.",
+  "Price": 1264769,
+  "Pictures": "assets/productsimages/fullcompilcaseven.jpeg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Илка 4 Девотти макс. комплект",
+  "Type": "полный комплект яхты",
+  "Description": "Данная комплектация яхты Ilca 4 представляется в максимальном комплекте.",
+  "Price": 1201840,
+  "Pictures": "assets/productsimages/ilcafourfull.png",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Илка 6 Девотти Лайт - без чехллов",
+  "Type": "полный комплект яхты",
+  "Description": "Данная комплектация яхты Ilca 6 представляется без чехлов, с карбоновой нижней мачтой.",
+  "Price": 1307641,
+  "Pictures": "assets/productsimages/ilcasixfull.png",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Илка 7 Девотти Лайт - без чехлов",
+  "Type": "полный комплект яхты",
+  "Description": "Данная комплектация яхты Ilca 7 представляется без чехлов.",
+  "Price": 1228290,
+  "Pictures": "assets/productsimages/fullcompilcaseven.jpeg",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Илка 4 Девотти Лайт - без чехлов",
+  "Type": "полный комплект яхты",
+  "Description": "Данная комплектация яхты Ilca 4 представляется без чехлов.",
+  "Price": 1201840,
+  "Pictures": "assets/productsimages/ilcafourfull.png",
+  "TypeForBuy": "Есть в наличии"
+},
+{
+  "Name": "Илка 6 Девотти алюминиевый низ - без чехлов",
+  "Type": "полный комплект яхты",
+  "Description": "Данная комплектация яхты Ilca 6 представляется без чехлов, с алюминиевой нижней мачтой.",
+  "Price": 1228290,
+  "Pictures": "assets/productsimages/ilcasixfull.png",
+  "TypeForBuy": "Есть в наличии"
+}]

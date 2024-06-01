@@ -1,4 +1,4 @@
-<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()" style="margin-top: 30px; margin-bottom: 30px">
   <div>
     <label for="phoneNumber">Номер телефона:</label>
     <input id="phoneNumber" formControlName="phoneNumber" placeholder="8-999-100-22-33" type="text">
@@ -31,7 +31,7 @@
     </div>
     <div>
       <label for="house">Дом:</label>
-      <input id="house" formControlName="house" type="number">
+      <input id="house" formControlName="house" type="text">
       <div *ngIf="isAddressFieldInvalid('house')" class="error">
         Пожалуйста, введите номер дома.
       </div>
@@ -55,10 +55,12 @@
     <img [src]="item.product.pictures" alt="{{ item.product.name }}">
     <div class="product-info">
       <div class="product-name">{{ item.product.name }}</div>
-      <div class="product-price">{{ item.product.price }} ₽</div>
+      <div class="product-price">Цена за шт. - {{ item.product.price }} ₽</div>
       <div class="product-quantity">Количество: {{ item.quantity }}</div>
     </div>
   </div>
 
-  <button type="submit" [disabled]="orderForm.invalid">Оформить заказ</button>
+  <button type="submit"  [disabled]="orderForm.invalid">Оформить заказ</button>
+  <br>
+  <span>{{error}}</span>
 </form>

@@ -10,16 +10,18 @@ handshake
   </div>
   <h3>Детали заказа:</h3>
   <div class="order-items">
-    <div *ngFor="let item of orderData.products" class="order-item">
+    <div *ngFor="let item of orderData.productToCreateOrder" class="order-item">
       <img [src]="item.pictures" alt="{{ item.name }}" class="order-item-image">
       <div class="order-item-details">
         <div class="order-item-name">{{ item.name }}</div>
-        <div class="order-item-price">{{ item.price }} ₽</div>
+        <div class="order-item-price">Цена за штуку: {{ item.price }} ₽</div>
         <div class="order-item-quantity">Количество: {{ item.quantity }}</div>
+        <div style="margin-top: 5px">Цена Итого по товару: {{ item.price * item.quantity}} ₽</div>
       </div>
     </div>
   </div>
   <div class="order-total">
     <p>Общая стоимость: {{ orderData.totalPrice }} ₽</p>
   </div>
+  <button type="submit" routerLink="/">На главную</button>
 </div>

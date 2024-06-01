@@ -22,6 +22,7 @@ armament: Armament[] = []
   }
 
   ngOnInit(): void {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
     this.titleService.setTitle('Магазин парусного спорта | M-sailing');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусных яхт, вооружения, экипировки. Лучшие бренды, отличные цены.' },

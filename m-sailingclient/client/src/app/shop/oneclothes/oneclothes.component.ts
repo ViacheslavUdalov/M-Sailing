@@ -5,7 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Clothes} from "../../models/Clothes";
 import {animations} from "../../helpers/animations";
 import { BasketService } from 'src/app/basket/basket.service';
-import { ProductToCreateOrder } from 'src/app/models/OrdersModels';
+import { ProductToCreateOrder, ProductToCreateOrderWithId } from 'src/app/models/OrdersModels';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -20,6 +20,7 @@ export class OneclothesComponent implements OnInit{
   id: string = '';
   quantityInBasket: number = 0;
   isProductAddedToCart: boolean = false
+  selectedSize: string = '';
   constructor(private shopService: ShopService,
               private activeRouter: ActivatedRoute,
               private basketService: BasketService,
@@ -39,9 +40,14 @@ export class OneclothesComponent implements OnInit{
     })
     this.getEquipForHome();
   }
+  onSizeChange(selectedSize: string) {
+    this.selectedSize = selectedSize;
+    console.log('Selected size:', selectedSize);
+  }
   getOneProduct() {
-    this.shopService.getOneClothes(this.id).subscribe(data => {
+    this.shopService.getOneClothes(Number(this.id)).subscribe(data => {
       this.clothes = data;
+      this.selectedSize = data.size[0];
     })
   }
   getEquipForHome() {
@@ -50,21 +56,22 @@ export class OneclothesComponent implements OnInit{
     })
   }
   addItem(product : Clothes) {
-    let productForOrder : ProductToCreateOrder = {
+    let productForOrder : ProductToCreateOrderWithId = {
       id : product.id,
       name : product.name,
       price : product.price,
       pictures : product.pictures,
-      quantity: 1
+      quantity: 1,
+      size: this.selectedSize
     }
     this.basketService.addToCart(productForOrder, productForOrder.quantity);
     this.updateRemoveButtonVisibility(product.id)
     this.checkoutQuantity(product.id)
   }
-  checkoutQuantity(id: string) {
+  checkoutQuantity(id: number) {
     this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
   }
-  removeFromCart(productId: string) {
+  removeFromCart(productId: number) {
     this.basketService.removeFromCart(productId);
     this.updateRemoveButtonVisibility(productId)
     this.checkoutQuantity(productId)
@@ -72,7 +79,7 @@ export class OneclothesComponent implements OnInit{
   clearCart() {
     this.basketService.clearCart()
   }
-  updateRemoveButtonVisibility(productId: string) {
+  updateRemoveButtonVisibility(productId: number) {
     this.isProductAddedToCart = this.basketService.isProductInCart(productId);
   }
   clickToTop() {

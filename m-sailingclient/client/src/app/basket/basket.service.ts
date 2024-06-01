@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {CartItem, ProductToCreateOrder } from '../models/OrdersModels';
+import {CartItem, ProductToCreateOrder, ProductToCreateOrderWithId } from '../models/OrdersModels';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ constructor() {
       this.cartItemsSubject.next(this.cartItems);
     }
   }
-  increaseQuantity(productId: string) {
+  increaseQuantity(productId: number) {
     const index = this.cartItems.findIndex(item => item.product.id === productId);
     if (index !== -1) {
       this.cartItems[index].quantity += 1;
@@ -30,7 +30,7 @@ constructor() {
     }
   }
 
-  decreaseQuantity(productId: string) {
+  decreaseQuantity(productId: number) {
     const index = this.cartItems.findIndex(item => item.product.id === productId);
     if (index !== -1 && this.cartItems[index].quantity > 1) {
       this.cartItems[index].quantity -= 1;
@@ -43,17 +43,19 @@ constructor() {
   getCartItems() {
     return this.cartItemsSubject.asObservable();
   }
-isProductInCart(id : string) {
+isProductInCart(id : number) {
 return   this.cartItems.some(c => c.product.id === id);
 }
-getQuantityOfProduct(id : string) {
-  let products = this.cartItems.find(c => c.product.id === id);
+getQuantityOfProduct(id : number) {
+  let products = this.cartItems.find(c => c.product.id == id);
  if (products) {
+   console.log(products.quantity)
    return products.quantity
+ 
  }
  return 0;
 }
-  addToCart(product: ProductToCreateOrder, quantity: number = 1) {
+  addToCart(product: ProductToCreateOrderWithId, quantity: number = 1) {
     const index = this.cartItems.findIndex(item => item.product.id === product.id);
     if (index !== -1) {
       this.cartItems[index].quantity += quantity;
@@ -64,7 +66,7 @@ getQuantityOfProduct(id : string) {
     this.saveCartToLocalStorage();
   }
 
-  removeFromCart(productId: string) {
+  removeFromCart(productId: number) {
     this.cartItems = this.cartItems.filter(item => item.product.id !== productId);
     this.cartItemsSubject.next(this.cartItems);
     this.saveCartToLocalStorage();

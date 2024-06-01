@@ -7,11 +7,18 @@
         <h2 class="name">{{ equipment.name }}</h2>
         <h3 class="textproduct" style="color: #34be02"><strong>Цена: </strong>  {{ equipment.price }} Руб.</h3>
         <h3 class="textproduct"><strong>Тип: </strong>  {{ equipment.type }}</h3>
-        <h3 class="textproduct"><strong>Размеры: </strong>  {{ equipment.size.join(', ') }}</h3>
-        <h3 class="textproduct"><strong>Цвета: </strong>  {{ equipment.color }}</h3>
+        <h3 class="textproduct"><strong>Размер: </strong>
+          <div class="sizes-container">
+            <button style=" " class="button-size" *ngFor="let size of equipment.size"
+                    (click)="onSizeChange(size)"
+                    [class.selected]="selectedSize === size">
+              {{ size }}
+            </button>
+          </div>
+        </h3>
+        <h3  class="textproduct"><strong>Цвета: </strong>  {{ equipment.color }} <span *ngIf="!equipment.color">Для данного товара имеется один цвет.</span></h3>
         <h3 class="textproduct"><strong>Наличие товара: </strong>  <span [class.green]="equipment.typeForBuy === 'Есть в наличии'"
                                                                          [class.red]="equipment.typeForBuy === 'Под заказ'">{{ equipment.typeForBuy }}</span></h3>
-        <span style="color: red">Что бы заказать данный товар, свяжитесь с нами в любом мессенджере по номеру телефона +7-991-100-49-87.</span>
         <div class="buttons">
           <div class="inside-buttons">
             <button (click)="addItem(equipment)" style="margin-right: 10px">Добавить в Корзину</button>

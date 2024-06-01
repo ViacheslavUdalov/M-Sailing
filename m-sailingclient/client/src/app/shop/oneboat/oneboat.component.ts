@@ -5,7 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Boat} from "../../models/boat";
 import { animations } from 'src/app/helpers/animations';
 import { BasketService } from 'src/app/basket/basket.service';
-import { ProductToCreateOrder } from 'src/app/models/OrdersModels';
+import { ProductToCreateOrder, ProductToCreateOrderWithId } from 'src/app/models/OrdersModels';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
@@ -40,7 +40,7 @@ export class OneboatComponent implements OnInit{
     this.getEquipForHome();
   }
   getOneProduct() {
-    this.shopService.getOneboat(this.id).subscribe(data => {
+    this.shopService.getOneboat(Number(this.id)).subscribe(data => {
       this.boat = data;
     })
   }
@@ -50,7 +50,7 @@ export class OneboatComponent implements OnInit{
     })
   }
   addItem(product : Boat) {
-    let productForOrder : ProductToCreateOrder = {
+    let productForOrder : ProductToCreateOrderWithId = {
       id : product.id,
       name : product.name,
       price : product.price,
@@ -61,10 +61,10 @@ export class OneboatComponent implements OnInit{
     this.updateRemoveButtonVisibility(product.id)
     this.checkoutQuantity(product.id)
   }
-  checkoutQuantity(id: string) {
+  checkoutQuantity(id: number) {
     this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
   }
-  removeFromCart(productId: string) {
+  removeFromCart(productId: number) {
     this.basketService.removeFromCart(productId);
     this.updateRemoveButtonVisibility(productId)
     this.checkoutQuantity(productId)
@@ -72,7 +72,7 @@ export class OneboatComponent implements OnInit{
   clearCart() {
     this.basketService.clearCart()
   }
-  updateRemoveButtonVisibility(productId: string) {
+  updateRemoveButtonVisibility(productId: number) {
     this.isProductAddedToCart = this.basketService.isProductInCart(productId);
   }
   clickToTop() {

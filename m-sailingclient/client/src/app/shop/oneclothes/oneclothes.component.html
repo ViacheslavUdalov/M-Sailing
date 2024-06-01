@@ -1,5 +1,4 @@
 <div *ngIf="clothes" class="equipment-details">
-
   <div class="details" @animations>
     <div class="productdata">
       <img [src]="clothes.pictures" alt="{{ clothes.name }}" class="equipment-image">
@@ -7,10 +6,15 @@
         <h2 class="name">{{ clothes.name }}</h2>
         <h3 class="textproduct" style="color: #34be02"><strong>Цена: </strong>  {{ clothes.price }} Руб.</h3>
         <h3 class="textproduct"><strong>Тип: </strong>  {{ clothes.type }}</h3>
-        <h3 class="textproduct"><strong>Размеры: </strong>  {{ clothes.size.join(', ') }}</h3>
+        <div class="sizes-container">
+          <button style=" " class="button-size" *ngFor="let size of clothes.size"
+                  (click)="onSizeChange(size)"
+                  [class.selected]="selectedSize === size">
+            {{ size }}
+          </button>
+        </div>
         <h3 class="textproduct"><strong>Наличие товара: </strong>  <span [class.green]="clothes.typeForBuy === 'Есть в наличии'" [class.red]="clothes.typeForBuy === 'Под заказ'">{{ clothes.typeForBuy }}</span></h3>
-        <span style="color: red">Что бы заказать данный товар, свяжитесь с нами в любом мессенджере по номеру телефона +7-991-100-49-87.</span>
-        <div class="buttons">
+       <div class="buttons">
           <div class="inside-buttons">
             <button (click)="addItem(clothes)" style="margin-right: 10px">Добавить в Корзину</button>
 
@@ -21,8 +25,6 @@ delete
           <span>Количество данного товара в корзине : {{quantityInBasket}}</span>
           <a routerLink="/basket" style="font-size: smaller; margin-top: 5px">Перейти в корзину</a>
         </div>
-
-
       </div>
     </div>
     <div >
@@ -33,5 +35,4 @@ delete
       <app-dataproductshelper (click)="clickToTop()" [data]="addition" [title]="'/clothes'"></app-dataproductshelper>
     </div>
   </div>
-
 </div>

@@ -4,6 +4,7 @@
   <div *ngFor="let item of cartItems" class="cart-item">
     <img [src]="item.product.pictures" alt="{{ item.product.name }}">
     <div class="product-name">{{ item.product.name }}</div>
+    <div *ngIf="item.product.size" class="product-price">Размер: {{ item.product.size }}</div>
     <div class="product-price">Цена за штуку: {{ item.product.price }} ₽</div>
     <div class="product-price">Цена Всего: {{ item.product.price * item.quantity }} ₽</div>
     <div class="product-quantity">Количество: {{ item.quantity }}</div>
@@ -14,7 +15,9 @@
     <button (click)="removeFromCart(item.product.id)">Удалить</button>
     </div>
 </div>
-<div class="clear-cart-container">
+<h4 style="text-align: center">Итоговая Сумма заказа (Без учёта доставки) - {{totalPrice}} ₽</h4>
+<div class="clear-cart-container" *ngIf="cartItems.length !== 0">
+  
   <a routerLink="/create-order" *ngIf="cartItems.length !== 0" class="follow-to-order">Перейти к оформлению заказа</a>
 
   <button (click)="clearCart()" class="clear-cart-button">Очистить корзину</button>

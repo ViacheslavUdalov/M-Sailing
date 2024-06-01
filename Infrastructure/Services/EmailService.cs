@@ -60,7 +60,7 @@ public class EmailService : IEmailService
                            createOrderData.Address.House + createOrderData.Address.Corpus +@"</p>
                 <p>Товары:</p>
                 <ul>";
-        foreach (var item in createOrderData.Products)
+        foreach (var item in createOrderData.ProductToCreateOrder)
         {
             emailBody += "<li>" + item.Price + item.Name +"</li>";
             emailBody += $"<img src=\"{item.Pictures}\" alt=\"{item.Name}\" />";

@@ -77,20 +77,20 @@ return this.http.get<Equipment[]>(this.apiUrl + 'main/random-equipment')
   getBoats() {
     return this.getItems('main/boats')
   }
-  getOneClothes(id: string) {
+  getOneClothes(id: number) {
 
     return this.http.get<Clothes>(this.apiUrl + 'main/clothes/' + id)
   }
-  getOneEquipment(id: string): Observable<Equipment> {
+  getOneEquipment(id: number): Observable<Equipment> {
     return this.http.get<Equipment>(this.apiUrl + 'main/equipment/' + id)
   }
-  getOneCovers(id: string): Observable<Cover> {
+  getOneCovers(id: number): Observable<Cover> {
     return this.http.get<Cover>(this.apiUrl + 'main/covers/' + id)
   }
-  getOneArmament(id: string) {
+  getOneArmament(id: number) {
     return this.http.get<Armament>(this.apiUrl + 'main/armament/' + id)
   }
-  getOneboat(id: string) {
+  getOneboat(id: number) {
 
     return this.http.get<Boat>(this.apiUrl + 'main/boats/' + id)
   }

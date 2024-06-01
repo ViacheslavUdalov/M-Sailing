@@ -1,14 +1,24 @@
+using Core.Entities;
 using Core.Specifications;
 
 namespace Core.Interfaces;
 
-public interface IProductsRepository<TEntity>
+public interface IProductsRepository
 {
-    Task<TEntity> GetByIdAsync(string collectionName, string id);
-    Task<IReadOnlyList<TEntity>> GetAllAsync(string collectionName);
-    Task<IReadOnlyList<TEntity>> ListWithSpecAsync(ISpecification<TEntity> specification, string collectionName);
-    Task<int> CountAsync(ISpecification<TEntity> specification, string collectionName);
-    Task AddAsync(string collectionName, TEntity entity);
-    Task UpdateAsync(string collectionName, TEntity entity);
-    Task DeleteAsync(string collectionName, TEntity entity);
+    Task<Equipment> GetEquipByIdAsync(int id);
+    Task<Armament> GetArmamByIdAsync(int id);
+    Task<Covers> GetCoversByIdAsync(int id);
+    Task<Clothes> GetClothesByIdAsync(int id);
+    Task<Boats> GetBoatsByIdAsync(int id);
+    Task<IReadOnlyList<Equipment>> ListEquipWithSpecAsync(ISpecification<Equipment> specification);
+    Task<IReadOnlyList<Armament>> ListArmamWithSpecAsync(ISpecification<Armament> specification);
+    Task<IReadOnlyList<Clothes>> ListClothesWithSpecAsync(ISpecification<Clothes> specification);
+    Task<IReadOnlyList<Covers>> ListCoversWithSpecAsync(ISpecification<Covers> specification);
+    Task<IReadOnlyList<Boats>> ListBoatsWithSpecAsync(ISpecification<Boats> specification);
+    Task<int> CountEquipAsync(ISpecification<Equipment> specification);
+    Task<int> CountArmamAsync(ISpecification<Armament> specification);
+    Task<int> CountClothesAsync(ISpecification<Clothes> specification);
+    Task<int> CountCoversAsync(ISpecification<Covers> specification);
+    Task<int> CountBoatsAsync(ISpecification<Boats> specification);
+    
 }

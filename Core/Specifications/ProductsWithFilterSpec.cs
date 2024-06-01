@@ -3,7 +3,7 @@ using Core.Entities;
 
 namespace Core.Specifications;
 
-public class ProductsWithFilterSpec : BaseSpecification<Product>
+public class ProductsWithFilterSpec<T> : BaseSpecification<T> where T : Product
 {
     public ProductsWithFilterSpec(ProductSpecParams productSpecParams)
         : base(x =>

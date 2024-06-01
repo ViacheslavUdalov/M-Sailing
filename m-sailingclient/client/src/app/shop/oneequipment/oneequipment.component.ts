@@ -3,7 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Equipment} from "../../models/equipment";
 import {animations} from "../../helpers/animations";
 import { ShopService } from '../shop.service';
-import { ProductToCreateOrder } from 'src/app/models/OrdersModels';
+import { ProductToCreateOrder , ProductToCreateOrderWithId} from 'src/app/models/OrdersModels';
 import { BasketService } from 'src/app/basket/basket.service';
 import {Meta, Title } from '@angular/platform-browser';
 
@@ -18,7 +18,8 @@ export class OneequipmentComponent implements OnInit{
   addition: Equipment[] = [];
   id: string = '';
   quantityInBasket: number = 0;
-  isProductAddedToCart: boolean = false
+  isProductAddedToCart: boolean = false;
+  selectedSize: string = '';
   constructor(private shopService: ShopService,
               private activeRouter: ActivatedRoute,
               private basketService: BasketService,
@@ -26,6 +27,7 @@ export class OneequipmentComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     this.titleService.setTitle('Магазин парусной экипировки и вооружения | M-sailing');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки и одежды для яхтинга. Лучшие бренды, отличные цены.' },
@@ -36,35 +38,47 @@ export class OneequipmentComponent implements OnInit{
     this.activeRouter.paramMap.subscribe(params => {
       this.id = params.get('id') as string;
       this.getOneProduct();
+      console.log(   this.equipment )
+    })
+
+  }
+  getOneProduct() {
+    this.shopService.getOneEquipment(Number(this.id)).subscribe(data => {
+      this.quantityInBasket = this.basketService.getQuantityOfProduct(Number(this.id))
+      this.equipment = data;
+      this.selectedSize = data.size[0];
+      console.log(   this.equipment )
     })
     this.getEquipForHome();
   }
-  getOneProduct() {
-    this.shopService.getOneEquipment(this.id).subscribe(data => {
-      this.equipment = data;
-    })
-  }
   getEquipForHome() {
-    this.shopService.getCovers().subscribe(data => {
-      this.addition = data.data.slice(0, 4) as Equipment[];
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    this.shopService.getRandomEquipment().subscribe(data => {
+      this.addition = data;
     })
   }
   addItem(product : Equipment) {
-    let productForOrder : ProductToCreateOrder = {
+    let productForOrder : ProductToCreateOrderWithId = {
       id : product.id,
       name : product.name,
       price : product.price,
       pictures : product.pictures,
-      quantity: 1
+      quantity: 1,
+      size: this.selectedSize
     }
+    console.log(productForOrder)
     this.basketService.addToCart(productForOrder, productForOrder.quantity);
-    this.updateRemoveButtonVisibility(product.id)
-    this.checkoutQuantity(product.id)
+    this.updateRemoveButtonVisibility(Number(product.id))
+    this.checkoutQuantity(Number(product.id))
   }
-  checkoutQuantity(id: string) {
+  onSizeChange(selectedSize: string) {
+    this.selectedSize = selectedSize;
+    console.log('Selected size:', selectedSize);
+  }
+  checkoutQuantity(id: number) {
     this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
   }
-  removeFromCart(productId: string) {
+  removeFromCart(productId: number) {
     this.basketService.removeFromCart(productId);
     this.updateRemoveButtonVisibility(productId)
     this.checkoutQuantity(productId)
@@ -72,7 +86,7 @@ export class OneequipmentComponent implements OnInit{
   clearCart() {
     this.basketService.clearCart()
   }
-  updateRemoveButtonVisibility(productId: string) {
+  updateRemoveButtonVisibility(productId: number) {
     this.isProductAddedToCart = this.basketService.isProductInCart(productId);
   }
   clickToTop() {

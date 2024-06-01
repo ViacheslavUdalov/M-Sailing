@@ -1,79 +1,97 @@
 using Core.Entities;
 using Core.Interfaces;
 using Core.Specifications;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using MongoDB.Driver.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
-    public class ProductsRepository<T> : IProductsRepository<T> where T : BaseEntity
+    public class ProductsRepository : IProductsRepository
     {
-        private readonly IMongoDbContext _dbContext;
+        private readonly StoreContext _context;
 
-        public ProductsRepository(IMongoDbContext dbContext)
+        public ProductsRepository(StoreContext context)
         {
-            _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+            _context = context;
         }
 
-        public async Task<T> GetByIdAsync(string collectionName, string id)
+        public async Task<Equipment> GetEquipByIdAsync(int id)
         {
-            var collection = _dbContext.GetCollection<T>(collectionName);
-            if (!ObjectId.TryParse(id, out ObjectId objectId))
-            {
-                Console.WriteLine($"Invalid ObjectId format: {id}");
-                return null;
-            }
-            var filter = Builders<T>.Filter.Eq("_id", objectId);
-            
-            var cursor = await collection.FindAsync(filter);
-            var result = await cursor.FirstOrDefaultAsync();
-            if (result == null)
-            {
-                Console.WriteLine($"Document with id {id} not found in collection {collectionName}");
-            }
-
-            return result;
+            return await _context.Equipment.FindAsync(id);
         }
 
-        public async Task<IReadOnlyList<T>> GetAllAsync(string collectionName)
+        public async Task<Armament> GetArmamByIdAsync(int id)
         {
-            var collection = _dbContext.GetCollection<T>(collectionName);
-            var result = await collection.Find(_ => true).ToListAsync();
-            return result;
+            return await _context.Armament.FindAsync(id);
         }
 
-        public async Task<IReadOnlyList<T>> ListWithSpecAsync(ISpecification<T> specification, string collectionName)
+        public async Task<Covers> GetCoversByIdAsync(int id)
         {
-            return await ApplySpecification(specification, collectionName).ToListAsync();
+            return await _context.Covers.FindAsync(id);
         }
 
-        public async Task<int> CountAsync(ISpecification<T> specification, string collectionName)
+        public async Task<Clothes> GetClothesByIdAsync(int id)
         {
-            return await ApplySpecification(specification, collectionName).CountAsync();
+            return await _context.Clothes.FindAsync(id);
         }
 
-        public async Task AddAsync(string collectionName, T entity)
+        public async Task<Boats> GetBoatsByIdAsync(int id)
         {
-            var collection = _dbContext.GetCollection<T>(collectionName);
-            throw new NotImplementedException();
+            return await _context.Boats.FindAsync(id);
         }
 
-        public async Task UpdateAsync(string collectionName, T entity)
+        public async Task<IReadOnlyList<Equipment>> ListEquipWithSpecAsync(ISpecification<Equipment> specification)
         {
-            var collection = _dbContext.GetCollection<T>(collectionName);
-            throw new NotImplementedException();
+            return await ApplySpecification(specification, _context.Equipment).ToListAsync();
         }
 
-        public async Task DeleteAsync(string collectionName, T entity)
+        public async Task<IReadOnlyList<Armament>> ListArmamWithSpecAsync(ISpecification<Armament> specification)
         {
-            var collection = _dbContext.GetCollection<T>(collectionName);
-            throw new NotImplementedException();
+            return await ApplySpecification(specification, _context.Armament).ToListAsync();
         }
 
-        private IMongoQueryable<T> ApplySpecification(ISpecification<T> specification, string collectionName)
+        public async Task<IReadOnlyList<Clothes>> ListClothesWithSpecAsync(ISpecification<Clothes> specification)
         {
-            return SpecificationEvaluator<T>.GetQuery(_dbContext.GetCollection<T>(collectionName).AsQueryable(), specification);
+            return await ApplySpecification(specification, _context.Clothes).ToListAsync();
+        }
+
+        public async Task<IReadOnlyList<Covers>> ListCoversWithSpecAsync(ISpecification<Covers> specification)
+        {
+            return await ApplySpecification(specification, _context.Covers).ToListAsync();
+        }
+
+        public async Task<IReadOnlyList<Boats>> ListBoatsWithSpecAsync(ISpecification<Boats> specification)
+        {
+            return await ApplySpecification(specification, _context.Boats).ToListAsync();
+        }
+
+        public async Task<int> CountEquipAsync(ISpecification<Equipment> specification)
+        {
+            return await ApplySpecification(specification, _context.Equipment).CountAsync();
+        }
+
+        public async Task<int> CountArmamAsync(ISpecification<Armament> specification)
+        {
+            return await ApplySpecification(specification, _context.Armament).CountAsync();
+        }
+
+        public async Task<int> CountClothesAsync(ISpecification<Clothes> specification)
+        {
+            return await ApplySpecification(specification, _context.Clothes).CountAsync();
+        }
+
+        public async Task<int> CountCoversAsync(ISpecification<Covers> specification)
+        {
+            return await ApplySpecification(specification, _context.Covers).CountAsync();
+        }
+
+        public async Task<int> CountBoatsAsync(ISpecification<Boats> specification)
+        {
+            return await ApplySpecification(specification, _context.Boats).CountAsync();
+        }
+
+        private IQueryable<T> ApplySpecification<T>(ISpecification<T> specification, DbSet<T> dbSet) where T : BaseEntity
+        {
+            return SpecificationEvaluator<T>.GetQuery(dbSet.AsQueryable(), specification);
         }
     }
 }

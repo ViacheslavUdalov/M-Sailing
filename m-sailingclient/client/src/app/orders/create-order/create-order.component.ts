@@ -13,7 +13,7 @@ import { OrdersService } from '../orders.service';
   export class CreateOrderComponent implements OnInit {
   orderForm: FormGroup;
   cartItems: CartItem[] = [];
-
+error =''
   constructor(
     private fb: FormBuilder,
     private cartService: BasketService,
@@ -26,7 +26,7 @@ import { OrdersService } from '../orders.service';
         region: ['', Validators.required],
         city: ['', Validators.required],
         street: ['', Validators.required],
-        house: [null, [Validators.required, Validators.min(1)]],
+        house: ['', Validators.required],
         corpus: ['']
       }),
       nameOfGetter: ['', Validators.required]
@@ -34,6 +34,7 @@ import { OrdersService } from '../orders.service';
   }
 
   ngOnInit(): void {
+    window.scrollTo({top: 0, behavior: "smooth"})
     this.cartService.getCartItems().subscribe(items => {
       this.cartItems = items;
     });
@@ -43,17 +44,24 @@ import { OrdersService } from '../orders.service';
     if (this.orderForm.valid) {
       const orderData: CreateOrderData = {
         ...this.orderForm.value,
-        products: this.cartItems.map(item => ({
-          ...item.product,
-          quantity: item.quantity
-        })),
+        productToCreateOrder: this.cartItems.map(item => {
+          const { id, ...productWithoutId } = item.product;
+            return {
+            ...productWithoutId ,
+            quantity: item.quantity
+          }
+        }),
         totalPrice: this.cartItems.reduce((total, item) => total + item.product.price * item.quantity, 0)
       };
-
+      console.log(orderData)
       this.orderService.createOrder(orderData).subscribe(response => {
         console.log('Order created successfully', response);
         this.cartService.clearCart();
         this.router.navigate(['/order-success'], { state: { data: response } });
+      },
+        error => {
+          console.error('Error creating order', error);
+      this.error = 'Не удалось создать заказ. Провереть Валидность ваших данных.'
       });
     }
   }
