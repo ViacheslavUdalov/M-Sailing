@@ -27,7 +27,7 @@ export class OnearmamentComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Магазин парусных яхт, парусного и яхтенного вооружения | M-sailing');
+    this.titleService.setTitle('M-sailing | Магазин парусных яхт, парусного и яхтенного вооружения');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки, парусных яхт, одежды и вооружения для яхтинга. Лучшие бренды, отличные цены.' },
       { name: 'keywords', content: 'гик-оттяжка для лазера, верёвки, блочки, руль, рангоут, купить рангоут для лазера, купить вооружение для лазера, купить гик-оттяжку дёшево' },

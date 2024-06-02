@@ -57,7 +57,7 @@ export class ArmamentComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.titleService.setTitle('Магазин яхтенного, парусного вооружения и экипировки | M-sailing');
+    this.titleService.setTitle('M-sailing | Магазин яхтенного, парусного вооружения и экипировки');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусных яхт, яхтенного вооружения, экипировки. Лучшие бренды, отличные цены.' },
       { name: 'keywords', content: 'парусное вооружение, яхтенное вооружение, яхты, купить вооружение для парусной яхты, купить парусное вооружение'},

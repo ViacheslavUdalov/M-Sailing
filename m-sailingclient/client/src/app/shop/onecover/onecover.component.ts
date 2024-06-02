@@ -27,7 +27,7 @@ export class OnecoverComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Магазин парусного и яхтенного вооружения, чехлов для яхт | M-sailing');
+    this.titleService.setTitle('M-sailing | Магазин парусного и яхтенного вооружения, чехлов для яхт');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки, яхтенного вооружения, чехлов для яхт. Лучшие бренды, отличные цены.' },
       { name: 'keywords', content: 'парусное вооружение, чехлы для яхт, яхтенное вооружение, купить чехол для парусной яхты, купить чехол лазера' },

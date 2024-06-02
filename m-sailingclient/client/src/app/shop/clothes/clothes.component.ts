@@ -57,7 +57,7 @@ export class ClothesComponent implements OnInit{
 }
 
 ngOnInit() {
-  this.titleService.setTitle('Магазин парусной экипировки и одежды | M-sailing');
+  this.titleService.setTitle('M-sailing | Магазин парусной экипировки и одежды');
   this.metaService.addTags([
     { name: 'description', content: 'Интернет-магазин парусной экипировки и одежды для яхтинга. Лучшие бренды, отличные цены.' },
     { name: 'keywords', content: 'Sandiline, Zhik, парусная одежда, купить одежду Sandiline, купить одежду Zhik'},

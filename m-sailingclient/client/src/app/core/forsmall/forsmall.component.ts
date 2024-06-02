@@ -27,4 +27,8 @@ isOpen: boolean = false;
     }
     event.stopPropagation();
   }
+  setIsOpenByClickOutside(event: MouseEvent): void {
+      this.isOpen = false;
+
+  }
 }

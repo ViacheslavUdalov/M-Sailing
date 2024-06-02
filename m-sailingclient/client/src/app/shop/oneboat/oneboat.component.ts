@@ -27,7 +27,7 @@ export class OneboatComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Магазин парусных яхт и парусного вооружения | M-sailing');
+    this.titleService.setTitle('M-sailing | Магазин парусных яхт и парусного вооружения');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки, парусных яхт и одежды для яхтинга. Лучшие бренды, отличные цены.' },
       { name: 'keywords', content: 'парусная яхта, парусная лодка, яхты, купить яхту' },

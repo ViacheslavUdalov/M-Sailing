@@ -28,7 +28,7 @@ export class OneequipmentComponent implements OnInit{
 
   ngOnInit(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    this.titleService.setTitle('Магазин парусной экипировки и вооружения | M-sailing');
+    this.titleService.setTitle('M-sailing | Магазин парусной экипировки и вооружения');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки и одежды для яхтинга. Лучшие бренды, отличные цены.' },
       { name: 'keywords', content: 'парусные ботинки, откренки, откреночные шорты, купить откреночные шорты, купить парусную куртку, ' +

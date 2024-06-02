@@ -5,4 +5,4 @@ Disallow: /order-success/
 
 Allow: /
 
-Sitemap: https://localhost:5001/sitemap.xml
+Sitemap: https://m-sailing.ru/sitemap.xml

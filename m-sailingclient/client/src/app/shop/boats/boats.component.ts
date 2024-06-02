@@ -44,7 +44,7 @@ export class BoatsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.titleService.setTitle('Магазин парусного вооружения, парусных яхт | M-sailing');
+    this.titleService.setTitle('M-sailing | Магазин парусного вооружения, парусных яхт');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусных яхт, яхтенного вооружения. Лучшие бренды, отличные цены.' },
       { name: 'keywords', content: 'Ilca, Ilca 7, Ilca 6, Ilca 4, Лазер, Laser, купить яхту Ilca, купить яхту Лазер, купить парусную яхту дёшево'},

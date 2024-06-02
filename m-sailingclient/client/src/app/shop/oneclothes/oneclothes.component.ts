@@ -28,7 +28,7 @@ export class OneclothesComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Магазин парусной одежды и экипировки, яхтенного вооружения | M-sailing');
+    this.titleService.setTitle('M-sailing | Магазин парусной одежды и экипировки, яхтенного вооружения');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки, одежды для яхтинга и парусного спорта. Лучшие бренды, отличные цены.' },
       { name: 'keywords', content: 'парусная одежда, парусная экипировка, одежда для яхтинга, купить одежду для парусной яхты, купить экипировку для парусного спорта' },

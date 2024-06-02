@@ -35,8 +35,13 @@ close
     <a routerLink="/basket" (click)="setIsOpen($event)" class="basket"><span class="material-symbols-outlined">
 shopping_cart
 </span>{{ItemsLength}}</a>
-    <app-footer/>
+    <div style="margin: 40px 0;">
+      <app-footer/>
+    </div>
+
   </div>
 </div>
+
 </div>
-<div *ngIf="isOpen" class="overlay"></div>
+
+<div *ngIf="isOpen" class="overlay" (click)="setIsOpenByClickOutside($event)"></div>
