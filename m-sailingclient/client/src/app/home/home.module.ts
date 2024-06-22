@@ -5,6 +5,7 @@ import {RouterLink} from "@angular/router";
 import { DataproductshelperComponent } from './dataproductshelper/dataproductshelper.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SharedModule} from "../shared/shared.module";
+import {AppModule} from "../app.module";
 
 
 

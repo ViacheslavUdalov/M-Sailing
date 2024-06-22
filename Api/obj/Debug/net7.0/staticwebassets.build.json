@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e34X3hxWwCadXxkR7BQsrnVE2L6z4+qV7MumaD775jE=",
+  "Hash": "qL+9V6wMgUaFqBV4iivoaO6XMSwPhdLzZSLJ4aCJmZU=",
   "Source": "Api",
   "BasePath": "_content/Api",
   "Mode": "Default",
@@ -1765,12 +1765,12 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Production\\M-sailing\\Api\\wwwroot\\main.42f916b7d55f4f3d.js",
+      "Identity": "C:\\Production\\M-sailing\\Api\\wwwroot\\main.bcd66c64904f815a.js",
       "SourceId": "Api",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Production\\M-sailing\\Api\\wwwroot\\",
       "BasePath": "_content/Api",
-      "RelativePath": "main.42f916b7d55f4f3d.js",
+      "RelativePath": "main.bcd66c64904f815a.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1781,7 +1781,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\main.42f916b7d55f4f3d.js"
+      "OriginalItemSpec": "wwwroot\\main.bcd66c64904f815a.js"
     },
     {
       "Identity": "C:\\Production\\M-sailing\\Api\\wwwroot\\photo_2024-04-01_15-48-42.00cfc24e7677cb94.jpg",

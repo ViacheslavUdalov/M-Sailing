@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Equipment} from "../../models/equipment";
 import {animations} from "../../helpers/animations";
@@ -6,6 +6,7 @@ import { ShopService } from '../shop.service';
 import { ProductToCreateOrder , ProductToCreateOrderWithId} from 'src/app/models/OrdersModels';
 import { BasketService } from 'src/app/basket/basket.service';
 import {Meta, Title } from '@angular/platform-browser';
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-oneequipment',
@@ -20,7 +21,8 @@ export class OneequipmentComponent implements OnInit{
   quantityInBasket: number = 0;
   isProductAddedToCart: boolean = false;
   selectedSize: string = '';
-  constructor(private shopService: ShopService,
+  constructor(@Inject(DOCUMENT) private document: Document,
+              private shopService: ShopService,
               private activeRouter: ActivatedRoute,
               private basketService: BasketService,
               private metaService: Meta, private titleService: Title) {
@@ -31,8 +33,8 @@ export class OneequipmentComponent implements OnInit{
     this.titleService.setTitle('M-sailing | Магазин парусной экипировки и вооружения');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки и одежды для яхтинга. Лучшие бренды, отличные цены.' },
-      { name: 'keywords', content: 'парусные ботинки, откренки, откреночные шорты, купить откреночные шорты, купить парусную куртку, ' +
-          'купить неопреновую кофту' },
+      { name: 'keywords', content: 'гидрокостюм, откренки, откреночные шорты, купить откреночные шорты, купить парусную куртку, ' +
+          'купить неопреновую кофту, гидрокостюм купить' },
       { name: 'robots', content: 'index, follow' }
     ]);
     this.activeRouter.paramMap.subscribe(params => {
@@ -40,7 +42,30 @@ export class OneequipmentComponent implements OnInit{
       this.getOneProduct();
       console.log(   this.equipment )
     })
+    this.addJsonLd();
+  }
+  addJsonLd(): void {
+    const jsonLd = {
+      "@context": "https://schema.org/",
+      "@type": "Equipment",
+      "name": this.equipment?.name,
+      "image": this.equipment?.pictures,
+      "description": this.equipment?.description,
+      "offers": {
+        "@type": "Offer",
+        "url": window.location.href,
+        "priceCurrency": "RUB",
+        "price": this.equipment?.price,
+        "priceValidUntil": "2024-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+      }
+    };
 
+    const script = this.document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(jsonLd);
+    this.document.head.appendChild(script);
   }
   getOneProduct() {
     this.shopService.getOneEquipment(Number(this.id)).subscribe(data => {

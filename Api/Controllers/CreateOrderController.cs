@@ -2,10 +2,7 @@ using System.Text;
 using Core.Entities;
 using Core.Interfaces;
 using DefaultNamespace;
-using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
-using MongoDB.Bson.IO;
 
 
 namespace Api.Controllers;

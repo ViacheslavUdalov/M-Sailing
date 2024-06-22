@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   equipments: Equipment[] = [];
 armament: Armament[] = []
   boats: Boat[] = []
+  discountProduct!: Equipment;
   constructor(private shopService: ShopService,
               private metaService: Meta, private titleService: Title) {
   }
@@ -41,6 +42,11 @@ armament: Armament[] = []
       this.boats = data.data.slice(0, 4)
       console.log(this.boats)
     })
+    this.loadDiscountProduct()
     }
-
+loadDiscountProduct() {
+  this.shopService.getOneEquipment(1).subscribe(response => {
+    this.discountProduct = response;
+  })
+}
 }

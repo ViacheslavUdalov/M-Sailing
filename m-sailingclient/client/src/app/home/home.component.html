@@ -1,6 +1,16 @@
 <div class="container">
   <div class="main">
-    <div class="fir stblock" @animations>
+    <div class="firstblock" @animations>
+<h1 style="color: green">Распродажа!</h1>
+      <div class="sale-banner" *ngIf="discountProduct.price" routerLink="/equipment/{{discountProduct.id}}">
+        <img [src]="discountProduct.pictures" alt="{{ discountProduct.name }}">
+        <h2>{{ discountProduct.name }}</h2>
+        <p class="original-price">Цена без скидки: 54044 Руб.</p>
+        <p class="discounted-price">Цена по скидке: {{ discountProduct.price }} Руб.</p>
+        <p class="discount-percentage">Скидка: 40%</p>
+        <span class="undertext">Кликните, что бы перейти на страницу товара.</span>
+      </div>
+
       <div class="img-containerone" >
         <h1 class="name-of-block"><h1>M-sailing </h1> У нас вы
           можете найти парусную экипировку Sandiline, Zhik

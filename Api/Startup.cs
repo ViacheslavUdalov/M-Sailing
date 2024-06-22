@@ -6,8 +6,6 @@ using Infrastructure.Data;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
-using MongoDB.Bson;
-using MongoDB.Driver;
 
 namespace Api;
 

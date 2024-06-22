@@ -1,8 +1,6 @@
 using Core.Entities;
 using Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using MongoDB.Bson;
-using MongoDB.Driver;
 
 namespace Infrastructure.Data;
 

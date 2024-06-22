@@ -150,7 +150,7 @@
   "Name": "Пробка в корму Laser",
   "Type": "вооружение",
   "Description": "Пробка на транец, диаметр 22мм.",
-  "Price": 727,
+  "Price": 881,
   "Pictures": "assets/productsimages/probka.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -222,7 +222,7 @@
   "Name": "Нижняя матча Ilca 6 Алюминиевая",
   "Type": "рангоут",
   "Description": "Нижняя мачта для класса Ilca 6, Алюминиевая.",
-  "Price": 24797,
+  "Price": 25000,
   "Pictures": "assets/productsimages/downmastsix.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -230,7 +230,7 @@
   "Name": "Нижняя матча Ilca 6 Карбон",
   "Type": "рангоут",
   "Description": "Нижняя мачта для класса Ilca 6, Карбон.",
-  "Price": 131762,
+  "Price": 13200,
   "Pictures": "assets/productsimages/downmastsixcarbon.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -238,7 +238,7 @@
   "Name": "Нижняя матча Ilca 4",
   "Type": "рангоут",
   "Description": "Нижняя мачта для класса Ilca 4.",
-  "Price": 25568,
+  "Price": 26000,
   "Pictures": "assets/productsimages/downmastsixcarbon.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -246,32 +246,64 @@
   "Name": "Подставка под телегу для лазера.",
   "Type": "вооружение",
   "Description": "Подставка под телегу для лазера поможет вам устанавливать яхты друг на друга для транспортировки, при этом не оказывая воздействия на лодку.",
-  "Price": 5841,
+  "Price": 5900,
   "Pictures": "assets/productsimages/fortelega.jpeg",
   "TypeForBuy": "Есть в наличии"
 },
 {
-  "Name": "Парус Ilca 7 Китай в комплекте с латами",
+  "Name": "Парус Без лицензии Ilca 7 Китай в комплекте с латами",
   "Type": "парус",
   "Description": "Парус Ilca 7 Китай в комплекте с латами.",
-  "Price": 36369,
+  "Price": 36400,
   "Pictures": "assets/productsimages/sailSjpg.jpg",
   "TypeForBuy": "Есть в наличии"
 },
 {
-  "Name": "Парус Ilca 6 Китай в комплекте с латами",
+  "Name": "Парус Без лицензии Ilca 6 Китай в комплекте с латами",
   "Type": "парус",
   "Description": "Парус Ilca 6 Китай в комплекте с латами.",
-  "Price": 33069,
+  "Price": 33100,
   "Pictures": "assets/productsimages/sailR.jpg",
   "TypeForBuy": "Есть в наличии"
 },
 {
-  "Name": "Парус Ilca 4 Китай в комплекте с латами",
+  "Name": "Парус Без лицензии Ilca 4 Китай в комплекте с латами",
   "Type": "парус",
   "Description": "Парус Ilca 4 Китай в комплекте с латами.",
-  "Price": 29756,
+  "Price": 30000,
   "Pictures": "assets/productsimages/ilcafour.png",
   "TypeForBuy": "Есть в наличии"
-}
+},
+  {
+    "Name": "Парус Hide Ilca 4",
+    "Type": "парус",
+    "Description": "Парус Лицензионный.",
+    "Price": 61700,
+    "Pictures": "assets/productsimages/ilcafour.png",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Ремень откреночный Ilca",
+    "Type": "вооружение",
+    "Description": "Ремень откреночный Ilca нескользящий.",
+    "Price": 4750,
+    "Pictures": "assets/productsimages/dinghystrap.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Шкоты Ilca",
+    "Type": "вооружение",
+    "Description": "Длина - 14 метров. Толщина шкота - 5мм. Очень удобные",
+    "Price": 2210,
+    "Pictures": "assets/productsimages/mainsheet.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Латты На Ilca 6, Ilca 4",
+    "Type": "вооружение",
+    "Description": "Латты На Ilca 6, Ilca 4",
+    "Price": 4100,
+    "Pictures": "assets/productsimages/battens.jpg",
+    "TypeForBuy": "Есть в наличии"
+  }
 ]

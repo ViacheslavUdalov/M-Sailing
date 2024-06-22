@@ -15,27 +15,27 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { OrderSuccessComponent } from './orders/order-success/order-success.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CreateOrderComponent,
-    BasketComponent,
-    OrderSuccessComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoreModule,
-    ShopModule,
-    SharedModule,
-    HomeModule,
-    HttpClientModule,
-    NgxSpinnerModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
-  ],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    declarations: [
+        AppComponent,
+        CreateOrderComponent,
+        BasketComponent,
+        OrderSuccessComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CoreModule,
+        ShopModule,
+        SharedModule,
+        HomeModule,
+        HttpClientModule,
+        NgxSpinnerModule,
+        ReactiveFormsModule
+    ],
+    providers: [
+        {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+    ],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

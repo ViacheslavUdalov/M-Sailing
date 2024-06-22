@@ -31,13 +31,13 @@ import {BoatsComponent} from "./boats/boats.component";
     OneboatComponent,
     BoatsComponent
   ],
-    imports: [
-        CommonModule,
-        HttpClientModule,
-        RouterModule.forRoot([]),
-        HomeModule,
-        CoreModule,
-        SharedModule
-    ]
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    RouterModule.forRoot([]),
+    CoreModule,
+    SharedModule,
+    HomeModule
+  ]
 })
 export class ShopModule { }

@@ -1,5 +1,4 @@
 using Core.Entities;
-using MongoDB.Driver.Linq;
 
 namespace Core.Specifications;
 
