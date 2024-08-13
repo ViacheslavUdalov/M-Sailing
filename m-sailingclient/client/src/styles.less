@@ -1,26 +1,29 @@
-body {
-  background-color: rgb(225, 225, 225);
-  color: black;
+html {
+  overflow-y: scroll;
+}
 
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: black;
+margin: 0;
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings:
-    "wdth" 100;
+    "width" 100;
 
 }
 body.menu-open {
   overflow: hidden;
 }
 .animate {
-  opacity: 0;
-  transform: translateY(-100px); /* Начальное положение блока перед появлением */
-  transition: opacity 1s ease, transform 1s ease; /* Анимация изменения прозрачности и положения */
+  opacity: 0; /* Начальное положение блока перед появлением */
+  transition: opacity 1s ease; /* Анимация изменения прозрачности и положения */
 }
 
 .animate.active {
   opacity: 1;
-  transform: translateY(0); /* Конечное положение блока после появления */
 }
 .ubuntu-light {
   font-family: "Ubuntu", sans-serif;

@@ -2,15 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterLink, RouterLinkActive} from "@angular/router";
 import { ScrollAnimationsDirective } from './scroll-animations.directive';
+import {SizeTableComponent} from "./size-table/size-table.component";
 
 
 
 @NgModule({
     declarations: [
-        ScrollAnimationsDirective
+        ScrollAnimationsDirective,
+      SizeTableComponent
     ],
     exports: [
-        ScrollAnimationsDirective
+        ScrollAnimationsDirective,
+      SizeTableComponent
     ],
     imports: [
         CommonModule,

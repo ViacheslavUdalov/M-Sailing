@@ -42,6 +42,7 @@ export class OnecoverComponent implements OnInit {
   getOneProduct() {
     this.shopService.getOneCovers(Number(this.id)).subscribe(data => {
       this.cover = data;
+
     })
   }
   getEquipForHome() {

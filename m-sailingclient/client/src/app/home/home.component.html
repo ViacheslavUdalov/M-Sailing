@@ -1,41 +1,93 @@
-<div class="container">
+<div class="cont">
   <div class="main">
-    <div class="firstblock" @animations>
-<h1 style="color: green">Распродажа!</h1>
-      <div class="sale-banner" *ngIf="discountProduct.price" routerLink="/equipment/{{discountProduct.id}}">
-        <img [src]="discountProduct.pictures" alt="{{ discountProduct.name }}">
-        <h2>{{ discountProduct.name }}</h2>
-        <p class="original-price">Цена без скидки: 54044 Руб.</p>
-        <p class="discounted-price">Цена по скидке: {{ discountProduct.price }} Руб.</p>
-        <p class="discount-percentage">Скидка: 40%</p>
-        <span class="undertext">Кликните, что бы перейти на страницу товара.</span>
+    <!-- Первый блок с полноэкранным изображением -->
+    <div class="firstblock">
+      <div class="full-screen-image">
+        <img src="../../assets/images/menslaser.jpg" alt="Full Screen Image">
       </div>
+      <div class="content-overlay">
+        <div class="about">
+                    <div class="inner-container">
+          <div class="square-image">
+            <img src="../../assets/images/msailing.png" alt="Square Image">
+          </div>
+          <!--            <div class="shop-description">-->
+          <!--              <h2>Добро пожаловать в наш интернет-магазин!</h2>-->
+          <!--              <p>Здесь вы найдете высококачественную экипировку и аксессуары для парусного спорта и яхтинга.</p>-->
+          <!--            </div>-->
+                    </div>
 
-      <div class="img-containerone" >
-        <h1 class="name-of-block"><h1>M-sailing </h1> У нас вы
-          можете найти парусную экипировку Sandiline, Zhik
-          и других производителей, а так же яхтенное вооружение. Мы поставляем продукцию по всей России.</h1>
-<!--        <button class="button" routerLink='equipment'>Перейти в каталог.</button>-->
-      </div>
-      <div @animations>
-        <app-dataproductshelper [data]="equipments" [title]="'/equipment'"></app-dataproductshelper>
+          <span class="name-of-block">Добро пожаловать в интернет-магазин <strong>M-sailing!</strong></span>
+          <p class="description">Здесь вы найдете высококачественную экипировку Sandiline, Zhik, а так же аксессуары для парусного спорта и яхтинга. Мы поставляем продукцию по всей России.</p>
+<!--          <div class="inner-container">-->
+
+<!--            <div class="shop-description">-->
+<!--              <h2>Добро пожаловать в наш интернет-магазин!</h2>-->
+<!--              <p>Здесь вы найдете высококачественную экипировку и аксессуары для парусного спорта и яхтинга.</p>-->
+<!--            </div>-->
+<!--          </div>-->
+        </div>
+        <div class="sale-banner" *ngIf="discountProduct.price" routerLink="/equipment/{{discountProduct.id}}">
+          <h1 class="sale-title">Распродажа!</h1>
+          <img [src]="discountProduct.pictures" alt="{{ discountProduct.name }}">
+          <h2 class="sale-product-name" style="color:black;">{{ discountProduct.name }}</h2>
+          <p class="original-price">Цена без скидки: 54044 Руб.</p>
+          <p class="discounted-price">Цена по скидке: {{ discountProduct.price }} Руб.</p>
+          <p class="discount-percentage">Скидка: 40%</p>
+          <span class="undertext">Кликните, что бы перейти на страницу товара.</span>
+        </div>
       </div>
     </div>
+
+
+    <div class="section-container">
+      <div class="columnGroup-root">
+        <div class="columnLine-root">
+          <!-- Первый блок -->
+          <div class="column-root pagebuilder-column"
+               style="background-image: url('../../assets/images/photo_2024-04-01_15-48-42.jpg');">
+            <div class="buttons-root">
+              <button class="button-root_highPriority" type="button">
+                <span class="button-content" routerLink="/equipment">Одежда</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Второй блок -->
+          <div class="column-root pagebuilder-column"
+               style="background-image: url('../../assets/images/photo_2024-04-01_15-48-47.jpg');">
+            <div class="buttons-root">
+              <button class="button-root_highPriority" type="button">
+                <span class="button-content" routerLink="/armament">Вооружение</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Третий блок -->
+          <div class="column-root pagebuilder-column"
+               style="background-image: url('../../assets/images/photo_2024-04-01_15-48-51.jpg');">
+            <div class="buttons-root">
+              <button class="button-root_highPriority" type="button">
+                <span class="button-content" routerLink="/boats">Яхты</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Второй блок с вооружением для яхт -->
     <div class="firstblock animate" appScrollAnimations>
-      <h1 class="name-of-blocksec">Вооружение Для Яхты.</h1>
-      <div class="img-container animate" appScrollAnimations>
-
-        <img src="./assets/images/photo_2024-04-01_15-48-47.jpg" alt="" class="imagesblocks">
-      </div>
-  <app-dataproductshelper [data]="armament" [title]="'/armament'"></app-dataproductshelper>
-    </div>
-    <div class="firstblock animate" appScrollAnimations>
-      <h1 class="name-of-blocksec">И многое другое.</h1>
-      <div class="img-container animate" appScrollAnimations>
-        <img src="./assets/images/photo_2024-04-01_15-48-51.jpg" alt="" class="imagesblocks">
-      </div>
-      <app-dataproductshelper [data]="boats" [title]="'/boats'"></app-dataproductshelper>
+<!--      <div class="img-container animate" appScrollAnimations>-->
+<!--      </div>-->
+      <h1 style="margin: 10px"><strong>Наша Коллекция</strong></h1>
+      <app-dataproductshelper [data]="armament" [title]="'/armament'"></app-dataproductshelper>
+      <app-dataproductshelper [data]="equipments" [title]="'/equipment'"></app-dataproductshelper>
     </div>
 
+    <!-- Таблица размеров -->
+    <app-size-table></app-size-table>
   </div>
 </div>

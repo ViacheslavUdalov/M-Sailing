@@ -1,108 +1,108 @@
-.container {
-}
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.firstblock {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* Общие стили для текста */
+span {
+  color: black;
+  font-family: "Ubuntu", sans-serif;
 }
 
+/* Карточка продукта */
 .dataofequipment {
-  height: 400px;
-  width: 100%;
-  //padding: 20px;
-  margin: 20px;
+  height: 450px;
+  width: 300px;
+  margin: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  //border: 1px solid green;
-  transition: background-color 1s ease, box-shadow 1s ease;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
 .dataofequipment:hover {
-  background-color: #eeeeee;
-  box-shadow: 0 0 20px black;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-.dataofequipment:hover img {
-  transform: scale(1.1);
-  transition: transform 1s ease;
-}
+
+/* Изображение продукта */
 .product-image {
   width: 100%;
-  height: auto;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px;
 }
 
 .product-image img {
-  width: 100%;
-  height: auto;
-  transition: transform 1s ease;
+  max-width: 100%;
+  max-height: 100%;
+  transition: transform 0.5s ease;
 }
 
-.products {
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
+.dataofequipment:hover img {
+  transform: scale(1.1);
 }
+
+/* Детали продукта */
+.product-details {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .nameofproduct {
-  width: 150px;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 10px;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: pre-wrap;
   text-overflow: ellipsis;
 }
-.product-details {
-  display: flex;
-  padding: 10px; padding: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+
+.type {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #757575;
 }
+
 .price {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 700;
-  font-style: italic;
+  font-size: 18px;
+  color: #34be02;
+  font-weight: bold;
 }
-@media screen and (max-width: 950px) {
-  .products {
-    flex-direction: column;
+
+/* Контейнер продуктов */
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media screen and (max-width: 1200px) {
+  .dataofequipment {
+    height: 400px;
   }
   .product-image {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+    height: 200px;
   }
-
-  .product-image img {
-    width: 100%;
-    height: auto;
-    transition: transform 1s ease;
-  }
-
 }
+
 @media screen and (max-width: 670px) {
   .products {
     flex-direction: column;
+    align-items: center;
   }
-  .product-image {
-    width: 100%;
-    height: auto;
-    overflow: hidden;
+  .dataofequipment {
+    width: 90%;
   }
-
-  .product-image img {
-    width: 100%;
-    height: auto;
-    transition: transform 1s ease;
-  }
-
 }

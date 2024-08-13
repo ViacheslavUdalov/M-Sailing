@@ -31,6 +31,8 @@ import {BoatsComponent} from "./boats/boats.component";
     OneboatComponent,
     BoatsComponent
   ],
+  exports: [
+  ],
   imports: [
     CommonModule,
     HttpClientModule,

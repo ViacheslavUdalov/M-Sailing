@@ -38,6 +38,7 @@ delete
       <p class="description"><strong>Описание:</strong><br> {{ equipment.description }}</p>
     </div>
     <div>
+      <app-size-table></app-size-table>
       <h2>Похожие товары:</h2>
       <app-dataproductshelper (click)="clickToTop()" [data]="addition" [title]="'/equipment'"></app-dataproductshelper>
     </div>

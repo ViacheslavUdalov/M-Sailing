@@ -18,7 +18,6 @@ C:\Production\M-sailing\publish\Content\assets\productsimages\bootsneoh.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\bootszhik.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\bottom.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\cap.jpg
-C:\Production\M-sailing\publish\Content\assets\productsimages\clewangle.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\clock.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\dinghystrap.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\doubleblock.jpg
@@ -31,11 +30,13 @@ C:\Production\M-sailing\publish\Content\assets\productsimages\flugerone.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\forruleOvington.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\fortelega.jpeg
 C:\Production\M-sailing\publish\Content\assets\productsimages\fullcompilcaseven.jpeg
+C:\Production\M-sailing\publish\Content\assets\productsimages\fullvangset.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\geek.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\grey-hikers.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\hikers-grey-airxlight.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\hiking.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\hoodie.jpg
+C:\Production\M-sailing\publish\Content\assets\productsimages\ilca-4-lower-mast.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\ilcafour.png
 C:\Production\M-sailing\publish\Content\assets\productsimages\ilcafourfull.png
 C:\Production\M-sailing\publish\Content\assets\productsimages\ilcasixfull.png
@@ -54,6 +55,7 @@ C:\Production\M-sailing\publish\Content\assets\productsimages\lowshoes.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\lycralongsleeve.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\mainsheet.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\number.jpg
+C:\Production\M-sailing\publish\Content\assets\productsimages\outhaulone.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\pantsthreefour.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\perorula.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\polartechpower.jpg
@@ -62,6 +64,7 @@ C:\Production\M-sailing\publish\Content\assets\productsimages\powerpuds.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\probka.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\ratchetblockone.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\ropeForblock.jpg
+C:\Production\M-sailing\publish\Content\assets\productsimages\Rudderhead.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\rumpel.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\sailnumbertwothree.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\sailR.jpg
@@ -83,6 +86,7 @@ C:\Production\M-sailing\publish\Content\assets\productsimages\sportspants.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\spraytop.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\t-shirt.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\techboardiesrisingstar.jpg
+C:\Production\M-sailing\publish\Content\assets\productsimages\TillerCarbon.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\top.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\topmath.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\traveller.jpg

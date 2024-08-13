@@ -76,7 +76,7 @@ export class EquipmentComponent implements OnInit {
     this.titleService.setTitle('M-sailing | Магазин парусной экипировки и вооружения');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки и одежды для яхтинга. Лучшие бренды, отличные цены.' },
-      { name: 'keywords', content: 'парусная экипировка, парусная одежда, одежда для яхтинга, купить экипировку для яхт, купить парусную одежду' },
+      { name: 'keywords', content: 'парусная экипировка, парусная одежда, одежда для яхтинга, купить экипировку для яхт, купить парусную одежду, гидрокостюм, гидрокостюм купить' },
       { name: 'robots', content: 'index, follow' }
     ]);
     this.route.queryParams.subscribe(params => {

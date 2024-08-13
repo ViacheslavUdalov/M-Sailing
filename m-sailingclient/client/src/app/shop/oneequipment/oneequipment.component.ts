@@ -30,13 +30,6 @@ export class OneequipmentComponent implements OnInit{
 
   ngOnInit(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' })
-    this.titleService.setTitle('M-sailing | Магазин парусной экипировки и вооружения');
-    this.metaService.addTags([
-      { name: 'description', content: 'Интернет-магазин парусной экипировки и одежды для яхтинга. Лучшие бренды, отличные цены.' },
-      { name: 'keywords', content: 'гидрокостюм, откренки, откреночные шорты, купить откреночные шорты, купить парусную куртку, ' +
-          'купить неопреновую кофту, гидрокостюм купить' },
-      { name: 'robots', content: 'index, follow' }
-    ]);
     this.activeRouter.paramMap.subscribe(params => {
       this.id = params.get('id') as string;
       this.getOneProduct();
@@ -72,7 +65,12 @@ export class OneequipmentComponent implements OnInit{
       this.quantityInBasket = this.basketService.getQuantityOfProduct(Number(this.id))
       this.equipment = data;
       this.selectedSize = data.size[0];
-      console.log(   this.equipment )
+      this.titleService.setTitle(`M-sailing | Купить ${this.equipment.name}`);
+      this.metaService.addTags([
+        { name: 'description', content: `Интернет-магазин парусной экипировки и одежды для яхтинга. ${this.equipment.name}.` },
+        { name: 'keywords', content: `${this.equipment.name.toLowerCase()}, купить ${this.equipment.name.toLowerCase()}, гидрокостюм, купить гидрокостюм` },
+        { name: 'robots', content: 'index, follow' }
+      ]);
     })
     this.getEquipForHome();
   }

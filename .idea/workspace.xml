@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c963795c-538d-46e9-8f60-d77d8baab964" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Api/Content/assets/productsimages/Rudderhead.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Content/assets/productsimages/TillerCarbon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Content/assets/productsimages/fullvangset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Content/assets/productsimages/ilca-4-lower-mast.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Content/assets/productsimages/outhaulone.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/wwwroot/assets/images/forkids.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/wwwroot/assets/images/razmer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/wwwroot/assets/images/table1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/wwwroot/assets/images/table2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/wwwroot/main.fa19206ebd8b4224.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shared/size-table/size-table.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shared/size-table/size-table.component.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shared/size-table/size-table.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m-sailingclient/client/src/assets/images/forkids.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m-sailingclient/client/src/assets/images/razmer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m-sailingclient/client/src/assets/images/table1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/m-sailingclient/client/src/assets/images/table2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/Content/assets/productsimages/Rudderhead.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/Content/assets/productsimages/TillerCarbon.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/Content/assets/productsimages/fullvangset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/Content/assets/productsimages/ilca-4-lower-mast.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/Content/assets/productsimages/outhaulone.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/wwwroot/assets/images/forkids.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/wwwroot/assets/images/razmer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/wwwroot/assets/images/table1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/wwwroot/assets/images/table2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/publish/wwwroot/main.fa19206ebd8b4224.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Content/assets/productsimages/clewangle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Api.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Data/SeedData/armament.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Data/SeedData/armament.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Data/SeedData/equipment.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Data/SeedData/equipment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Api.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Api.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Api.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Data/SeedData/armament.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Data/SeedData/armament.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Data/SeedData/equipment.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Data/SeedData/equipment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/bin/Release/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/bin/Release/net7.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/Api.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/ref/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/ref/Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/refint/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/refint/Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/staticwebassets.pack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Debug/net7.0/staticwebassets/msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Debug/net7.0/staticwebassets/msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/Api.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/PublishOutputs.4cc52f0934.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/PublishOutputs.4cc52f0934.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/ref/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/ref/Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/refint/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/refint/Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets.pack.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets.publish.json" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets.publish.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets/msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/Api/obj/Release/net7.0/staticwebassets/msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Api/wwwroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/wwwroot/main.bcd66c64904f815a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Debug/net7.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Release/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Release/net7.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/bin/Release/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/bin/Release/net7.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/Core.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/ref/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/ref/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Debug/net7.0/refint/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Debug/net7.0/refint/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Release/net7.0/Core.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Release/net7.0/ref/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Release/net7.0/ref/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/obj/Release/net7.0/refint/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Core/obj/Release/net7.0/refint/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/SeedData/armament.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Data/SeedData/armament.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Data/SeedData/equipment.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Data/SeedData/equipment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Data/SeedData/armament.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Data/SeedData/armament.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Data/SeedData/equipment.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Data/SeedData/equipment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Data/SeedData/armament.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Data/SeedData/armament.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Data/SeedData/equipment.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Data/SeedData/equipment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/bin/Release/net7.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/Infrastructure.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/ref/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Debug/net7.0/refint/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/Infrastructure.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/ref/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/ref/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/refint/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/obj/Release/net7.0/refint/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/core/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/core/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/home/dataproductshelper/dataproductshelper.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/home/dataproductshelper/dataproductshelper.component.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/home/home.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/home/home.component.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/home/home.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/home/home.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shared/shared.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/equipment/equipment.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/equipment/equipment.component.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/equipment/equipment.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/equipment/equipment.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/onearmament/onearmament.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/onearmament/onearmament.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneboat/oneboat.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneboat/oneboat.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneclothes/oneclothes.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneclothes/oneclothes.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/onecover/onecover.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/onecover/onecover.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneequipment/oneequipment.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneequipment/oneequipment.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneequipment/oneequipment.component.less" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneequipment/oneequipment.component.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneequipment/oneequipment.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/oneequipment/oneequipment.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/shop.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/app/shop/shop.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m-sailingclient/client/src/styles.less" beforeDir="false" afterPath="$PROJECT_DIR$/m-sailingclient/client/src/styles.less" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/publish/Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/publish/Api.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/publish/Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Content/assets/productsimages/clewangle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/publish/Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/publish/Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Data/SeedData/armament.json" beforeDir="false" afterPath="$PROJECT_DIR$/publish/Data/SeedData/armament.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Data/SeedData/equipment.json" beforeDir="false" afterPath="$PROJECT_DIR$/publish/Data/SeedData/equipment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Infrastructure.dll" beforeDir="false" afterPath="$PROJECT_DIR$/publish/Infrastructure.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/Infrastructure.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/publish/Infrastructure.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/publish/wwwroot/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/publish/wwwroot/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2kavq3nqbbq7LqiKQjvyzwsIbnm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Production/M-sailing",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c963795c-538d-46e9-8f60-d77d8baab964" name="Changes" comment="" />
+      <created>1723534690567</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723534690567</updated>
+      <workItem from="1723534691926" duration="6000" />
+    </task>
+    <servers />
+  </component>
+</project>

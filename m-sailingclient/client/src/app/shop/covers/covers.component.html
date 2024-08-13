@@ -1,6 +1,6 @@
 <app-top-bar-filter (getEquipment)="getCovers()" [shopParams]="shopParams"
                     [types]="types" [options]="sortOptions" [typesForBuy]="typesForBuy" ></app-top-bar-filter>
-<div style="display: flex; justify-content: center" *ngIf="covers.length === 0">Не найдено товаров с данным фильтром</div>
+<div style="display: flex; justify-content: center"  @animations *ngIf="covers.length === 0">Не найдено товаров с данным фильтром</div>
 <div class="products-container">
   <div class="product-card" @animations *ngFor="let product of covers" routerLink="/covers/{{product.id}}">
 

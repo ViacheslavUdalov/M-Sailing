@@ -30,7 +30,7 @@ export class OneboatComponent implements OnInit{
     this.titleService.setTitle('M-sailing | Магазин парусных яхт и парусного вооружения');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки, парусных яхт и одежды для яхтинга. Лучшие бренды, отличные цены.' },
-      { name: 'keywords', content: 'парусная яхта, парусная лодка, яхты, купить яхту' },
+      { name: 'keywords', content: 'парусная яхта, парусная лодка, яхты, купить яхту, Ilca, Ilca 7, Ilca 6, Ilca 4, laser, Laser' },
       { name: 'robots', content: 'index, follow' }
     ]);
     this.activeRouter.paramMap.subscribe(params => {

@@ -1,16 +1,12 @@
-<div class="products" >
+<div class="products">
   <div *ngFor="let product of data" class="dataofequipment" routerLink="{{title}}/{{product.id}}">
     <div class="product-image">
-
       <img src="{{product.pictures}}" alt="imageOfProduct" class="imageOfProduct">
-
     </div>
     <div class="product-details">
-   <span class="nameofproduct">
-            {{product.name}}
-        </span>
-      <span class="price" style="color: #34be02">{{product.price}} Руб.</span>
-      <span>Тип: {{product.type}}</span>
+      <span class="nameofproduct">{{product.name}}</span>
+      <span class="type">Тип: {{product.type}}</span>
+      <span class="price">{{product.price}} Руб.</span>
     </div>
   </div>
 </div>
