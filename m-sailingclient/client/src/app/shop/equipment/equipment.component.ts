@@ -5,6 +5,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ShopParams} from "../../models/shopParams";
 import {ShopService} from "../shop.service";
 import { Meta, Title } from '@angular/platform-browser';
+import {BreadcrumbService} from "xng-breadcrumb";
+import {BcServicePrivateService} from "../../shared/bc-service-private.service";
 
 @Component({
   selector: 'app-equipment',
@@ -68,11 +70,15 @@ export class EquipmentComponent implements OnInit {
   ]
   constructor(private shopService: ShopService, private router: Router,
               private route: ActivatedRoute,
-              private metaService: Meta, private titleService: Title) {
+              private metaService: Meta, private titleService: Title,
+              private bcService: BreadcrumbService,
+              private brService: BcServicePrivateService) {
+  this.bcService.set('@productDetails', '')
     this.shopParams = this.shopService.getShopParams();
   }
 
   ngOnInit() {
+    // this.bcService.set('@equip', `Экипировка/${this.shopParams.type.replace(/\./g, ' ')}`)
     this.titleService.setTitle('M-sailing | Магазин парусной экипировки и вооружения');
     this.metaService.addTags([
       { name: 'description', content: 'Интернет-магазин парусной экипировки и одежды для яхтинга. Лучшие бренды, отличные цены.' },
@@ -86,6 +92,8 @@ export class EquipmentComponent implements OnInit {
       this.shopParams.pageIndex = +params["pageIndex"] || 1;
       this.shopParams.pageSize = +params["pageSize"] || 10;
       this.shopParams.search = params["search"] || '';
+
+      this.bcService.set('@productDetails', `Экипировка ${this.shopParams.type.length > 1 ? ' / ' : ''} ${this.shopParams.type.replace(/\./g, ' ').toUpperCase()}`)
       if (this.searchTerm && this.shopParams.search) {
         this.searchTerm.nativeElement.value = this.shopParams.search;
       }
@@ -128,5 +136,6 @@ export class EquipmentComponent implements OnInit {
       queryParamsHandling: 'merge',
       replaceUrl: true
     })
+    this.bcService.set('@equip', `Экипировка/${this.shopParams.type.replace(/\./g, ' ')}`)
   }
 }

@@ -7,6 +7,7 @@ import { animations } from 'src/app/helpers/animations';
 import { BasketService } from 'src/app/basket/basket.service';
 import { ProductToCreateOrder, ProductToCreateOrderWithId } from 'src/app/models/OrdersModels';
 import { Meta, Title } from '@angular/platform-browser';
+import {BreadcrumbService} from "xng-breadcrumb";
 
 @Component({
   selector: 'app-oneboat',
@@ -23,7 +24,7 @@ export class OneboatComponent implements OnInit{
   constructor(private shopService: ShopService,
               private activeRouter: ActivatedRoute,
               private basketService: BasketService,
-              private metaService: Meta, private titleService: Title) {
+              private metaService: Meta, private titleService: Title, private bcService: BreadcrumbService) {
   }
 
   ngOnInit(): void {
@@ -42,6 +43,18 @@ export class OneboatComponent implements OnInit{
   getOneProduct() {
     this.shopService.getOneboat(Number(this.id)).subscribe(data => {
       this.boat = data;
+      this.activeRouter.queryParams.subscribe(params => {
+
+        let type = (`${params['type']}`).replace(/\./g, ' ').toUpperCase() || '';
+        if (type === "UNDEFINED") {
+          type = '';
+        }
+        // const parentRoute = this.activeRouter.snapshot.url[0].path;
+
+        this.bcService.set('@productDetails', (`Яхты / ${type}${type.length > 0 ? ' / ' :  ''}${this.boat?.name}`).toUpperCase());
+        // this.bcService.set('@productDetails', `${parentRoute}/${this.equipment?.name}`)
+
+      })
     })
   }
   getEquipForHome() {

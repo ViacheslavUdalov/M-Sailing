@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {ShopService} from "../shop.service";
 import { ShopParams } from 'src/app/models/shopParams';
 import { Meta, Title } from '@angular/platform-browser';
+import {BreadcrumbService} from "xng-breadcrumb";
 
 @Component({
   selector: 'app-boats',
@@ -39,7 +40,7 @@ export class BoatsComponent implements OnInit {
   ]
   constructor(private shopService: ShopService, private router: Router,
               private route: ActivatedRoute,
-              private metaService: Meta, private titleService: Title) {
+              private metaService: Meta, private titleService: Title, private bcService: BreadcrumbService) {
     this.shopParams = this.shopService.getShopParams();
   }
 
@@ -57,6 +58,7 @@ export class BoatsComponent implements OnInit {
       this.shopParams.pageIndex = +params["pageIndex"] || 1;
       this.shopParams.pageSize = +params["pageSize"] || 10;
       this.shopParams.search = params["search"] || '';
+      this.bcService.set('@productDetails', `Яхты ${this.shopParams.type.length > 1 ? ' / ' : ''}  ${this.shopParams.type.replace(/\./g, ' ').toUpperCase()}`)
       if (this.searchTerm && this.shopParams.search) {
         this.searchTerm.nativeElement.value = this.shopParams.search;
       }

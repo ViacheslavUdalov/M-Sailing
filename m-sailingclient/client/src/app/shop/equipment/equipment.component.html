@@ -1,9 +1,9 @@
 
 <app-top-bar-filter (getEquipment)="getEquipment()" [shopParams]="shopParams"
             [types]="types" [options]="sortOptions" [typesForBuy]="typesForBuy" ></app-top-bar-filter>
-<div style="display: flex; justify-content: center" @animations *ngIf="equipment.length === 0">Не найдено товаров по данному фильтру.</div>
+<div style="display: flex; justify-content: center;" @animations *ngIf="equipment.length === 0">Не найдено товаров по данному фильтру.</div>
 <div class="products-container" *ngIf="equipment">
-  <div class="product-card " @animations *ngFor="let product of equipment" routerLink="/equipment/{{product.id}}">
+  <div class="product-card " @animations *ngFor="let product of equipment" routerLink="/equipment/{{product.id}}"  [queryParams]="{type: shopParams.type}">
     <div class="product-image">
       <img [src]="product.pictures" alt="Product Image">
     </div>

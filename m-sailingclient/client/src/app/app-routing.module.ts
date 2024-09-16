@@ -15,25 +15,50 @@ import {HomeComponent} from "./home/home.component";
 import { CreateOrderComponent } from './orders/create-order/create-order.component';
 import { BasketComponent } from './basket/basket/basket.component';
 import { OrderSuccessComponent } from './orders/order-success/order-success.component';
+import {ArmamentResolver, BoatsResolver, CoversResolver, EquipmentResolver} from "./helpers/product-resolver.resolver";
+import {Equipment} from "./models/equipment";
+import {Cover} from "./models/cover";
+import {Armament} from "./models/armament";
+import {Boat} from "./models/boat";
 
+// const routes: Routes = [
+//   {path: '', component: HomeComponent},
+//   {path: 'equipment', component: EquipmentComponent, data: {breadcrumb: "Экипировка"}},
+//   {path: 'equipment/:id',
+//     component: OneequipmentComponent,
+//     resolve: {product: EquipmentResolver},
+//     data: {breadcrumb: (data: Equipment) => `${data.name}`}},
+//   {path: 'covers', component: CoversComponent, data: {breadcrumb: "Чехлы"}},
+//   {path: 'covers/:id', component: OnecoverComponent, resolve: {product: CoversResolver},
+//     data: {breadcrumb: (data: Cover) => `${data.name}`}},
+//   {path: 'armament', component: ArmamentComponent, data: {breadcrumb: "Вооружение"}},
+//   {path: 'armament/:id', component: OnearmamentComponent, resolve: {product: ArmamentResolver},
+//     data: {breadcrumb: (data: Armament) => `${data.name}`}},
+//   {path: 'boats', component: BoatsComponent, data: {breadcrumb: "Яхты"}},
+//   {path: 'boats/:id', component: OneboatComponent, resolve: {product: BoatsResolver},
+//     data: {breadcrumb: (data: Boat) => `${data.name}`}},
+//   { path: 'create-order', component: CreateOrderComponent },
+//   { path: 'basket', component: BasketComponent, data: {breadcrumb: "Корзина" } },
+//   { path: 'order-success', component: OrderSuccessComponent },
+//   {path: '**', redirectTo: '/', pathMatch: "full"}
+// ];
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'equipment', component: EquipmentComponent},
-  {path: 'equipment/:id', component: OneequipmentComponent},
-  {path: 'clothes',  component: ClothesComponent},
-  {path: 'clothes/:id', component: OneclothesComponent},
-  {path: 'covers', component: CoversComponent},
-  {path: 'covers/:id', component: OnecoverComponent},
-  {path: 'armament', component: ArmamentComponent},
-  {path: 'armament/:id', component: OnearmamentComponent},
-  {path: 'boats', component: BoatsComponent},
-  {path: 'boats/:id', component: OneboatComponent},
+  {path: 'equipment', component: EquipmentComponent, data: {breadcrumb: {alias : 'productDetails'}}},
+  {path: 'equipment/:id', component: OneequipmentComponent, data: {breadcrumb: {alias : 'productDetails'}}},
+  {path: 'covers', component: CoversComponent, data: {breadcrumb: {alias : 'productDetails'}}},
+  {path: 'covers/:id', component: OnecoverComponent, data: {breadcrumb: {alias : 'productDetails'}}},
+  {path: 'armament', component: ArmamentComponent, data: {breadcrumb: {alias : 'productDetails'}}},
+  {path: 'armament/:id', component: OnearmamentComponent,data: {breadcrumb: {alias : 'productDetails'}}},
+  {path: 'boats', component: BoatsComponent, data: {breadcrumb: {alias : 'productDetails'}}},
+  {path: 'boats/:id', component: OneboatComponent, data: {breadcrumb: {alias : 'productDetails'}}},
   { path: 'create-order', component: CreateOrderComponent },
-  { path: 'basket', component: BasketComponent },
+  { path: 'basket', component: BasketComponent, data: {breadcrumb: "Корзина" } },
   { path: 'order-success', component: OrderSuccessComponent },
+  {path: 'shop',
+  loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)},
   {path: '**', redirectTo: '/', pathMatch: "full"}
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes), CommonModule],
   exports: [RouterModule]

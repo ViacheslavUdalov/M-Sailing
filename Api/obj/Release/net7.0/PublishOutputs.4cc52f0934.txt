@@ -18,6 +18,7 @@ C:\Production\M-sailing\publish\Content\assets\productsimages\bootsneoh.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\bootszhik.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\bottom.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\cap.jpg
+C:\Production\M-sailing\publish\Content\assets\productsimages\clew.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\clock.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\dinghystrap.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\doubleblock.jpg
@@ -37,8 +38,11 @@ C:\Production\M-sailing\publish\Content\assets\productsimages\hikers-grey-airxli
 C:\Production\M-sailing\publish\Content\assets\productsimages\hiking.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\hoodie.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\ilca-4-lower-mast.jpg
+C:\Production\M-sailing\publish\Content\assets\productsimages\ilcafour.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\ilcafour.png
 C:\Production\M-sailing\publish\Content\assets\productsimages\ilcafourfull.png
+C:\Production\M-sailing\publish\Content\assets\productsimages\ilcaseven.jpg
+C:\Production\M-sailing\publish\Content\assets\productsimages\ilcasix.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\ilcasixfull.png
 C:\Production\M-sailing\publish\Content\assets\productsimages\ins200shorts.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\jacketraceblack.jpg
@@ -92,6 +96,7 @@ C:\Production\M-sailing\publish\Content\assets\productsimages\topmath.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\traveller.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\trousers.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\udlinitel.jpg
+C:\Production\M-sailing\publish\Content\assets\productsimages\vangblockrons.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\vangcurvedkey.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\vangdoubleblock.jpg
 C:\Production\M-sailing\publish\Content\assets\productsimages\vangropeset.jpg

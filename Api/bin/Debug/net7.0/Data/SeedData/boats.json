@@ -3,7 +3,7 @@
   "Type": "полный комплект яхты",
   "Description": "Данная комплектация яхты Ilca 6 представляется в максимальном комплекте.",
   "Price": 1344010,
-  "Pictures": "assets/productsimages/ilcasixfull.png",
+  "Pictures": "assets/productsimages/ilcasix.jpg",
   "TypeForBuy": "Есть в наличии"
 },
 {
@@ -11,7 +11,7 @@
   "Type": "полный комплект яхты",
   "Description": "Данная комплектация яхты Ilca 7 представляется в максимальном комплекте.",
   "Price": 1264769,
-  "Pictures": "assets/productsimages/fullcompilcaseven.jpeg",
+  "Pictures": "assets/productsimages/ilcaseven.jpg",
   "TypeForBuy": "Есть в наличии"
 },
 {
@@ -19,7 +19,7 @@
   "Type": "полный комплект яхты",
   "Description": "Данная комплектация яхты Ilca 4 представляется в максимальном комплекте.",
   "Price": 1201840,
-  "Pictures": "assets/productsimages/ilcafourfull.png",
+  "Pictures": "assets/productsimages/ilcafour.jpg",
   "TypeForBuy": "Есть в наличии"
 },
 {
@@ -27,7 +27,7 @@
   "Type": "полный комплект яхты",
   "Description": "Данная комплектация яхты Ilca 6 представляется без чехлов, с карбоновой нижней мачтой.",
   "Price": 1307641,
-  "Pictures": "assets/productsimages/ilcasixfull.png",
+  "Pictures": "assets/productsimages/ilcasix.jpg",
   "TypeForBuy": "Есть в наличии"
 },
 {
@@ -35,7 +35,7 @@
   "Type": "полный комплект яхты",
   "Description": "Данная комплектация яхты Ilca 7 представляется без чехлов.",
   "Price": 1228290,
-  "Pictures": "assets/productsimages/fullcompilcaseven.jpeg",
+  "Pictures": "assets/productsimages/ilcaseven.jpg",
   "TypeForBuy": "Есть в наличии"
 },
 {
@@ -43,7 +43,7 @@
   "Type": "полный комплект яхты",
   "Description": "Данная комплектация яхты Ilca 4 представляется без чехлов.",
   "Price": 1201840,
-  "Pictures": "assets/productsimages/ilcafourfull.png",
+  "Pictures": "assets/productsimages/ilcafour.jpg",
   "TypeForBuy": "Есть в наличии"
 },
 {
@@ -51,6 +51,6 @@
   "Type": "полный комплект яхты",
   "Description": "Данная комплектация яхты Ilca 6 представляется без чехлов, с алюминиевой нижней мачтой.",
   "Price": 1228290,
-  "Pictures": "assets/productsimages/ilcasixfull.png",
+  "Pictures": "assets/productsimages/ilcasix.jpg",
   "TypeForBuy": "Есть в наличии"
 }]

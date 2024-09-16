@@ -7,6 +7,7 @@ import { Armament } from 'src/app/models/armament';
 import { ProductToCreateOrder , ProductToCreateOrderWithId} from 'src/app/models/OrdersModels';
 import { BasketService } from 'src/app/basket/basket.service';
 import { Meta, Title } from '@angular/platform-browser';
+import {BreadcrumbService} from "xng-breadcrumb";
 
 @Component({
   selector: 'app-onecover',
@@ -23,7 +24,7 @@ export class OnecoverComponent implements OnInit {
   constructor(private shopService: ShopService,
               private activeRouter: ActivatedRoute,
               private basketService: BasketService,
-              private metaService: Meta, private titleService: Title) {
+              private metaService: Meta, private titleService: Title, private bcService: BreadcrumbService) {
   }
 
   ngOnInit(): void {
@@ -42,7 +43,18 @@ export class OnecoverComponent implements OnInit {
   getOneProduct() {
     this.shopService.getOneCovers(Number(this.id)).subscribe(data => {
       this.cover = data;
+      this.activeRouter.queryParams.subscribe(params => {
 
+        let type = (`${params['type']}`).replace(/\./g, ' ').toUpperCase() || '';
+        if (type === "UNDEFINED") {
+          type = '';
+        }
+        // const parentRoute = this.activeRouter.snapshot.url[0].path;
+
+        this.bcService.set('@productDetails', (`Чехлы / ${type}${type.length > 0 ? ' / ' :  ''}${this.cover?.name}`).toUpperCase());
+        // this.bcService.set('@productDetails', `${parentRoute}/${this.equipment?.name}`)
+
+      })
     })
   }
   getEquipForHome() {

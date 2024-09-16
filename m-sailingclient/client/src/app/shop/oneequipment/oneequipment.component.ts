@@ -7,6 +7,7 @@ import { ProductToCreateOrder , ProductToCreateOrderWithId} from 'src/app/models
 import { BasketService } from 'src/app/basket/basket.service';
 import {Meta, Title } from '@angular/platform-browser';
 import {DOCUMENT} from "@angular/common";
+import {BreadcrumbService} from "xng-breadcrumb";
 
 @Component({
   selector: 'app-oneequipment',
@@ -25,7 +26,9 @@ export class OneequipmentComponent implements OnInit{
               private shopService: ShopService,
               private activeRouter: ActivatedRoute,
               private basketService: BasketService,
-              private metaService: Meta, private titleService: Title) {
+              private metaService: Meta, private titleService: Title,
+              private bcService: BreadcrumbService) {
+  this.bcService.set('@productDetails', '')
   }
 
   ngOnInit(): void {
@@ -36,6 +39,7 @@ export class OneequipmentComponent implements OnInit{
       console.log(   this.equipment )
     })
     this.addJsonLd();
+
   }
   addJsonLd(): void {
     const jsonLd = {
@@ -64,6 +68,25 @@ export class OneequipmentComponent implements OnInit{
     this.shopService.getOneEquipment(Number(this.id)).subscribe(data => {
       this.quantityInBasket = this.basketService.getQuantityOfProduct(Number(this.id))
       this.equipment = data;
+      // const breadcrumb = [
+      //   {label : "Экипировка", url: '/equipment'},
+      //   {label: this.equipment.name, url: ''}
+      // ]
+      // this.bcService.set('@equip', `Экипировка/${this.equipment.type.replace(/\./g, ' ')}`)
+      this.activeRouter.queryParams.subscribe(params => {
+
+        let type = (`${params['type']}`).replace(/\./g, ' ').toUpperCase() || '';
+        console.log(type.length)
+        if (type === "UNDEFINED") {
+          type = '';
+        }
+
+        // const parentRoute = this.activeRouter.snapshot.url[0].path;
+
+        this.bcService.set('@productDetails', (`Экипировка / ${type}${type.length > 0  ? ' / ' :  ''}${this.equipment?.name}`).toUpperCase());
+        // this.bcService.set('@productDetails', `${parentRoute}/${this.equipment?.name}`)
+
+      })
       this.selectedSize = data.size[0];
       this.titleService.setTitle(`M-sailing | Купить ${this.equipment.name}`);
       this.metaService.addTags([

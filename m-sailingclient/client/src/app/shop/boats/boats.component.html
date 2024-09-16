@@ -2,7 +2,7 @@
                     [types]="types" [options]="sortOptions" [typesForBuy]="typesForBuy" ></app-top-bar-filter>
 <div style="display: flex; justify-content: center" *ngIf="boats.length === 0">Не найдено товаров по данному фильтру.</div>
 <div class="products-container">
-  <div class="product-card " @animations *ngFor="let product of boats" routerLink="/boats/{{product.id}}">
+  <div class="product-card " @animations *ngFor="let product of boats" [queryParams]="{type: shopParams.type}" routerLink="/boats/{{product.id}}">
     <div class="product-image">
       <img [src]="product.pictures" alt="Product Image">
     </div>

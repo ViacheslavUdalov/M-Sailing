@@ -82,19 +82,13 @@
   justify-items: center;
 }
 
-
-
-
-
-
-
-
 .sale-banner {
   border: 1px solid #ccc;
   padding: 16px;
   text-align: center;
   background-color: #f9f9f9;
   margin-bottom: 16px;
+  margin-right: 50px;
   border-radius: 8px;
   cursor: pointer;
   max-width: 300px;
@@ -271,7 +265,9 @@
   //  width: 100%;
   //  height: 300px;
   //}
-
+  .column-root {
+    width: 48%; /* Две колонки в ряд на экранах до 1200px */
+  }
   .name-of-block {
     font-weight: 400;
     font-size: xx-large;
@@ -310,7 +306,38 @@
 }
 
 @media screen and (max-width: 725px) {
+  .about {
+    width: 100%;
+  }
+  .column-root {
+    width: 100%;
 
+  }
+  .sale-banner {
+  margin-top: 30px;
+    margin-right: 0;
+  }
+  .columnLine-root {
+    display: flex ;
+    flex-direction: column;
+  }
+  .buttons-root {
+    justify-content: center; /* Центрирование кнопки на маленьких экранах */
+  }
+
+  .button-root_highPriority {
+    width: 100%;
+    min-width: unset; /* Ширина кнопки по ширине контейнера */
+  }
+
+  .button-content {
+    gap: 1rem; /* Уменьшение зазора внутри кнопки на маленьких экранах */
+  }
+.content-overlay {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
     h1 {
       font-size: 1.5rem;
     }
@@ -349,38 +376,32 @@
     height: auto;
   }
 
+  .section-container {
+    padding: 5px;
+  }
 
+  .column-root {
+    min-height: 300px; /* Уменьшение высоты колонок на очень маленьких экранах */
+    padding: 10px;
+  }
+
+  .button-root_highPriority {
+    padding: 8px 15px; /* Уменьшение отступов внутри кнопки на очень маленьких экранах */
+  }
+
+  .button-content {
+    gap: 0.5rem;
+  }
   .button {
     padding: 7px 20px;
     font-size: small;
     margin-top: 10px;
   }
 
-  //.img-containerone {
-  //  width: 80%;
-  //  padding: 10px;
-  //  height: 300px;
-  //}
 
   .name-of-block {
     font-weight: 200;
     font-size: medium;
   }
 }
-//.img-containerone {
-//  margin: 30px 5%;
-//  padding: 70px;
-//  width: 100%;
-//  height: 450px;
-//  //background-color: rgba(33, 33, 33, 0.76);
-//  //background-blend-mode: multiply;
-//  //background-image: url("../../assets/images/photo_2024-04-01_15-48-42.jpg");
-//  //background-size: cover;
-//  //background-repeat: no-repeat;
-//  display: flex;
-//  flex-direction: column;
-//  justify-content: center;
-//  align-items: center;
-//  transition: transform 0.5s ease;
-//}
-//
+

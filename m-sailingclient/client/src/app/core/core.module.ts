@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import {FormsModule} from "@angular/forms";
 import { TopBarFilterComponent } from './top-bar-filter/top-bar-filter.component';
+import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb.component';
 
 
 
@@ -18,22 +19,24 @@ import { TopBarFilterComponent } from './top-bar-filter/top-bar-filter.component
     ForfullComponent,
     FooterComponent,
     PaginationComponent,
-    TopBarFilterComponent
+    TopBarFilterComponent,
+    HeaderBreadcrumbComponent
   ],
-  imports: [
-    CommonModule,
-    RouterLink,
-    RouterLinkActive,
-    RouterModule,
-    FormsModule
-  ],
+    imports: [
+        CommonModule,
+        RouterLink,
+        RouterLinkActive,
+        RouterModule,
+        FormsModule,
+    ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    exports: [
-        NavbarComponent,
-        FooterComponent,
-        PaginationComponent,
-      TopBarFilterComponent,
-      FormsModule
-    ]
+  exports: [
+    NavbarComponent,
+    FooterComponent,
+    PaginationComponent,
+    TopBarFilterComponent,
+    FormsModule,
+    HeaderBreadcrumbComponent
+  ]
 })
 export class CoreModule { }

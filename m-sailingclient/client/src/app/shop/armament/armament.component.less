@@ -1,61 +1,63 @@
 .products-container {
-  margin: auto;
-  width: 100%;
+  //margin: auto;
+  //width: 100%;
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-image: url("../../../assets/images/nt.jpg");
+  background-blend-mode: multiply;
+  background-color: rgba(45, 40, 173, 0.44);
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  //background-color: black;
 }
 
 .product-card {
   width: calc(20% - 20px);
   margin: 20px;
   background-color: #f0f0f0;
-  transition:  box-shadow 1s ease;
-}
-.filters {
-  padding: 2%;
+  transition: box-shadow 1s ease;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
-.selectoption {
-  padding: 2%;
-}
-.option {
-  padding: 10px;
-  background-color: rgba(81, 131, 74, 0.84);
-  border-radius: 10px;
-  border: 1px solid red;
-  transition: box-shadow 0.5s ease, border 0.5s ease;
-}
+
 .product-card:hover {
   cursor: pointer;
   box-shadow: 0 0 30px black;
 }
+
 .product-image {
   width: 100%;
-  height: auto;
+  height: 400px; /* Фиксированная высота для блока изображения */
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.product-details {
 
-}
 .product-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover; /* Изображение заполняет блок и обрезается по краям */
+  object-position: center; /* Центрирование изображения */
   transition: transform 1s ease;
 }
+
 .product-card:hover img {
   transform: scale(1.1);
   transition: transform 1s ease;
 }
+
 .product-details {
-  //display: flex;
-  padding: 10px; padding: 10px;
-  //justify-content: center;
-  //align-items: center;
-  //flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
 }
 
 .product-name {
@@ -67,7 +69,6 @@
 }
 
 .product-description {
-  //margin-bottom: 10px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -75,10 +76,14 @@
 
 .product-price {
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .product-type {
   font-style: italic;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 768px) {

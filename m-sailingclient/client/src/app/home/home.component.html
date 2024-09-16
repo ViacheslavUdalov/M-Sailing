@@ -3,7 +3,7 @@
     <!-- Первый блок с полноэкранным изображением -->
     <div class="firstblock">
       <div class="full-screen-image">
-        <img src="../../assets/images/menslaser.jpg" alt="Full Screen Image">
+        <img src="../../assets/images/nt.jpg" alt="Full Screen Image">
       </div>
       <div class="content-overlay">
         <div class="about">
@@ -17,7 +17,7 @@
           <!--            </div>-->
                     </div>
 
-          <span class="name-of-block">Добро пожаловать в интернет-магазин <strong>M-sailing!</strong></span>
+          <span class="name-of-block">Добро пожаловать в интернет-магазин <br><strong>M-sailing!</strong></span>
           <p class="description">Здесь вы найдете высококачественную экипировку Sandiline, Zhik, а так же аксессуары для парусного спорта и яхтинга. Мы поставляем продукцию по всей России.</p>
 <!--          <div class="inner-container">-->
 
@@ -45,7 +45,7 @@
         <div class="columnLine-root">
           <!-- Первый блок -->
           <div class="column-root pagebuilder-column"
-               style="background-image: url('../../assets/images/photo_2024-04-01_15-48-42.jpg');">
+               style="background-image: url('../../assets/images/equip.jpg');">
             <div class="buttons-root">
               <button class="button-root_highPriority" type="button">
                 <span class="button-content" routerLink="/equipment">Одежда</span>
@@ -55,7 +55,7 @@
 
           <!-- Второй блок -->
           <div class="column-root pagebuilder-column"
-               style="background-image: url('../../assets/images/photo_2024-04-01_15-48-47.jpg');">
+               style="background-image: url('../../assets/images/outhaul.jpg');">
             <div class="buttons-root">
               <button class="button-root_highPriority" type="button">
                 <span class="button-content" routerLink="/armament">Вооружение</span>
@@ -85,6 +85,7 @@
       <h1 style="margin: 10px"><strong>Наша Коллекция</strong></h1>
       <app-dataproductshelper [data]="armament" [title]="'/armament'"></app-dataproductshelper>
       <app-dataproductshelper [data]="equipments" [title]="'/equipment'"></app-dataproductshelper>
+      <app-dataproductshelper [data]="boats" [title]="'/boats'"></app-dataproductshelper>
     </div>
 
     <!-- Таблица размеров -->

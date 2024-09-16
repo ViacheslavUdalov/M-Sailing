@@ -7,6 +7,7 @@ import {animations} from "../../helpers/animations";
 import { BasketService } from 'src/app/basket/basket.service';
 import { ProductToCreateOrder, ProductToCreateOrderWithId } from 'src/app/models/OrdersModels';
 import { Meta, Title } from '@angular/platform-browser';
+import {BreadcrumbService} from "xng-breadcrumb";
 
 @Component({
   selector: 'app-onearmament',
@@ -23,7 +24,9 @@ export class OnearmamentComponent implements OnInit{
   constructor(private shopService: ShopService,
               private activeRouter: ActivatedRoute,
               private basketService: BasketService,
-              private metaService: Meta, private titleService: Title) {
+              private metaService: Meta, private titleService: Title,
+              private bcService: BreadcrumbService) {
+    this.bcService.set('@productDetails', '')
   }
 
   ngOnInit(): void {
@@ -43,6 +46,18 @@ export class OnearmamentComponent implements OnInit{
   getOneProduct() {
     this.shopService.getOneArmament(Number(this.id)).subscribe(data => {
       this.armament = data;
+      this.activeRouter.queryParams.subscribe(params => {
+
+        let type = (`${params['type']}`).replace(/\./g, ' ').toUpperCase();
+        console.log(type)
+        // const parentRoute = this.activeRouter.snapshot.url[0].path;
+        if (type === "UNDEFINED") {
+          type = '';
+        }
+        this.bcService.set('@productDetails', (`Вооружение / ${type}${type.length > 0 ? ' / ' :  ''}${this.armament?.name}`).toUpperCase());
+        // this.bcService.set('@productDetails', `${parentRoute}/${this.equipment?.name}`)
+
+      })
       this.updateRemoveButtonVisibility(this.armament.id)
       this.checkoutQuantity(this.armament.id)
       this.titleService.setTitle(`M-sailing | Купить ${this.armament.name}`);
