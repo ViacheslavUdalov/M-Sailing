@@ -51,9 +51,8 @@ const routes: Routes = [
   { path: 'create-order', component: CreateOrderComponent },
   { path: 'basket', component: BasketComponent, data: {breadcrumb: "Корзина" } },
   { path: 'order-success', component: OrderSuccessComponent },
-  { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: 'cookie-policy', component: CookieComponent },
-  { path: 'terms-of-service', component: TermsOfServiceComponent },
+  {path: 'core',
+    loadChildren: () => import('./core/core.module').then(m => m.CoreModule)},
   {path: 'shop',
   loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)},
   {path: '**', redirectTo: '/', pathMatch: "full"}
