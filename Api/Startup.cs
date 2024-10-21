@@ -37,7 +37,7 @@ public class Startup
             
             services.AddIdentityService(_configuration);
             services.AddTransient<IEmailService, EmailService>();
-
+            services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IAdminProductsRepository, AdminProductsRepository>();
             // services.AddScoped<LogUserActivity>();
             services.AddScoped(typeof(IProductsRepository), typeof(ProductsRepository));

@@ -18,6 +18,10 @@ public class AppIdentityDbContext: IdentityDbContext<AppUser, AppRole, int, Iden
         base.OnModelCreating(builder);
 
         builder.Entity<AppUser>()
+            .Property(u => u.Id)
+            .ValueGeneratedOnAdd();
+        
+        builder.Entity<AppUser>()
             .HasMany(ur => ur.UserRoles)
             .WithOne(u => u.User)
             .HasForeignKey(ur => ur.UserId) 
@@ -26,7 +30,7 @@ public class AppIdentityDbContext: IdentityDbContext<AppUser, AppRole, int, Iden
         builder.Entity<AppRole>()
             .HasMany(ur => ur.UserRoles)
             .WithOne(u => u.Role)
-            .HasForeignKey(ur => ur.UserId) 
+            .HasForeignKey(ur => ur.RoleId) 
             .IsRequired();
         
 

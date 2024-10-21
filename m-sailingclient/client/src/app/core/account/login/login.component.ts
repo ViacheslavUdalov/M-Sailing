@@ -11,13 +11,13 @@ import {ToastrService} from "ngx-toastr";
 })
 export class LoginComponent {
   loginForm!: FormGroup;
-  returnUrl: string = '';
+  // returnUrl: string = '';
   error: string = ''
   constructor(private accountService: AccountServiceService, private router: Router,
               private activatedRoute: ActivatedRoute, private toastr: ToastrService) {
   }
   ngOnInit() {
-    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
+    // this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
     this.createLoginForm();
   }
   createLoginForm() {
@@ -28,7 +28,7 @@ export class LoginComponent {
   }
   onSubmit() {
     this.accountService.login(this.loginForm?.value).subscribe((response) => {
-      this.router.navigateByUrl(this.returnUrl);
+      // this.router.navigateByUrl(this.returnUrl);
       this.toastr.success('Вы успешно вошли в аккаунт!')
     }, error => {
       console.log(error);

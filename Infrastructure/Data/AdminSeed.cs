@@ -6,7 +6,8 @@ namespace Infrastructure.Data;
 
 public class AdminSeed
 {
-    public static async Task SeedAdmin(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
+    public static async Task SeedAdmin(UserManager<AppUser> userManager, 
+        RoleManager<AppRole> roleManager)
     {
         var users = await userManager.Users.ToListAsync();
         if (users.Any()) return;
@@ -22,11 +23,23 @@ public class AdminSeed
 
         var admin = new AppUser
         {
-            Email = "slava187115@mail.ru",
             DisplayName = "Admin",
-
+            Email = "slava187115@mail.ru",
+            UserName = "Admin",
+            PhotoUrl = "assets/productsimages/msailing.jpg",
+            SecurityStamp = Guid.NewGuid().ToString()
         };
-        await userManager.CreateAsync(admin, "M-sailing");
-        await userManager.AddToRoleAsync(admin, "Admin");
+        var result = await userManager.CreateAsync(admin, "M-sailing115!");
+        if (!result.Succeeded)
+        {
+            foreach (var error in result.Errors)
+            {
+                Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                Console.WriteLine(error.Description);
+            }
+        }
+
+      
+        await userManager.AddToRolesAsync(admin, new[] {"Admin"});
     }
 }

@@ -20,7 +20,7 @@ import {LoginComponent} from "./account/login/login.component";
 
 
 const routes: Routes = [
-  { path: 'account/login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'cookie-policy', component: CookieComponent },
   { path: 'terms-of-service', component: TermsOfServiceComponent },
