@@ -1,9 +1,13 @@
 using Api.Controllers;
+using Api.Extensions;
 using Api.Helpers;
 using Core.Entities;
+using Core.Entities.Identity;
 using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Data.Identity;
 using Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
 
@@ -22,18 +26,30 @@ public class Startup
         {
             services.AddControllers();
             services.AddDirectoryBrowser();
+            
+            
             services.AddDbContext<StoreContext>(x =>
                 x.UseNpgsql(_configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AppIdentityDbContext>(x =>
+            {
+                x.UseNpgsql(_configuration.GetConnectionString("IdentityConnection"));
+            });
+            
+            services.AddIdentityService(_configuration);
             services.AddTransient<IEmailService, EmailService>();
+
+            services.AddScoped<IAdminProductsRepository, AdminProductsRepository>();
+            // services.AddScoped<LogUserActivity>();
             services.AddScoped(typeof(IProductsRepository), typeof(ProductsRepository));
             services.AddScoped(typeof(IOrderRepository<>), typeof(OrderRepository<>));
             services.AddScoped<UrlResolver>();
+            services.AddScoped<PasswordValidator<AppUser>>();
+            
+            
             services.Configure<TelegramBotOptions>(_configuration.GetSection("TelegramBot"));
             var telegramBotOptions = new TelegramBotOptions();
             _configuration.GetSection("TelegramBot").Bind(telegramBotOptions);
 
-            Console.WriteLine($"Telegram Bot Token: {telegramBotOptions.Token}");
-            Console.WriteLine($"Telegram Channel ID: {telegramBotOptions.ChannelId}");
             services.AddHttpClient<ITelegramService, TelegramService>((services, client) =>
             {
                 var botToken = _configuration["TelegramBot:Token"];

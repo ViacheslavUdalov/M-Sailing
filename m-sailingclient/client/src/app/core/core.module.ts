@@ -9,6 +9,10 @@ import { PaginationComponent } from './pagination/pagination.component';
 import {FormsModule} from "@angular/forms";
 import { TopBarFilterComponent } from './top-bar-filter/top-bar-filter.component';
 import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb.component';
+import { LoginComponent } from './account/login/login.component';
+import {PrivacyPolicyComponent} from "./privacy-policy/privacy-policy.component";
+import {TermsOfServiceComponent} from "./terms-of-service/terms-of-service.component";
+import { CookieComponent } from './cookie/cookie.component';
 
 
 
@@ -20,7 +24,11 @@ import { HeaderBreadcrumbComponent } from './header-breadcrumb/header-breadcrumb
     FooterComponent,
     PaginationComponent,
     TopBarFilterComponent,
-    HeaderBreadcrumbComponent
+    HeaderBreadcrumbComponent,
+    LoginComponent,
+    PrivacyPolicyComponent,
+    TermsOfServiceComponent,
+    CookieComponent
   ],
     imports: [
         CommonModule,

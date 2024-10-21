@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0F/266+JvrqVrNYm9KDiwFxMtfc7Wbw5vuj6a1E36LA=",
+  "Hash": "t5qKR7ZFmkoUVUORpzJ3BKQx/yTUoUxz9qi2EGuYyZI=",
   "Source": "Api",
   "BasePath": "_content/Api",
   "Mode": "Default",
@@ -2031,12 +2031,12 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Production\\M-sailing\\Api\\wwwroot\\main.2029bb2ff9350971.js",
+      "Identity": "C:\\Production\\M-sailing\\Api\\wwwroot\\main.4f1219fb88493d2b.js",
       "SourceId": "Api",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Production\\M-sailing\\Api\\wwwroot\\",
       "BasePath": "_content/Api",
-      "RelativePath": "main.2029bb2ff9350971.js",
+      "RelativePath": "main.4f1219fb88493d2b.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -2047,7 +2047,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\main.2029bb2ff9350971.js"
+      "OriginalItemSpec": "wwwroot\\main.4f1219fb88493d2b.js"
     },
     {
       "Identity": "C:\\Production\\M-sailing\\Api\\wwwroot\\nt.494210bd57bed316.jpg",

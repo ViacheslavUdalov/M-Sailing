@@ -1,0 +1,47 @@
+using Core.Entities;
+using Core.Entities.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+
+namespace Infrastructure.Data.Identity;
+
+public class AppIdentityDbContext: IdentityDbContext<AppUser, AppRole, int, IdentityUserClaim<int>, AppUserRole, 
+    IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
+{
+    public AppIdentityDbContext(DbContextOptions<AppIdentityDbContext> options) : base(options)
+    {
+    }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+
+        builder.Entity<AppUser>()
+            .HasMany(ur => ur.UserRoles)
+            .WithOne(u => u.User)
+            .HasForeignKey(ur => ur.UserId) 
+            .IsRequired();
+
+        builder.Entity<AppRole>()
+            .HasMany(ur => ur.UserRoles)
+            .WithOne(u => u.Role)
+            .HasForeignKey(ur => ur.UserId) 
+            .IsRequired();
+        
+
+        builder.Entity<AppUserRole>()
+            .HasKey(ur => new { ur.UserId, ur.RoleId });
+        
+        builder.Entity<AppUserRole>()
+            .HasOne(ur => ur.User)
+            .WithMany(u => u.UserRoles)
+            .HasForeignKey(ur => ur.UserId);
+
+        builder.Entity<AppUserRole>()
+            .HasOne(ur => ur.Role)
+            .WithMany(r => r.UserRoles)
+            .HasForeignKey(ur => ur.RoleId);
+
+    }
+}
