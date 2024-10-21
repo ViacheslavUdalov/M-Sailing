@@ -36,8 +36,8 @@ import { OrderSuccessComponent } from './orders/order-success/order-success.comp
         {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
     ],
     bootstrap: [AppComponent],
-    exports: [
-    ],
+  exports: [
+  ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

@@ -46,4 +46,17 @@ public class AccountController : BaseApiController
             PhotoUrl = user.PhotoUrl
         };
     }
+
+    [HttpGet]
+    public async Task<ActionResult<UserDto>> GetCurrentUser()
+    {
+        var user = await _userManager.Users.FirstOrDefaultAsync(u => u.Email == "slava187115@mail.ru");
+        return new UserDto
+        {
+            Email = user.Email,
+            Token = await _tokenService.CreateToken(user),
+            UserName = user.DisplayName,
+            PhotoUrl = user.PhotoUrl
+        };
+    }
 }

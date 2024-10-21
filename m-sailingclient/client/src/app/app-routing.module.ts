@@ -13,31 +13,11 @@ import {HomeComponent} from "./home/home.component";
 import { CreateOrderComponent } from './orders/create-order/create-order.component';
 import { BasketComponent } from './basket/basket/basket.component';
 import { OrderSuccessComponent } from './orders/order-success/order-success.component';
-import {TermsOfServiceComponent} from "./core/terms-of-service/terms-of-service.component";
+import {LoginComponent} from "./core/account/login/login.component";
 import {PrivacyPolicyComponent} from "./core/privacy-policy/privacy-policy.component";
 import {CookieComponent} from "./core/cookie/cookie.component";
+import {TermsOfServiceComponent} from "./core/terms-of-service/terms-of-service.component";
 
-// const routes: Routes = [
-//   {path: '', component: HomeComponent},
-//   {path: 'equipment', component: EquipmentComponent, data: {breadcrumb: "Экипировка"}},
-//   {path: 'equipment/:id',
-//     component: OneequipmentComponent,
-//     resolve: {product: EquipmentResolver},
-//     data: {breadcrumb: (data: Equipment) => `${data.name}`}},
-//   {path: 'covers', component: CoversComponent, data: {breadcrumb: "Чехлы"}},
-//   {path: 'covers/:id', component: OnecoverComponent, resolve: {product: CoversResolver},
-//     data: {breadcrumb: (data: Cover) => `${data.name}`}},
-//   {path: 'armament', component: ArmamentComponent, data: {breadcrumb: "Вооружение"}},
-//   {path: 'armament/:id', component: OnearmamentComponent, resolve: {product: ArmamentResolver},
-//     data: {breadcrumb: (data: Armament) => `${data.name}`}},
-//   {path: 'boats', component: BoatsComponent, data: {breadcrumb: "Яхты"}},
-//   {path: 'boats/:id', component: OneboatComponent, resolve: {product: BoatsResolver},
-//     data: {breadcrumb: (data: Boat) => `${data.name}`}},
-//   { path: 'create-order', component: CreateOrderComponent },
-//   { path: 'basket', component: BasketComponent, data: {breadcrumb: "Корзина" } },
-//   { path: 'order-success', component: OrderSuccessComponent },
-//   {path: '**', redirectTo: '/', pathMatch: "full"}
-// ];
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'equipment', component: EquipmentComponent, data: {breadcrumb: {alias : 'productDetails'}}},
@@ -51,10 +31,10 @@ const routes: Routes = [
   { path: 'create-order', component: CreateOrderComponent },
   { path: 'basket', component: BasketComponent, data: {breadcrumb: "Корзина" } },
   { path: 'order-success', component: OrderSuccessComponent },
-  {path: 'core',
-    loadChildren: () => import('./core/core.module').then(m => m.CoreModule)},
-  {path: 'shop',
-  loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)},
+  { path: 'login', component: LoginComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
+  { path: 'cookie-policy', component: CookieComponent },
+  { path: 'terms-of-service', component: TermsOfServiceComponent },
   {path: '**', redirectTo: '/', pathMatch: "full"}
 ];
 @NgModule({

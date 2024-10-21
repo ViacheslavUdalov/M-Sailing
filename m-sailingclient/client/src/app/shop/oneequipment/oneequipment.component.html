@@ -22,6 +22,7 @@
         <div class="buttons">
           <div class="inside-buttons">
             <button (click)="addItem(equipment)" style="margin-right: 10px">Добавить в Корзину</button>
+            <button routerLink="/edit-equipment" *appHasRole="['Admin']">Редактировать товар</button>
 
             <a class="delete-button" *ngIf="isProductAddedToCart" (click)="removeFromCart(equipment.id)"><span class="material-symbols-outlined">
 delete

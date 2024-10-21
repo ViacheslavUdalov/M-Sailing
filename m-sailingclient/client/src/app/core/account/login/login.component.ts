@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AccountServiceService} from "../account-service.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ToastrService} from "ngx-toastr";
+import {IUser} from "../../../models/IUser";
 
 @Component({
   selector: 'app-login',
@@ -13,11 +14,21 @@ export class LoginComponent {
   loginForm!: FormGroup;
   // returnUrl: string = '';
   error: string = ''
+  user!: IUser | null;
+
   constructor(private accountService: AccountServiceService, private router: Router,
               private activatedRoute: ActivatedRoute, private toastr: ToastrService) {
+    this.accountService.currentUser$.subscribe(user => {
+      this.user = user
+      console.log(this.user)
+      if (this.user) {
+        this.router.navigateByUrl('/')
+      }
+    })
   }
   ngOnInit() {
-    // this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
+    // this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/equipment';
+    // console.log(this.returnUrl)
     this.createLoginForm();
   }
   createLoginForm() {
@@ -28,7 +39,8 @@ export class LoginComponent {
   }
   onSubmit() {
     this.accountService.login(this.loginForm?.value).subscribe((response) => {
-      // this.router.navigateByUrl(this.returnUrl);
+      // console.log(this.returnUrl)
+      this.router.navigateByUrl('/');
       this.toastr.success('Вы успешно вошли в аккаунт!')
     }, error => {
       console.log(error);
