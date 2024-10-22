@@ -76,6 +76,9 @@ public class Startup
             }
             app.UseHttpsRedirection();
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions
             {

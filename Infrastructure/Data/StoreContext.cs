@@ -13,14 +13,21 @@ public class StoreContext : DbContext
     }
 
     public DbSet<Equipment> Equipment { get; set; }
+    public DbSet<ProductVariants> ProductVariants { get; set; }
     public DbSet<Armament> Armament { get; set; }
-    public DbSet<Clothes>  Clothes { get; set; }
     public DbSet<Covers>  Covers { get; set; }
     public DbSet<Boats>  Boats { get; set; }
     public DbSet<CreateOrderData>  Orders { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
+         builder.Entity<Equipment>()
+             .HasMany(p => p.ProductVariants)
+             .WithOne()
+             .HasForeignKey(v => v.ProductId)
+             .OnDelete(DeleteBehavior.Cascade);
+         
+     
         builder.Entity<CreateOrderData>()
             .Property(e => e.OrderDate)
             .HasConversion(new DateTimeOffsetToStringConverter());

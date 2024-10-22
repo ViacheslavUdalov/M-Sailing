@@ -5,38 +5,47 @@
       <img [src]="equipment.pictures" alt="{{ equipment.name }}" class="equipment-image">
       <div class="info">
         <h2 class="name">{{ equipment.name }}</h2>
-        <h3 class="textproduct" style="color: #34be02"><strong>Цена: </strong>  {{ equipment.price }} Руб.</h3>
-        <h3 class="textproduct"><strong>Тип: </strong>  {{ equipment.type }}</h3>
-        <h3 class="textproduct"><strong>Размер: </strong>
-          <div class="sizes-container">
-            <button style=" " class="button-size" *ngFor="let size of equipment.size"
-                    (click)="onSizeChange(size)"
-                    [class.selected]="selectedSize === size">
-              {{ size }}
+        <h3 class="textproduct"><strong style="font-weight: bold">{{ equipment.price }} Руб.</strong></h3>
+        <h3 class="textproduct"><strong>Тип товара: </strong>  {{ equipment.type }}</h3>
+<!--        <h3 class="textproduct"><strong>Размер: </strong>-->
+          <div style="margin-top: 40px" *ngIf="equipment.productVariants && equipment.productVariants.length > 0" >
+            <button style="" class="button-size" *ngFor="let variant of equipment.productVariants"
+                    (click)="onSizeChange(variant.size)"
+                    [class.selected]="selectedSize === variant.size"
+                    [class.disable]="variant.quantity === 0"
+                    [disabled]="variant.quantity === 0">
+              <span *appHasRole="['Admin']">{{variant.quantity}} шт. </span>
+              <strong>{{ variant.size }}</strong>
             </button>
           </div>
-        </h3>
-        <h3  class="textproduct"><strong>Цвета: </strong>  {{ equipment.color }} <span *ngIf="!equipment.color">Для данного товара имеется один цвет.</span></h3>
+<!--        </h3>-->
+
         <h3 class="textproduct"><strong>Наличие товара: </strong>  <span [class.green]="equipment.typeForBuy === 'Есть в наличии'"
                                                                          [class.red]="equipment.typeForBuy === 'Под заказ'">{{ equipment.typeForBuy }}</span></h3>
         <div class="buttons">
           <div class="inside-buttons">
-            <button (click)="addItem(equipment)" style="margin-right: 10px">Добавить в Корзину</button>
-            <button routerLink="/edit-equipment" *appHasRole="['Admin']">Редактировать товар</button>
+            <button (click)="addItem(equipment)" class="addToCart">Добавить в Корзину</button>
 
             <a class="delete-button" *ngIf="isProductAddedToCart" (click)="removeFromCart(equipment.id)"><span class="material-symbols-outlined">
 delete
 </span></a>
+
           </div>
-          <span>Количество данного товара в корзине : {{quantityInBasket}}</span>
+          <span>Количество данного товара в корзине: <strong>{{quantityInBasket}}</strong> - Редактировать количество Вы сможете перейдя в корзину  </span><br>
           <a routerLink="/basket" style="font-size: smaller; margin-top: 5px">Перейти в корзину</a>
+          <div style="margin: 10px; display: flex; flex-direction: column;">
+            <a class="edit" [routerLink] = "['/create-equipment', equipment.id]" *appHasRole="['Admin']">Редактировать товар</a>
+            <a class="edit" *appHasRole="['Admin']">Удалить(товар будет полностью удалён)</a>
+
+          </div>
+
         </div>
 
 
       </div>
     </div>
-    <div >
-      <p class="description"><strong>Описание:</strong><br> {{ equipment.description }}</p>
+    <div class="description">
+      <p ><strong style="margin-bottom: 10px">Описание:</strong><br> {{ equipment.description }}</p>
     </div>
     <div>
       <app-size-table></app-size-table>
@@ -46,3 +55,4 @@ delete
   </div>
 
 </div>
+

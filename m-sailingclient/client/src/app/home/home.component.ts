@@ -32,15 +32,15 @@ armament: Armament[] = []
     ]);
       this.shopService.getRandomEquipment().subscribe(data => {
       this.equipments = data
-      console.log(this.equipments)
+      // console.log(this.equipments)
     })
     this.shopService.getRandomArmament().subscribe(data => {
       this.armament = data
-      console.log(this.armament)
+      // console.log(this.armament)
     })
     this.shopService.getBoats().subscribe(data => {
       this.boats = data.data.slice(0, 4)
-      console.log(this.boats)
+      // console.log(this.boats)
     })
     this.loadDiscountProduct()
     }

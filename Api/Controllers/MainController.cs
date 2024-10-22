@@ -119,22 +119,7 @@ public class MainController: BaseApiController
         return Ok(
             new Pagination<Boats>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
     }
-    [HttpGet("clothes")]
-    public async Task<ActionResult<Pagination<Clothes>>> GetAllClothes([FromQuery] ProductSpecParams productSpecParams)
-    {
-        productSpecParams.TypeForBuy = productSpecParams.TypeForBuy?.Replace(".", " ");
-        productSpecParams.Type = productSpecParams.Type?.Replace(".", " ");
-        var spec = new ProductsWithFilterSpec<Clothes>(productSpecParams);
-        var countSpec = new ProductsWithFiltersCountSpec<Clothes>(productSpecParams);
-        var totalItems = await _productsRepository.CountClothesAsync(countSpec);
-        var products = await _productsRepository.ListClothesWithSpecAsync(spec);
-        foreach (var product in products)
-        {
-            product.Pictures = _urlResolver.Resolve(product.Pictures);
-        }
-        return Ok(
-            new Pagination<Clothes>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
-    }
+   
     
     [HttpGet("equipment/{id}")]
     public async Task<ActionResult<Equipment>> GetOneEquipment(int id)
@@ -159,18 +144,7 @@ public class MainController: BaseApiController
         }
         return Ok(boat);
     }
-      
-    [HttpGet("clothes/{id}")]
-    public async Task<ActionResult<Clothes>> GetOneClothes(int id)
-    {
-        var clothes = await _productsRepository.GetClothesByIdAsync(id);
-        clothes.Pictures = _urlResolver.Resolve(clothes.Pictures);
-        if (clothes == null)
-        {
-            return NotFound();
-        }
-        return Ok(clothes);
-    }
+    
     [HttpGet("armament/{id}")]
     public async Task<ActionResult<Armament>> GetOneArmament(int id)
     {

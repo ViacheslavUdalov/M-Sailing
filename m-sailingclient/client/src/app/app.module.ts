@@ -13,6 +13,7 @@ import { CreateOrderComponent } from './orders/create-order/create-order.compone
 import { BasketComponent } from './basket/basket/basket.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrderSuccessComponent } from './orders/order-success/order-success.component';
+import {JwtInterceptor} from "./interceptor/jwt-interceptor";
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import { OrderSuccessComponent } from './orders/order-success/order-success.comp
         ReactiveFormsModule
     ],
     providers: [
-        {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true}
+        {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},
+      {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     ],
     bootstrap: [AppComponent],
   exports: [

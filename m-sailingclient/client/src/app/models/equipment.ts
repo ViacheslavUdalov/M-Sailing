@@ -1,11 +1,12 @@
+import {ProductVariant} from "./ProductVariant";
+
 export interface Equipment {
   id: number,
-    name: string,
+  name: string,
   price: number,
   description: string,
   type: string,
-  size: string[],
-  color: string,
+  productVariants: ProductVariant[];
   pictures: string,
   typeForBuy: string
 }

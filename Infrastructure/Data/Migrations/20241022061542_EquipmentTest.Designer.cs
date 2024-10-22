@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20240601065042_Postgres initial")]
-    partial class Postgresinitial
+    [Migration("20241022061542_EquipmentTest")]
+    partial class EquipmentTest
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -108,48 +108,6 @@ namespace Infrastructure.Data.Migrations
                     b.ToTable("Boats");
                 });
 
-            modelBuilder.Entity("Core.Entities.Clothes", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string[]>("Colors")
-                        .HasColumnType("text[]");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Pictures")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("double precision");
-
-                    b.Property<string[]>("Size")
-                        .HasColumnType("text[]");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("TypeForBuy")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Clothes");
-                });
-
             modelBuilder.Entity("Core.Entities.Covers", b =>
                 {
                     b.Property<int>("Id")
@@ -228,9 +186,6 @@ namespace Infrastructure.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string[]>("Colors")
-                        .HasColumnType("text[]");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -246,9 +201,6 @@ namespace Infrastructure.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
 
-                    b.Property<string[]>("Size")
-                        .HasColumnType("text[]");
-
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("text");
@@ -260,6 +212,34 @@ namespace Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Equipment");
+                });
+
+            modelBuilder.Entity("Core.Entities.ProductVariants", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Color")
+                        .HasColumnType("text");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Size")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductVariants");
                 });
 
             modelBuilder.Entity("Core.Entities.CreateOrderData", b =>
@@ -339,6 +319,22 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("ProductToCreateOrder");
+                });
+
+            modelBuilder.Entity("Core.Entities.ProductVariants", b =>
+                {
+                    b.HasOne("Core.Entities.Equipment", "Equipment")
+                        .WithMany("ProductVariants")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Equipment");
+                });
+
+            modelBuilder.Entity("Core.Entities.Equipment", b =>
+                {
+                    b.Navigation("ProductVariants");
                 });
 #pragma warning restore 612, 618
         }

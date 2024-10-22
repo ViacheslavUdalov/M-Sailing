@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class Postgresinitial : Migration
+    public partial class EquipmentTest : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -52,26 +52,6 @@ namespace Infrastructure.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Clothes",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Description = table.Column<string>(type: "text", nullable: false),
-                    Size = table.Column<string[]>(type: "text[]", nullable: true),
-                    Colors = table.Column<string[]>(type: "text[]", nullable: true),
-                    Name = table.Column<string>(type: "text", nullable: false),
-                    Type = table.Column<string>(type: "text", nullable: false),
-                    TypeForBuy = table.Column<string>(type: "text", nullable: false),
-                    Price = table.Column<double>(type: "double precision", nullable: false),
-                    Pictures = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Clothes", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Covers",
                 columns: table => new
                 {
@@ -98,8 +78,6 @@ namespace Infrastructure.Data.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Description = table.Column<string>(type: "text", nullable: false),
-                    Size = table.Column<string[]>(type: "text[]", nullable: true),
-                    Colors = table.Column<string[]>(type: "text[]", nullable: true),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Type = table.Column<string>(type: "text", nullable: false),
                     TypeForBuy = table.Column<string>(type: "text", nullable: false),
@@ -133,6 +111,28 @@ namespace Infrastructure.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProductVariants",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Size = table.Column<string>(type: "text", nullable: false),
+                    Color = table.Column<string>(type: "text", nullable: true),
+                    Quantity = table.Column<int>(type: "integer", nullable: false),
+                    ProductId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductVariants", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductVariants_Equipment_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Equipment",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ProductToCreateOrder",
                 columns: table => new
                 {
@@ -156,6 +156,11 @@ namespace Infrastructure.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ProductVariants_ProductId",
+                table: "ProductVariants",
+                column: "ProductId");
         }
 
         /// <inheritdoc />
@@ -168,19 +173,19 @@ namespace Infrastructure.Data.Migrations
                 name: "Boats");
 
             migrationBuilder.DropTable(
-                name: "Clothes");
-
-            migrationBuilder.DropTable(
                 name: "Covers");
-
-            migrationBuilder.DropTable(
-                name: "Equipment");
 
             migrationBuilder.DropTable(
                 name: "ProductToCreateOrder");
 
             migrationBuilder.DropTable(
+                name: "ProductVariants");
+
+            migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Equipment");
         }
     }
 }

@@ -16,7 +16,8 @@ namespace Infrastructure.Data
 
         public async Task<Equipment> GetEquipByIdAsync(int id)
         {
-            return await _context.Equipment.FindAsync(id);
+            return await _context.Equipment.Include(p => p.ProductVariants)
+                .FirstOrDefaultAsync(p => p.Id == id);
         }
 
         public async Task<Armament> GetArmamByIdAsync(int id)
@@ -29,11 +30,7 @@ namespace Infrastructure.Data
             return await _context.Covers.FindAsync(id);
         }
 
-        public async Task<Clothes> GetClothesByIdAsync(int id)
-        {
-            return await _context.Clothes.FindAsync(id);
-        }
-
+      
         public async Task<Boats> GetBoatsByIdAsync(int id)
         {
             return await _context.Boats.FindAsync(id);
@@ -48,11 +45,7 @@ namespace Infrastructure.Data
         {
             return await ApplySpecification(specification, _context.Armament).ToListAsync();
         }
-
-        public async Task<IReadOnlyList<Clothes>> ListClothesWithSpecAsync(ISpecification<Clothes> specification)
-        {
-            return await ApplySpecification(specification, _context.Clothes).ToListAsync();
-        }
+        
 
         public async Task<IReadOnlyList<Covers>> ListCoversWithSpecAsync(ISpecification<Covers> specification)
         {
@@ -73,11 +66,7 @@ namespace Infrastructure.Data
         {
             return await ApplySpecification(specification, _context.Armament).CountAsync();
         }
-
-        public async Task<int> CountClothesAsync(ISpecification<Clothes> specification)
-        {
-            return await ApplySpecification(specification, _context.Clothes).CountAsync();
-        }
+        
 
         public async Task<int> CountCoversAsync(ISpecification<Covers> specification)
         {

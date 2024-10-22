@@ -14,6 +14,8 @@ import {TermsOfServiceComponent} from "./terms-of-service/terms-of-service.compo
 import { CookieComponent } from './cookie/cookie.component';
 import { CoreRoutingModule } from './core-routing.module';
 import {ToastrModule} from "ngx-toastr";
+import { CreateEquipComponent } from './create-edite-products/create-equip/create-equip.component';
+import {SharedModule} from "../shared/shared.module";
 
 
 
@@ -28,7 +30,8 @@ import {ToastrModule} from "ngx-toastr";
     LoginComponent,
     PrivacyPolicyComponent,
     TermsOfServiceComponent,
-    CookieComponent
+    CookieComponent,
+    CreateEquipComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +44,8 @@ import {ToastrModule} from "ngx-toastr";
       positionClass: 'toast-bottom-right',
       preventDuplicates: true
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [

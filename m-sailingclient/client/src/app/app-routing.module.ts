@@ -17,6 +17,8 @@ import {LoginComponent} from "./core/account/login/login.component";
 import {PrivacyPolicyComponent} from "./core/privacy-policy/privacy-policy.component";
 import {CookieComponent} from "./core/cookie/cookie.component";
 import {TermsOfServiceComponent} from "./core/terms-of-service/terms-of-service.component";
+import {CreateEquipComponent} from "./core/create-edite-products/create-equip/create-equip.component";
+import {AuthAdminGuard} from "./guards/auth-admin.guard";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -35,6 +37,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'cookie-policy', component: CookieComponent },
   { path: 'terms-of-service', component: TermsOfServiceComponent },
+  { path: 'create-equipment/:id', canActivate: [AuthAdminGuard], component: CreateEquipComponent },
   {path: '**', redirectTo: '/', pathMatch: "full"}
 ];
 @NgModule({

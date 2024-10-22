@@ -33,17 +33,21 @@ public class StoreContextSeed
                 foreach (var item in types)
                 {
                     context.Equipment.Add(item);
-                }
-
-                await context.SaveChangesAsync();
-            }
-            if (!context.Clothes.Any())
-            {
-                var productsData = File.ReadAllText(path + @"/Data/SeedData/clothes.json");
-                var products = JsonSerializer.Deserialize<List<Clothes>>(productsData);
-                foreach (var item in products)
-                {
-                    context.Clothes.Add(item);
+                    await context.SaveChangesAsync();
+                    Console.WriteLine(item.ProductVariants);
+                    if (item.ProductVariants != null && item.ProductVariants.Count > 0)
+                    {
+                        Console.WriteLine(item.ProductVariants);
+                        foreach (var variant in item.ProductVariants)
+                        {
+                            Console.WriteLine(variant);
+                            variant.ProductId = item.Id;
+                            if (!context.ProductVariants.Any(v => v.Size == variant.Size && v.ProductId == variant.ProductId))
+                            {
+                                context.ProductVariants.Add(variant);
+                            }
+                        }
+                    }
                 }
 
                 await context.SaveChangesAsync();

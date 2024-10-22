@@ -15,7 +15,9 @@ export class AuthAdminGuard implements CanActivate {
   canActivate(): Observable<boolean> {
     return this.accountService.currentUser$.pipe(
       map(user => {
-        if (user.roles.includes("Admin")) {
+        console.log('guard User =>')
+        console.log(user)
+        if (user?.roles.includes("Admin")) {
           return true;
         }
         this.toastr.error("Нет доступа.")

@@ -45,7 +45,7 @@ public class AdminProductsController : BaseApiController
     
     
     [Authorize(Policy = "RequireAdminRole")]
-    [HttpPut("delete-equip/{id}")]
+    [HttpDelete("delete-equip/{id}")]
     public async Task<ActionResult> DeleteEquip(int id)
     {
        var success = await _adminProductsRepository.DeleteEq(id);

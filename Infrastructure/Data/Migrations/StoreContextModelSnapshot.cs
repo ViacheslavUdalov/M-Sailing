@@ -105,48 +105,6 @@ namespace Infrastructure.Data.Migrations
                     b.ToTable("Boats");
                 });
 
-            modelBuilder.Entity("Core.Entities.Clothes", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string[]>("Colors")
-                        .HasColumnType("text[]");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Pictures")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<double>("Price")
-                        .HasColumnType("double precision");
-
-                    b.Property<string[]>("Size")
-                        .HasColumnType("text[]");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("TypeForBuy")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Clothes");
-                });
-
             modelBuilder.Entity("Core.Entities.Covers", b =>
                 {
                     b.Property<int>("Id")
@@ -225,9 +183,6 @@ namespace Infrastructure.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string[]>("Colors")
-                        .HasColumnType("text[]");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -243,9 +198,6 @@ namespace Infrastructure.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
 
-                    b.Property<string[]>("Size")
-                        .HasColumnType("text[]");
-
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("text");
@@ -257,6 +209,31 @@ namespace Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Equipment");
+                });
+
+            modelBuilder.Entity("Core.Entities.ProductVariants", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Size")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductVariants");
                 });
 
             modelBuilder.Entity("Core.Entities.CreateOrderData", b =>
@@ -336,6 +313,20 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("ProductToCreateOrder");
+                });
+
+            modelBuilder.Entity("Core.Entities.ProductVariants", b =>
+                {
+                    b.HasOne("Core.Entities.Equipment", null)
+                        .WithMany("ProductVariants")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Core.Entities.Equipment", b =>
+                {
+                    b.Navigation("ProductVariants");
                 });
 #pragma warning restore 612, 618
         }

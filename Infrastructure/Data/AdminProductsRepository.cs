@@ -44,13 +44,22 @@ public class AdminProductsRepository : IAdminProductsRepository
        {
            return null;
        }
-       
-       _context.Entry(equip).CurrentValues.SetValues(equipment);
+
+       var trackedEntity = _context.Set<Equipment>().Local.FirstOrDefault(e => e.Id == equip.Id);
+       if (trackedEntity != null)
+       {
+           _context.Entry(equip).CurrentValues.SetValues(equipment);
            //Этот вызов берёт все значения из updatedEquipment и копирует их в существующий объект existingEquipment.
            //Entity Framework Core автоматически пометит изменённые поля и обновит их при сохранении.
+       }
+       else
+       {
+           _context.Set<Equipment>().Attach(equip);
+           _context.Entry(equip).State = EntityState.Modified;
+       }
            
         await _context.SaveChangesAsync();
-        return equipment;
+        return equip;
     }
 
     public Task<Armament> UpdateAr(Armament armament)

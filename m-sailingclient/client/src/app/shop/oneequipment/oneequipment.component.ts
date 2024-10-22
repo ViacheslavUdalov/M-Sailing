@@ -8,6 +8,7 @@ import { BasketService } from 'src/app/basket/basket.service';
 import {Meta, Title } from '@angular/platform-browser';
 import {DOCUMENT} from "@angular/common";
 import {BreadcrumbService} from "xng-breadcrumb";
+import {ProductVariant} from "../../models/ProductVariant";
 
 @Component({
   selector: 'app-oneequipment',
@@ -87,7 +88,7 @@ export class OneequipmentComponent implements OnInit{
         // this.bcService.set('@productDetails', `${parentRoute}/${this.equipment?.name}`)
 
       })
-      this.selectedSize = data.size[0];
+      // this.selectedSize = data.size[0];
       this.titleService.setTitle(`M-sailing | Купить ${this.equipment.name}`);
       this.metaService.addTags([
         { name: 'description', content: `Интернет-магазин парусной экипировки и одежды для яхтинга. ${this.equipment.name}.` },
@@ -102,6 +103,10 @@ export class OneequipmentComponent implements OnInit{
     this.shopService.getRandomEquipment().subscribe(data => {
       this.addition = data;
     })
+  }
+  getColorStyle(color: string): string {
+    // Можно вернуть цвет как стиль или просто отобразить цвет текстом
+    return color.toLowerCase(); // Преобразование цвета в нижний регистр (если это требуется)
   }
   addItem(product : Equipment) {
     let productForOrder : ProductToCreateOrderWithId = {
@@ -123,6 +128,12 @@ export class OneequipmentComponent implements OnInit{
   }
   checkoutQuantity(id: number) {
     this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
+  }
+  isLastVariant(variant: ProductVariant) {
+    if (!this.equipment || !this.equipment.productVariants) {
+      return false; // Если нет данных, возвращаем false
+    }
+    return this.equipment?.productVariants.indexOf(variant) === this.equipment?.productVariants?.length - 1
   }
   removeFromCart(productId: number) {
     this.basketService.removeFromCart(productId);
