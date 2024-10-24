@@ -20,6 +20,8 @@ export class ProductAdminService {
   updateProduct(productId: number, product: Equipment): Observable<Equipment> {
     console.log('productService => 0000000000000000000')
     console.log(productId)
+    console.log(product)
+    product.id = productId
     return this.http.put<Equipment>(this.baseUrl + `adminproducts/update-equip/${productId}`, product, {
       withCredentials: true
     });

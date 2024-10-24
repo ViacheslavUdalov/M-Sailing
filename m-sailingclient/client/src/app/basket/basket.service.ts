@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import {CartItem, ProductToCreateOrder, ProductToCreateOrderWithId } from '../models/OrdersModels';
+import {ProductVariant} from "../models/ProductVariant";
 
 @Injectable({
   providedIn: 'root'
@@ -30,33 +31,33 @@ constructor() {
     }
   }
 
-  decreaseQuantity(productId: number) {
+  decreaseQuantity(productId: number, size?: string) {
     const index = this.cartItems.findIndex(item => item.product.id === productId);
     if (index !== -1 && this.cartItems[index].quantity > 1) {
       this.cartItems[index].quantity -= 1;
       this.cartItemsSubject.next(this.cartItems);
       this.saveCartToLocalStorage();
     } else if (index !== -1 && this.cartItems[index].quantity === 1) {
-      this.removeFromCart(productId);
+      this.removeFromCart(productId, size);
     }
   }
   getCartItems() {
     return this.cartItemsSubject.asObservable();
   }
-isProductInCart(id : number) {
-return   this.cartItems.some(c => c.product.id === id);
+isProductInCart(id : number, variant?: ProductVariant) {
+return   this.cartItems.some(c => c.product.id === id && c.product.size == variant?.size);
 }
 getQuantityOfProduct(id : number) {
   let products = this.cartItems.find(c => c.product.id == id);
  if (products) {
    console.log(products.quantity)
    return products.quantity
- 
+
  }
  return 0;
 }
   addToCart(product: ProductToCreateOrderWithId, quantity: number = 1) {
-    const index = this.cartItems.findIndex(item => item.product.id === product.id);
+    const index = this.cartItems.findIndex(item => item.product.id === product.id && item.product.size === product.size);
     if (index !== -1) {
       this.cartItems[index].quantity += quantity;
     } else {
@@ -66,8 +67,8 @@ getQuantityOfProduct(id : number) {
     this.saveCartToLocalStorage();
   }
 
-  removeFromCart(productId: number) {
-    this.cartItems = this.cartItems.filter(item => item.product.id !== productId);
+  removeFromCart(productId: number, variant?: string) {
+    this.cartItems = this.cartItems.filter(item => item.product.id !== productId && item.product.size === variant);
     this.cartItemsSubject.next(this.cartItems);
     this.saveCartToLocalStorage();
   }

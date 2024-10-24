@@ -9,6 +9,7 @@ import {Meta, Title } from '@angular/platform-browser';
 import {DOCUMENT} from "@angular/common";
 import {BreadcrumbService} from "xng-breadcrumb";
 import {ProductVariant} from "../../models/ProductVariant";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-oneequipment',
@@ -22,13 +23,14 @@ export class OneequipmentComponent implements OnInit{
   id: string = '';
   quantityInBasket: number = 0;
   isProductAddedToCart: boolean = false;
-  selectedSize: string = '';
+  selectedSize!: ProductVariant;
   constructor(@Inject(DOCUMENT) private document: Document,
               private shopService: ShopService,
               private activeRouter: ActivatedRoute,
               private basketService: BasketService,
               private metaService: Meta, private titleService: Title,
-              private bcService: BreadcrumbService) {
+              private bcService: BreadcrumbService,
+              private toastr: ToastrService) {
   this.bcService.set('@productDetails', '')
   }
 
@@ -104,10 +106,7 @@ export class OneequipmentComponent implements OnInit{
       this.addition = data;
     })
   }
-  getColorStyle(color: string): string {
-    // Можно вернуть цвет как стиль или просто отобразить цвет текстом
-    return color.toLowerCase(); // Преобразование цвета в нижний регистр (если это требуется)
-  }
+
   addItem(product : Equipment) {
     let productForOrder : ProductToCreateOrderWithId = {
       id : product.id,
@@ -115,19 +114,27 @@ export class OneequipmentComponent implements OnInit{
       price : product.price,
       pictures : product.pictures,
       quantity: 1,
-      size: this.selectedSize
+      size: this.selectedSize.size
     }
     console.log(productForOrder)
+    if (this.selectedSize) {
+      this.updateRemoveButtonVisibility(Number(product.id), this.selectedSize)
+    } else {
+      this.toastr.error("Не удалось добавить в корзину")
+      return
+    }
     this.basketService.addToCart(productForOrder, productForOrder.quantity);
-    this.updateRemoveButtonVisibility(Number(product.id))
     this.checkoutQuantity(Number(product.id))
+    this.toastr.success("Товар добавлен в корзину!")
   }
-  onSizeChange(selectedSize: string) {
+  onSizeChange(selectedSize: ProductVariant) {
     this.selectedSize = selectedSize;
     console.log('Selected size:', selectedSize);
   }
   checkoutQuantity(id: number) {
     this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
+      if (this.quantityInBasket === this.selectedSize?.quantity) {
+      }
   }
   isLastVariant(variant: ProductVariant) {
     if (!this.equipment || !this.equipment.productVariants) {
@@ -136,15 +143,21 @@ export class OneequipmentComponent implements OnInit{
     return this.equipment?.productVariants.indexOf(variant) === this.equipment?.productVariants?.length - 1
   }
   removeFromCart(productId: number) {
-    this.basketService.removeFromCart(productId);
-    this.updateRemoveButtonVisibility(productId)
+    if (this.selectedSize) {
+      this.updateRemoveButtonVisibility(productId, this.selectedSize )
+    } else {
+      this.toastr.error("Не удалось удалить из корзины")
+      return
+    }
+    this.basketService.removeFromCart(productId, this.selectedSize.size);
     this.checkoutQuantity(productId)
+    this.toastr.success("Товар удалён из корзины!")
   }
   clearCart() {
     this.basketService.clearCart()
   }
-  updateRemoveButtonVisibility(productId: number) {
-    this.isProductAddedToCart = this.basketService.isProductInCart(productId);
+  updateRemoveButtonVisibility(productId: number, variant: ProductVariant) {
+    this.isProductAddedToCart = this.basketService.isProductInCart(productId, variant);
   }
   clickToTop() {
     window.scroll({

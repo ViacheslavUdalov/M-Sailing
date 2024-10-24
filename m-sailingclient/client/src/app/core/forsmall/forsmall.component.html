@@ -17,7 +17,7 @@ shopping_cart
   <div [ngClass]="{'menuActive': isOpen, 'menu': !isOpen}" id="menu">
 
   <div class="menuContent">
-    <div *ngIf='isOpen'(click)="setIsOpen($event)" class="menuBtn" style="margin-top: 20px; scale: 1.2">
+      <div *ngIf='isOpen'(click)="setIsOpen($event)" class="menuBtn" style="margin-top: 20px; scale: 1.2">
  <span class="material-symbols-outlined">
 close
 </span>
@@ -28,7 +28,6 @@ close
 <a class='NavLinks' routerLink='/' (click)="setIsOpen($event)"  routerLinkActive="active">Главная</a>
 <a class='NavLinks' routerLink='/equipment' (click)="setIsOpen($event)" routerLinkActive="active">Экипировка</a>
 <a class='NavLinks' routerLink='/armament'  (click)="setIsOpen($event)" routerLinkActive="active">Вооружение</a>
-  <a class='NavLinks' routerLink='/covers'  (click)="setIsOpen($event)" routerLinkActive="active">Чехлы</a>
 <!--  <a class='NavLinks' routerLink='/clothes'  (click)="setIsOpen($event)" routerLinkActive="active">Повседневная одежда</a>-->
     <a class="NavLinks" routerLink="/boats"  (click)="setIsOpen($event)" routerLinkActive="active">Комплект вооружения Ilca</a>
 

@@ -15,7 +15,6 @@ public class StoreContext : DbContext
     public DbSet<Equipment> Equipment { get; set; }
     public DbSet<ProductVariants> ProductVariants { get; set; }
     public DbSet<Armament> Armament { get; set; }
-    public DbSet<Covers>  Covers { get; set; }
     public DbSet<Boats>  Boats { get; set; }
     public DbSet<CreateOrderData>  Orders { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)

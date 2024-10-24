@@ -5,8 +5,6 @@ import {OneboatComponent} from "./shop/oneboat/oneboat.component";
 import {BoatsComponent} from "./shop/boats/boats.component";
 import {OnearmamentComponent} from "./shop/onearmament/onearmament.component";
 import {ArmamentComponent} from "./shop/armament/armament.component";
-import {OnecoverComponent} from "./shop/onecover/onecover.component";
-import {CoversComponent} from "./shop/covers/covers.component";
 import {OneequipmentComponent} from "./shop/oneequipment/oneequipment.component";
 import {EquipmentComponent} from "./shop/equipment/equipment.component";
 import {HomeComponent} from "./home/home.component";
@@ -24,9 +22,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'equipment', component: EquipmentComponent, data: {breadcrumb: {alias : 'productDetails'}}},
   {path: 'equipment/:id', component: OneequipmentComponent, data: {breadcrumb: {alias : 'productDetails'}}},
-  {path: 'covers', component: CoversComponent, data: {breadcrumb: {alias : 'productDetails'}}},
-  {path: 'covers/:id', component: OnecoverComponent, data: {breadcrumb: {alias : 'productDetails'}}},
-  {path: 'armament', component: ArmamentComponent, data: {breadcrumb: {alias : 'productDetails'}}},
+ {path: 'armament', component: ArmamentComponent, data: {breadcrumb: {alias : 'productDetails'}}},
   {path: 'armament/:id', component: OnearmamentComponent,data: {breadcrumb: {alias : 'productDetails'}}},
   {path: 'boats', component: BoatsComponent, data: {breadcrumb: {alias : 'productDetails'}}},
   {path: 'boats/:id', component: OneboatComponent, data: {breadcrumb: {alias : 'productDetails'}}},
@@ -38,6 +34,7 @@ const routes: Routes = [
   { path: 'cookie-policy', component: CookieComponent },
   { path: 'terms-of-service', component: TermsOfServiceComponent },
   { path: 'create-equipment/:id', canActivate: [AuthAdminGuard], component: CreateEquipComponent },
+  { path: 'create-equipment', canActivate: [AuthAdminGuard], component: CreateEquipComponent },
   {path: '**', redirectTo: '/', pathMatch: "full"}
 ];
 @NgModule({

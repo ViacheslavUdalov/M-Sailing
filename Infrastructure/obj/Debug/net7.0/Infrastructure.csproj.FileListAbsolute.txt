@@ -16,6 +16,4 @@ C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastructure.sourcelin
 C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastr.15EFFBFE.Up2Date
 C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\armament.json
 C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\boats.json
-C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\clothes.json
-C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\covers.json
 C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\equipment.json

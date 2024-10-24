@@ -321,5 +321,37 @@
     "Price": 10910,
     "Pictures": "assets/productsimages/vangblockrons.jpg",
     "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Чехол Devoti Sailing",
+    "Type": "чехлы",
+    "Description": "Прочный водонепроницаемый чехол",
+    "Price": 18885,
+    "Pictures": "assets/productsimages/top.jpg",
+    "TypeForBuy": "Под заказ"
+  },
+  {
+    "Name": "Чехол Devoti Sailing",
+    "Type": "чехлы",
+    "Description": "Прочный водонепроницаемый чехол",
+    "Price": 18885,
+    "Pictures": "assets/productsimages/bottom.jpg",
+    "TypeForBuy": "Под заказ"
+  },
+  {
+    "Name": "Чехол Devoti Sailing",
+    "Type": "чехлы",
+    "Description": "Прочный водонепроницаемый чехол",
+    "Price": 13468,
+    "Pictures": "assets/productsimages/keel.jpg",
+    "TypeForBuy": "Под заказ"
+  },
+  {
+    "Name": "Чехол Ovington",
+    "Type": "чехлы",
+    "Description": "Самые надежные чехлы фирмы Ovington для перьев Лазера с защитой от ультрафиолета и падений. С таким чехлом руль со швертом будут чувствовать себя как дома. Идеально подходит для транспортировки и хранения.",
+    "Price": 13468,
+    "Pictures": "assets/productsimages/forruleOvington.jpg",
+    "TypeForBuy": "Под заказ"
   }
 ]

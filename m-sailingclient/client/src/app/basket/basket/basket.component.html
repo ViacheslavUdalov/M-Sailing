@@ -10,14 +10,14 @@
     <div class="product-quantity">Количество: {{ item.quantity }}</div>
     <div class="plus-minus">
       <button (click)="increaseQuantity(item.product.id)">+</button>
-      <button (click)="decreaseQuantity(item.product.id)">-</button>
+      <button (click)="decreaseQuantity(item.product.id, item.product.size)">-</button>
     </div>
-    <button (click)="removeFromCart(item.product.id)">Удалить</button>
+    <button (click)="removeFromCart(item.product.id, item.product.size)">Удалить</button>
     </div>
 </div>
 <h4 style="text-align: center">Итоговая Сумма заказа (Без учёта доставки) - {{totalPrice}} ₽</h4>
 <div class="clear-cart-container" *ngIf="cartItems.length !== 0">
-  
+
   <a routerLink="/create-order" *ngIf="cartItems.length !== 0" class="follow-to-order">Перейти к оформлению заказа</a>
 
   <button (click)="clearCart()" class="clear-cart-button">Очистить корзину</button>

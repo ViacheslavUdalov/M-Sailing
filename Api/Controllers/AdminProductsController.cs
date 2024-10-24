@@ -33,13 +33,13 @@ public class AdminProductsController : BaseApiController
     [HttpPut("update-equip/{id}")]
     public async Task<ActionResult<Equipment>> UpdateEquip(Equipment equipment)
     {
-        var equip = await _adminProductsRepository.UpdateEq(equipment);
+        Console.WriteLine(equipment);
+        var equip = await _adminProductsRepository.UpdateEq(equipment.Id, equipment);
         if (equip == null)
         {
             return BadRequest("Не найдены данные.");
         }
         
-       
         return Ok(equip);
     }
     

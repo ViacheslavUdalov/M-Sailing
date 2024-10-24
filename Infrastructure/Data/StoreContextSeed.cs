@@ -52,17 +52,6 @@ public class StoreContextSeed
 
                 await context.SaveChangesAsync();
             }
-            if (!context.Covers.Any())
-            {
-                var dmData = File.ReadAllText(path + @"/Data/SeedData/covers.json");
-                var methods = JsonSerializer.Deserialize<List<Covers>>(dmData);
-                foreach (var item in methods)
-                {
-                    context.Covers.Add(item);
-                }
-
-                await context.SaveChangesAsync();
-            }
             if (!context.Boats.Any())
             {
                 var dmData = File.ReadAllText(path + @"/Data/SeedData/boats.json");

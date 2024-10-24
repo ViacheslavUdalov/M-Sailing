@@ -27,7 +27,8 @@ public class CreateOrderController : BaseApiController
         if (createOrderData == null)
         {
             return BadRequest("Товар не найден.");
-        }
+        } 
+        Console.WriteLine(createOrderData);
         createOrderData.GetPrice();
         await _orderRepository.AddAsync(createOrderData);
         await _emailService.SendEmail(createOrderData);

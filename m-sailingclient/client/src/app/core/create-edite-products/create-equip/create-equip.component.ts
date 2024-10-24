@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute} from "@angular/router";
 import {ProductAdminService} from "../product-admin.service";
 import {Equipment} from "../../../models/equipment";
@@ -13,12 +13,13 @@ import {ToastrService} from "ngx-toastr";
 export class CreateEquipComponent implements OnInit {
 
   productForm!: FormGroup;
-  productId!: string; // Переменная для хранения ID товара
-  isEditMode = false; // Флаг, чтобы знать, редактирование это или создание
-
+  productId!: string;
+  isEditMode = false;
+  typeForBuy!: string;
+  count = 0;
   constructor(
     private fb: FormBuilder,
-    private route: ActivatedRoute, // Для доступа к параметрам маршрута
+    private route: ActivatedRoute,
     private productAdminService: ProductAdminService,
     private productService: ShopService,
     private toastr: ToastrService
@@ -27,74 +28,94 @@ export class CreateEquipComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
 
-    // Получаем ID из параметров URL
     this.route.paramMap.subscribe(params => {
       this.productId = params.get('id') || 'Empty';
-      console.log("!!!!!!!!!!!!!!! ProductID !!!!!!!!!!!!")
-      console.log(this.productId)// Получаем ID из URL
+      // console.log("!!!!!!!!!!!!!!! ProductID !!!!!!!!!!!!")
+      // console.log(this.productId)// Получаем ID из URL
       if (this.productId) {
         this.isEditMode = true; // Устанавливаем флаг редактирования
         this.loadProduct(Number(this.productId)); // Загружаем данные товара для редактирования
       }
     });
+    this.productVariants.controls.forEach(control => {
+      this.subscribeToQuantity(control);
+    });
+    this.updateCount();
   }
 
-  // Инициализация формы
   initForm(): void {
     this.productForm = this.fb.group({
       name: ['', Validators.required],
       type: ['', Validators.required],
-      typeForBuy: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(0)]],
       pictures: ['', Validators.required],
       description: ['', Validators.required],
-      variants: this.fb.array([]) // FormArray для вариантов продукта
+      productVariants: this.fb.array([])
     });
   }
 
-  // Получаем массив вариантов
-  get variants(): FormArray {
-    return this.productForm.get('variants') as FormArray;
+  get productVariants(): FormArray {
+    return this.productForm.get('productVariants') as FormArray;
   }
 
-  // Добавление нового варианта
   addVariant(): void {
     const variantForm = this.fb.group({
       size: ['', Validators.required],
-      color: ['', Validators.required],
-      quantity: [0, [Validators.required, Validators.min(1)]]
+      quantity: [0, [Validators.required, Validators.min(1)]],
+      productId: this.productId
     });
-    this.variants.push(variantForm);
-  }
 
-  // Удаление варианта по индексу
+    this.productVariants.push(variantForm);
+    this.subscribeToQuantity(variantForm)
+    this.updateCount();
+  }
+  subscribeToQuantity(variantForm: AbstractControl) {
+    variantForm.get('quantity')?.valueChanges.subscribe(() => {
+      console.log("IN SUBSRIBE" + this.count)
+      this.updateCount()
+    })
+  }
+updateCount() {
+    this.count = this.productVariants.controls.reduce((total, variant) => {
+      const quantity = Number(variant.get('quantity')?.value)  || 0;
+      console.log(quantity)
+      console.log(total + quantity)
+      return total + quantity;
+    }, 0)
+  console.log(this.count)
+  this.typeForBuy = this.count > 0 ? "Есть в наличии" : "Под заказ"
+}
   removeVariant(index: number): void {
-    this.variants.removeAt(index);
+    this.productVariants.removeAt(index);
+    this.updateCount();
   }
 
-  // Загрузка товара для редактирования
   loadProduct(id: number): void {
     this.productService.getOneEquipment(id).subscribe(
       (product: Equipment) => {
-        console.log('!!!!!!!!!!! Updated Product !!!!!!!!!!!!! ')
-        console.log(product)
+        // console.log('!!!!!!!!!!! Updated Product !!!!!!!!!!!!! ')
+        // console.log(product)
         this.productForm.patchValue({
           name: product.name,
           type: product.type,
-          typeForBuy: product.typeForBuy,
           price: product.price,
           pictures: product.pictures,
           description: product.description,
         });
 
-        // Заполняем варианты продукта
         product.productVariants.forEach(variant => {
           const variantForm = this.fb.group({
             size: [variant.size, Validators.required],
-            quantity: [variant.quantity, [Validators.required, Validators.min(0)]]
+            quantity: [variant.quantity, [Validators.required, Validators.min(0)]],
+            productId: [variant.productId],
+            id: [variant.id]
           });
-          this.variants.push(variantForm);
+
+          this.productVariants.push(variantForm);
+          this.subscribeToQuantity(variantForm)
+          this.updateCount()
         });
+        this.typeForBuy = this.count > 0 ? "Есть в наличии" : "Под заказ"
       },
       error => {
         console.error('Error loading product', error);
@@ -103,13 +124,12 @@ export class CreateEquipComponent implements OnInit {
     );
   }
 
-  // Отправка формы для создания или обновления
   onSubmit(): void {
     if (this.productForm.valid) {
-      const productData: Equipment = this.productForm.value;
-
+      let productData: Equipment = this.productForm.value;
+      productData.typeForBuy = this.typeForBuy;
+      console.log(productData)
       if (this.isEditMode) {
-        // Если режим редактирования, отправляем запрос на обновление
         this.productAdminService.updateProduct(Number(this.productId), productData).subscribe(
           response => {
             console.log('Product updated successfully', response);
@@ -121,7 +141,6 @@ export class CreateEquipComponent implements OnInit {
           }
         );
       } else {
-        // Иначе создаем новый продукт
         this.productAdminService.createProduct(productData).subscribe(
           response => {
             console.log('Product created successfully', response);

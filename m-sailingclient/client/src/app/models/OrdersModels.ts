@@ -1,9 +1,10 @@
 // src/app/models/order.ts
+import {ProductVariant} from "./ProductVariant";
+
 export interface ProductToCreateOrder {
   name: string;
   price: number;
   size?: string;
-  color?: string;
   pictures: string;
   quantity: number;
 }
@@ -12,7 +13,6 @@ export interface ProductToCreateOrderWithId {
   name: string;
   price: number;
   size?: string;
-  color?: string;
   pictures: string;
   quantity: number;
 }

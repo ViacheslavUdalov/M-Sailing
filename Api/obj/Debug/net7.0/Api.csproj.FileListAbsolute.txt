@@ -54,8 +54,6 @@ C:\Production\M-sailing\Api\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Production\M-sailing\Api\bin\Debug\net7.0\System.CodeDom.dll
 C:\Production\M-sailing\Api\bin\Debug\net7.0\Data\SeedData\armament.json
 C:\Production\M-sailing\Api\bin\Debug\net7.0\Data\SeedData\boats.json
-C:\Production\M-sailing\Api\bin\Debug\net7.0\Data\SeedData\clothes.json
-C:\Production\M-sailing\Api\bin\Debug\net7.0\Data\SeedData\covers.json
 C:\Production\M-sailing\Api\bin\Debug\net7.0\Data\SeedData\equipment.json
 C:\Production\M-sailing\Api\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Production\M-sailing\Api\bin\Debug\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll

@@ -2,6 +2,7 @@
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20241024053853_EquipmentTestFourth")]
+    partial class EquipmentTestFourth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -253,16 +256,25 @@ namespace Infrastructure.Data.Migrations
                             b1.Property<int>("Quantity")
                                 .HasColumnType("integer");
 
-                            b1.Property<string>("Size")
-                                .IsRequired()
-                                .HasColumnType("text");
+                            b1.Property<int>("VariantId")
+                                .HasColumnType("integer");
 
                             b1.HasKey("CreateOrderDataId", "Id");
+
+                            b1.HasIndex("VariantId");
 
                             b1.ToTable("ProductToCreateOrder");
 
                             b1.WithOwner()
                                 .HasForeignKey("CreateOrderDataId");
+
+                            b1.HasOne("Core.Entities.ProductVariants", "Variant")
+                                .WithMany()
+                                .HasForeignKey("VariantId")
+                                .OnDelete(DeleteBehavior.Cascade)
+                                .IsRequired();
+
+                            b1.Navigation("Variant");
                         });
 
                     b.Navigation("Address")

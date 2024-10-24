@@ -23,11 +23,11 @@ totalPrice: number = 0;
     this.cartService.increaseQuantity(productId);
   }
 
-  decreaseQuantity(productId: number): void {
-    this.cartService.decreaseQuantity(productId);
+  decreaseQuantity(productId: number, size?: string): void {
+    this.cartService.decreaseQuantity(productId, size);
   }
-  removeFromCart(productId: number) {
-    this.cartService.removeFromCart(productId);
+  removeFromCart(productId: number,  size?: string) {
+    this.cartService.removeFromCart(productId, size);
   }
 
   clearCart() {

@@ -87,22 +87,6 @@ public class MainController: BaseApiController
         return Ok(
             new Pagination<Armament>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
     }
-    [HttpGet("covers")]
-    public async Task<ActionResult<Pagination<Covers>>> GetAllCovers([FromQuery] ProductSpecParams productSpecParams)
-    {
-        productSpecParams.TypeForBuy = productSpecParams.TypeForBuy?.Replace(".", " ");
-        productSpecParams.Type = productSpecParams.Type?.Replace(".", " ");
-        var spec = new ProductsWithFilterSpec<Covers>(productSpecParams);
-        var countSpec = new ProductsWithFiltersCountSpec<Covers>(productSpecParams);
-        var totalItems = await _productsRepository.CountCoversAsync(countSpec);
-        var products = await _productsRepository.ListCoversWithSpecAsync(spec);
-        foreach (var product in products)
-        {
-            product.Pictures = _urlResolver.Resolve(product.Pictures);
-        }
-        return Ok(
-            new Pagination<Covers>(productSpecParams.PageIndex, productSpecParams.PageSize, totalItems, products));
-    }
     [HttpGet("boats")]
     public async Task<ActionResult<Pagination<Boats>>> GetAllBoats([FromQuery] ProductSpecParams productSpecParams)
     {
@@ -125,6 +109,20 @@ public class MainController: BaseApiController
     public async Task<ActionResult<Equipment>> GetOneEquipment(int id)
     {
         var equipment = await _productsRepository.GetEquipByIdAsync(id);
+        var count = 0;
+        foreach (var variant in equipment.ProductVariants)
+        {
+            count += variant.Quantity;
+        }
+
+        if (count > 0)
+        {
+            equipment.TypeForBuy = "Есть в наличии";
+        }
+        else
+        {
+            equipment.TypeForBuy = "Под заказ";
+        }
         equipment.Pictures = _urlResolver.Resolve(equipment.Pictures);
         if (equipment == null)
         {
@@ -156,17 +154,5 @@ public class MainController: BaseApiController
         }
         return Ok(armament);
     }
-    
-    [HttpGet("covers/{id}")]
-    public async Task<ActionResult<Covers>> GetOneCover(int id)
-    {
-        var cover = await _productsRepository.GetCoversByIdAsync(id);
-        cover.Pictures = _urlResolver.Resolve(cover.Pictures);
-        if (cover == null)
-        {
-            return NotFound();
-        }
-        return Ok(cover);
-    }
-    
+
 }

@@ -13,11 +13,8 @@
       <label for="type">Product Type:</label>
       <input type="text" id="type" formControlName="type" class="form-control" />
     </div>
-    <div class="form-group">
-      <label for="typeForBuy">TypeForBuy:</label>
-      <input type="text" id="typeForBuy" formControlName="typeForBuy" class="form-control" />
-    </div>
 
+<span>Наличие товара - {{typeForBuy}}</span>
     <div class="form-group">
       <label for="price">Price:</label>
       <input type="number" id="price" formControlName="price" class="form-control" />
@@ -39,8 +36,8 @@
       <button type="button" class="btn btn-primary" (click)="addVariant()">Add Variant</button>
 
       <!-- Используем formArrayName для работы с массивом вариантов -->
-      <div formArrayName="variants">
-        <div *ngFor="let variant of variants.controls; let i = index" [formGroupName]="i" class="variant-form">
+      <div formArrayName="productVariants">
+        <div *ngFor="let variant of productVariants.controls; let i = index" [formGroupName]="i" class="variant-form">
           <label>Variant {{ i + 1 }}</label>
 
           <div class="form-group">

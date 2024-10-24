@@ -10,8 +10,8 @@
 <!--        <h3 class="textproduct"><strong>Размер: </strong>-->
           <div style="margin-top: 40px" *ngIf="equipment.productVariants && equipment.productVariants.length > 0" >
             <button style="" class="button-size" *ngFor="let variant of equipment.productVariants"
-                    (click)="onSizeChange(variant.size)"
-                    [class.selected]="selectedSize === variant.size"
+                    (click)="onSizeChange(variant)"
+                    [class.selected]="selectedSize === variant"
                     [class.disable]="variant.quantity === 0"
                     [disabled]="variant.quantity === 0">
               <span *appHasRole="['Admin']">{{variant.quantity}} шт. </span>
@@ -24,7 +24,7 @@
                                                                          [class.red]="equipment.typeForBuy === 'Под заказ'">{{ equipment.typeForBuy }}</span></h3>
         <div class="buttons">
           <div class="inside-buttons">
-            <button (click)="addItem(equipment)" class="addToCart">Добавить в Корзину</button>
+            <button (click)="addItem(equipment)" [class.dis]="selectedSize == null" [disabled]="selectedSize == null" class="addToCart">Добавить в Корзину</button>
 
             <a class="delete-button" *ngIf="isProductAddedToCart" (click)="removeFromCart(equipment.id)"><span class="material-symbols-outlined">
 delete

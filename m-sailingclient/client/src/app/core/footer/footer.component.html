@@ -49,7 +49,8 @@ mail
     <span><a href="/terms-of-service">Условия использования</a> <span class="vertical"> |</span></span>
    <span><a href="https://m-sailing.ru/sitemap.xml" target="_blank">Карта сайта</a> <span class="vertical"> |</span></span>
     <span><a href="/cookie-policy">Политика использования файлов cookie</a><span class="vertical"> |</span></span>
-    <span><a href="/login">Admins</a></span>
+    <span *ngIf="!user"><a href="/login">Admins</a></span>
+    <button *ngIf="user" (click)="logout()">Logout</button>
     <span *appHasRole="['Admin']"><span class="vertical"> | </span><a  href="/create-equipment">Создать</a></span>
   </div>
 

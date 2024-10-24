@@ -1,14 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EquipmentComponent } from './equipment/equipment.component';
-import { ClothesComponent } from './clothes/clothes.component';
-import { CoversComponent } from './covers/covers.component';
 import { ArmamentComponent } from './armament/armament.component';
 import {HttpClientModule} from "@angular/common/http";
 import { OneequipmentComponent } from './oneequipment/oneequipment.component';
-import { OnecoverComponent } from './onecover/onecover.component';
 import { OnearmamentComponent } from './onearmament/onearmament.component';
-import { OneclothesComponent } from './oneclothes/oneclothes.component';
 import {RouterModule} from "@angular/router";
 import {HomeModule} from "../home/home.module";
 import {CoreModule} from "../core/core.module";
@@ -21,13 +17,9 @@ import {BoatsComponent} from "./boats/boats.component";
 @NgModule({
   declarations: [
     EquipmentComponent,
-    ClothesComponent,
-    CoversComponent,
     ArmamentComponent,
     OneequipmentComponent,
-    OnecoverComponent,
     OnearmamentComponent,
-    OneclothesComponent,
     OneboatComponent,
     BoatsComponent
   ],

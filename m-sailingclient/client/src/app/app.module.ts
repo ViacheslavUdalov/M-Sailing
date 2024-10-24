@@ -14,6 +14,7 @@ import { BasketComponent } from './basket/basket/basket.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrderSuccessComponent } from './orders/order-success/order-success.component';
 import {JwtInterceptor} from "./interceptor/jwt-interceptor";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
     declarations: [
@@ -31,7 +32,11 @@ import {JwtInterceptor} from "./interceptor/jwt-interceptor";
         HomeModule,
         HttpClientModule,
         NgxSpinnerModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+      ToastrModule.forRoot({
+        positionClass: 'toast-bottom-right',
+        preventDuplicates: true
+      }),
     ],
     providers: [
         {provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true},

@@ -56,4 +56,9 @@ export class AccountServiceService {
     )
 
   }
+
+  logout() {
+    localStorage.removeItem('token')
+    this.currentUserSource.next(null)
+  }
 }

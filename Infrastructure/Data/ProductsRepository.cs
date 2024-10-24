@@ -24,11 +24,7 @@ namespace Infrastructure.Data
         {
             return await _context.Armament.FindAsync(id);
         }
-
-        public async Task<Covers> GetCoversByIdAsync(int id)
-        {
-            return await _context.Covers.FindAsync(id);
-        }
+        
 
       
         public async Task<Boats> GetBoatsByIdAsync(int id)
@@ -47,11 +43,6 @@ namespace Infrastructure.Data
         }
         
 
-        public async Task<IReadOnlyList<Covers>> ListCoversWithSpecAsync(ISpecification<Covers> specification)
-        {
-            return await ApplySpecification(specification, _context.Covers).ToListAsync();
-        }
-
         public async Task<IReadOnlyList<Boats>> ListBoatsWithSpecAsync(ISpecification<Boats> specification)
         {
             return await ApplySpecification(specification, _context.Boats).ToListAsync();
@@ -67,12 +58,6 @@ namespace Infrastructure.Data
             return await ApplySpecification(specification, _context.Armament).CountAsync();
         }
         
-
-        public async Task<int> CountCoversAsync(ISpecification<Covers> specification)
-        {
-            return await ApplySpecification(specification, _context.Covers).CountAsync();
-        }
-
         public async Task<int> CountBoatsAsync(ISpecification<Boats> specification)
         {
             return await ApplySpecification(specification, _context.Boats).CountAsync();
