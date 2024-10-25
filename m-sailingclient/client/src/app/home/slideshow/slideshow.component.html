@@ -1,0 +1,5 @@
+<div class="slideshow-container">
+  <div class="slide" *ngFor="let photo of photos; let i = index" [ngClass]="{ 'active': i === currentIndex }">
+    <img [src]="photo" style="width: 90%" alt="slide image" />
+  </div>
+</div>

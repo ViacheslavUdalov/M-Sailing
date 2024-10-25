@@ -72,7 +72,7 @@ getProductFromBasket(id: number, size?: string) {
   }
 
   removeFromCart(productId: number, variant?: string) {
-    this.cartItems = this.cartItems.filter(item => item.product.size !== variant);
+    this.cartItems = this.cartItems.filter(item => item.product.size !== variant || item.product.productId !== productId);
     this.cartItemsSubject.next(this.cartItems);
     this.saveCartToLocalStorage();
   }

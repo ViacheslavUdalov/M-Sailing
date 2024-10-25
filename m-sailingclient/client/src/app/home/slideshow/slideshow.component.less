@@ -1,0 +1,22 @@
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%; /* Измените ширину по необходимости */
+  margin: auto;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+}
+
+.slide.active {
+  display: block;
+  animation: fade 1s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

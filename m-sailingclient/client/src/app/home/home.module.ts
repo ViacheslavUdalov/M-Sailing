@@ -7,11 +7,14 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {SharedModule} from "../shared/shared.module";
 import {AppModule} from "../app.module";
 import {ShopModule} from "../shop/shop.module";
+import { SlideshowComponent } from './slideshow/slideshow.component';
 
 
 
 @NgModule({
-  declarations: [HomeComponent, DataproductshelperComponent],
+  declarations: [HomeComponent,
+    DataproductshelperComponent,
+    SlideshowComponent],
   imports: [
     CommonModule,
     RouterLink,

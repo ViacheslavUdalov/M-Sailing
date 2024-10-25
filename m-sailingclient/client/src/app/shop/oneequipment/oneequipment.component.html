@@ -7,7 +7,7 @@
         <h2 class="name">{{ equipment.name }}</h2>
         <h3 class="textproduct"><strong style="font-weight: bold">{{ equipment.price }} Руб.</strong></h3>
         <h3 class="textproduct"><strong>Тип товара: </strong>  {{ equipment.type }}</h3>
-<!--        <h3 class="textproduct"><strong>Размер: </strong>-->
+
           <div style="margin-top: 40px" *ngIf="equipment.productVariants && equipment.productVariants.length > 0" >
             <button style="" class="button-size" *ngFor="let variant of equipment.productVariants"
                     (click)="onSizeChange(variant)"
@@ -18,13 +18,13 @@
               <strong>{{ variant.size }}</strong>
             </button>
           </div>
-<!--        </h3>-->
+        <span>Выберете размер, что бы добавить товар в корзину.</span>
 
         <h3 class="textproduct"><strong>Наличие товара: </strong>  <span [class.green]="equipment.typeForBuy === 'Есть в наличии'"
                                                                          [class.red]="equipment.typeForBuy === 'Под заказ'">{{ equipment.typeForBuy }}</span></h3>
         <div class="buttons">
           <div class="inside-buttons">
-            <button (click)="addItem(equipment)" [class.dis]="selectedSize == null" [disabled]="selectedSize == null" class="addToCart">Добавить в Корзину</button>
+            <button (click)="addItem(equipment)" [class.dis]="selectedSize == null" [disabled]="selectedSize == null" class="addToCart" style="margin: 0">Добавить в Корзину</button>
 
             <a class="delete-button" *ngIf="isProductAddedToCart || quantityInBasket !== 0" (click)="removeFromCart(equipment.id)"><span class="material-symbols-outlined">
 delete
@@ -34,7 +34,7 @@ delete
 <!--          <span>Количество данного товара в корзине: <strong>{{quantityInBasket}}</strong> - Редактировать количество Вы сможете перейдя в корзину  </span><br>-->
           <div class="plus-minus">
             <button class="addToCart" style="margin: 0" [class.dis]="!selectedSize || quantityInBasket == 0" [disabled]="!selectedSize || quantityInBasket == 0" (click)="increaseQuantity(equipment.id, selectedSize.size)">+</button>
-            <strong class="quantity">{{quantityInBasket}}</strong>
+            <strong class="quantity">{{ quantityInBasket}}</strong>
             <button class="addToCart" style="margin: 0" [class.dis]="!selectedSize || quantityInBasket == 0" [disabled]="!selectedSize || quantityInBasket == 0" (click)="decreaseQuantity(equipment.id, selectedSize.size)">-</button>
 <!--          <button class="addToCart" [class.dis]="!selectedSize || quantityInBasket == 0" [disabled]="!selectedSize || quantityInBasket == 0" (click)="removeFromCart(equipment.id)">Удалить</button>-->
         </div>
