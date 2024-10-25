@@ -30,6 +30,22 @@ public class CreateOrderController : BaseApiController
         } 
         Console.WriteLine(createOrderData);
         createOrderData.GetPrice();
+
+        foreach (var product in createOrderData.ProductToCreateOrder)
+        {
+            switch (product.Type)
+            {
+                case "Equipment":
+                    await _orderRepository.UpdateProductQuantity(product.ProductId, "Equipment", product.Quantity, product.Size);
+                    break;
+                case "Armament":
+                    await _orderRepository.UpdateProductQuantity(product.ProductId, "Armament", product.Quantity, null);
+                    break;
+                default:
+                    return BadRequest("Неизвестный тип товара");
+            } 
+        }
+        
         await _orderRepository.AddAsync(createOrderData);
         await _emailService.SendEmail(createOrderData);
         var message = FormatOrderMessage(createOrderData);

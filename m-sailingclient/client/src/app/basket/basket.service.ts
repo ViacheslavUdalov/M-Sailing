@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import {CartItem, ProductToCreateOrder, ProductToCreateOrderWithId } from '../models/OrdersModels';
+import {CartItem, ProductToCreateOrder } from '../models/OrdersModels';
 import {ProductVariant} from "../models/ProductVariant";
 
 @Injectable({
@@ -22,8 +22,8 @@ constructor() {
       this.cartItemsSubject.next(this.cartItems);
     }
   }
-  increaseQuantity(productId: number) {
-    const index = this.cartItems.findIndex(item => item.product.id === productId);
+  increaseQuantity(productId: number, size?: string) {
+    const index = this.cartItems.findIndex(item => item.product.productId === productId && item.product.size == size);
     if (index !== -1) {
       this.cartItems[index].quantity += 1;
       this.cartItemsSubject.next(this.cartItems);
@@ -32,7 +32,7 @@ constructor() {
   }
 
   decreaseQuantity(productId: number, size?: string) {
-    const index = this.cartItems.findIndex(item => item.product.id === productId);
+    const index = this.cartItems.findIndex(item => item.product.productId === productId && item.product.size == size);
     if (index !== -1 && this.cartItems[index].quantity > 1) {
       this.cartItems[index].quantity -= 1;
       this.cartItemsSubject.next(this.cartItems);
@@ -45,30 +45,34 @@ constructor() {
     return this.cartItemsSubject.asObservable();
   }
 isProductInCart(id : number, variant?: ProductVariant) {
-return   this.cartItems.some(c => c.product.id === id && c.product.size == variant?.size);
+return   this.cartItems.some(c => c.product.productId === id && c.product.size == variant?.size);
 }
-getQuantityOfProduct(id : number) {
-  let products = this.cartItems.find(c => c.product.id == id);
+getQuantityOfProduct(id : number, size?: string) {
+  let products = this.cartItems.find(c => c.product.productId == id && c.product.size == size);
  if (products) {
    console.log(products.quantity)
    return products.quantity
-
  }
  return 0;
 }
-  addToCart(product: ProductToCreateOrderWithId, quantity: number = 1) {
-    const index = this.cartItems.findIndex(item => item.product.id === product.id && item.product.size === product.size);
+getProductFromBasket(id: number, size?: string) {
+  return  this.cartItems.find(c => c.product.productId == id && c.product.size == size);
+}
+  addToCart(product: ProductToCreateOrder, quantity: number = 1) {
+    const index = this.cartItems.findIndex(item => item.product.productId === product.productId && item.product.size === product.size);
     if (index !== -1) {
       this.cartItems[index].quantity += quantity;
     } else {
       this.cartItems.push({ product, quantity });
     }
+    console.log("In Service")
+    console.log(product)
     this.cartItemsSubject.next(this.cartItems);
     this.saveCartToLocalStorage();
   }
 
   removeFromCart(productId: number, variant?: string) {
-    this.cartItems = this.cartItems.filter(item => item.product.id !== productId && item.product.size === variant);
+    this.cartItems = this.cartItems.filter(item => item.product.size !== variant);
     this.cartItemsSubject.next(this.cartItems);
     this.saveCartToLocalStorage();
   }

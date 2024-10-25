@@ -1,3 +1,7 @@
+<button class="BackToBasket"> <span style="color: white" class="material-symbols-outlined">
+arrow_back
+</span><a style=" color: white;
+text-decoration: none;" href="basket">Вернуться в корзину</a></button>
 <form [formGroup]="orderForm" (ngSubmit)="onSubmit()" style="margin-top: 30px; margin-bottom: 30px">
   <div>
     <label for="phoneNumber">Номер телефона:</label>
@@ -62,5 +66,5 @@
 
   <button type="submit"  [disabled]="orderForm.invalid">Оформить заказ</button>
   <br>
-  <span>{{error}}</span>
+  <span style="color: red; font-weight: bold">{{error}}</span>
 </form>

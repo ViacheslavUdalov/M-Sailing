@@ -2,6 +2,7 @@
 using Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20241024063308_EquipmentTestFifth")]
+    partial class EquipmentTestFifth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,6 +32,9 @@ namespace Infrastructure.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
+                    b.Property<string[]>("Colors")
+                        .HasColumnType("text[]");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -44,8 +50,8 @@ namespace Infrastructure.Data.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("integer");
+                    b.Property<string[]>("Size")
+                        .HasColumnType("text[]");
 
                     b.Property<string>("Type")
                         .IsRequired()
@@ -247,16 +253,10 @@ namespace Infrastructure.Data.Migrations
                             b1.Property<double>("Price")
                                 .HasColumnType("double precision");
 
-                            b1.Property<int>("ProductId")
-                                .HasColumnType("integer");
-
                             b1.Property<int>("Quantity")
                                 .HasColumnType("integer");
 
                             b1.Property<string>("Size")
-                                .HasColumnType("text");
-
-                            b1.Property<string>("Type")
                                 .IsRequired()
                                 .HasColumnType("text");
 

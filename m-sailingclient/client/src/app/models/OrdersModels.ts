@@ -1,20 +1,22 @@
 // src/app/models/order.ts
 import {ProductVariant} from "./ProductVariant";
 
+// export interface ProductToCreateOrder {
+//   name: string;
+//   price: number;
+//   size?: string;
+//   pictures: string;
+//   quantity: number;
+//   type: string;
+// }
 export interface ProductToCreateOrder {
+  productId: number
   name: string;
   price: number;
   size?: string;
   pictures: string;
   quantity: number;
-}
-export interface ProductToCreateOrderWithId {
-  id: number
-  name: string;
-  price: number;
-  size?: string;
-  pictures: string;
-  quantity: number;
+  type: string;
 }
 
 
@@ -34,6 +36,6 @@ interface Address  {
   corpus: string;
 }
 export interface CartItem {
-  product: ProductToCreateOrderWithId;
+  product: ProductToCreateOrder;
   quantity: number
 }

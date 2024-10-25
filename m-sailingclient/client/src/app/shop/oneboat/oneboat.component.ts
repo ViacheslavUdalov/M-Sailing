@@ -5,9 +5,9 @@ import {ActivatedRoute} from "@angular/router";
 import {Boat} from "../../models/boat";
 import { animations } from 'src/app/helpers/animations';
 import { BasketService } from 'src/app/basket/basket.service';
-import { ProductToCreateOrder, ProductToCreateOrderWithId } from 'src/app/models/OrdersModels';
 import { Meta, Title } from '@angular/platform-browser';
 import {BreadcrumbService} from "xng-breadcrumb";
+import {ProductToCreateOrder} from "../../models/OrdersModels";
 
 @Component({
   selector: 'app-oneboat',
@@ -63,12 +63,13 @@ export class OneboatComponent implements OnInit{
     })
   }
   addItem(product : Boat) {
-    let productForOrder : ProductToCreateOrderWithId = {
-      id : product.id,
+    let productForOrder : ProductToCreateOrder = {
+      productId : product.id,
       name : product.name,
       price : product.price,
       pictures : product.pictures,
-      quantity: 1
+      quantity: 1,
+      type: "Armament"
     }
     this.basketService.addToCart(productForOrder, productForOrder.quantity);
     this.updateRemoveButtonVisibility(product.id)

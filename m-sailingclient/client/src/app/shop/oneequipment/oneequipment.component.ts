@@ -3,7 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Equipment} from "../../models/equipment";
 import {animations} from "../../helpers/animations";
 import { ShopService } from '../shop.service';
-import { ProductToCreateOrder , ProductToCreateOrderWithId} from 'src/app/models/OrdersModels';
+import {  ProductToCreateOrder} from 'src/app/models/OrdersModels';
 import { BasketService } from 'src/app/basket/basket.service';
 import {Meta, Title } from '@angular/platform-browser';
 import {DOCUMENT} from "@angular/common";
@@ -108,13 +108,14 @@ export class OneequipmentComponent implements OnInit{
   }
 
   addItem(product : Equipment) {
-    let productForOrder : ProductToCreateOrderWithId = {
-      id : product.id,
+    let productForOrder : ProductToCreateOrder = {
+      productId : product.id,
       name : product.name,
       price : product.price,
       pictures : product.pictures,
       quantity: 1,
-      size: this.selectedSize.size
+      size: this.selectedSize.size,
+      type: "Equipment"
     }
     console.log(productForOrder)
     if (this.selectedSize) {
@@ -123,6 +124,8 @@ export class OneequipmentComponent implements OnInit{
       this.toastr.error("Не удалось добавить в корзину")
       return
     }
+    console.log("productForOrder =============>>>>>>>>>>>")
+    console.log(productForOrder)
     this.basketService.addToCart(productForOrder, productForOrder.quantity);
     this.checkoutQuantity(Number(product.id))
     this.toastr.success("Товар добавлен в корзину!")
@@ -130,17 +133,21 @@ export class OneequipmentComponent implements OnInit{
   onSizeChange(selectedSize: ProductVariant) {
     this.selectedSize = selectedSize;
     console.log('Selected size:', selectedSize);
+    console.log(this.quantityInBasket)
+    if (this.equipment) {
+      this.checkoutQuantity(this.equipment?.id)
+    }
   }
   checkoutQuantity(id: number) {
-    this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
+    this.quantityInBasket = this.basketService.getQuantityOfProduct(id, this.selectedSize.size);
       if (this.quantityInBasket === this.selectedSize?.quantity) {
       }
   }
-  isLastVariant(variant: ProductVariant) {
-    if (!this.equipment || !this.equipment.productVariants) {
-      return false; // Если нет данных, возвращаем false
+  getOneProductFromBasket() {
+    if (this.equipment?.id) {
+      this.basketService.getProductFromBasket(this.equipment?.id, this.selectedSize.size);
     }
-    return this.equipment?.productVariants.indexOf(variant) === this.equipment?.productVariants?.length - 1
+
   }
   removeFromCart(productId: number) {
     if (this.selectedSize) {
@@ -158,6 +165,15 @@ export class OneequipmentComponent implements OnInit{
   }
   updateRemoveButtonVisibility(productId: number, variant: ProductVariant) {
     this.isProductAddedToCart = this.basketService.isProductInCart(productId, variant);
+  }
+  increaseQuantity(productId: number, size?: string): void {
+    this.basketService.increaseQuantity(productId, size);
+    this.checkoutQuantity(Number(productId))
+  }
+
+  decreaseQuantity(productId: number, size?: string): void {
+    this.basketService.decreaseQuantity(productId, size);
+    this.checkoutQuantity(Number(productId))
   }
   clickToTop() {
     window.scroll({

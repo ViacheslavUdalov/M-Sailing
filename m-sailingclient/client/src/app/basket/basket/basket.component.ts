@@ -19,8 +19,8 @@ totalPrice: number = 0;
       items.map(item => this.totalPrice += item.product.price * item.quantity);
     });
   }
-  increaseQuantity(productId: number): void {
-    this.cartService.increaseQuantity(productId);
+  increaseQuantity(productId: number,  size?: string): void {
+    this.cartService.increaseQuantity(productId, size);
   }
 
   decreaseQuantity(productId: number, size?: string): void {

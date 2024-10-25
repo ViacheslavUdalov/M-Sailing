@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BasketService } from 'src/app/basket/basket.service';
 import {CartItem, CreateOrderData } from 'src/app/models/OrdersModels';
 import { OrdersService } from '../orders.service';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-create-order',
@@ -18,7 +19,8 @@ error =''
     private fb: FormBuilder,
     private cartService: BasketService,
     private orderService: OrdersService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
     this.orderForm = this.fb.group({
       phoneNumber: ['', [Validators.required, Validators.pattern(/^\+?\d{10,15}$/)]],
@@ -45,9 +47,9 @@ error =''
       const orderData: CreateOrderData = {
         ...this.orderForm.value,
         productToCreateOrder: this.cartItems.map(item => {
-          const { id, ...productWithoutId } = item.product;
+          // const { productId, ...productWithoutId } = item.product;
             return {
-            ...productWithoutId ,
+              ...item.product,
             quantity: item.quantity
           }
         }),
@@ -61,6 +63,8 @@ error =''
       },
         error => {
           console.error('Error creating order', error);
+          console.log(error.error)
+          this.toastr.error(error.error.error)
       this.error = 'Не удалось создать заказ. Провереть Валидность ваших данных.'
       });
     }
