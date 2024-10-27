@@ -27,6 +27,7 @@ constructor() {
     if (index !== -1) {
       this.cartItems[index].quantity += 1;
       this.cartItemsSubject.next(this.cartItems);
+      console.log(this.cartItems)
       this.saveCartToLocalStorage();
     }
   }
@@ -36,10 +37,16 @@ constructor() {
     if (index !== -1 && this.cartItems[index].quantity > 1) {
       this.cartItems[index].quantity -= 1;
       this.cartItemsSubject.next(this.cartItems);
+      console.log(this.cartItems)
       this.saveCartToLocalStorage();
     } else if (index !== -1 && this.cartItems[index].quantity === 1) {
       this.removeFromCart(productId, size);
     }
+  }
+  getFullPrice(cartItems: CartItem[]) {
+  return cartItems.reduce((acc, curr) => {
+     return acc += curr.product.price * curr.quantity;
+    }, 0)
   }
   getCartItems() {
     return this.cartItemsSubject.asObservable();
@@ -66,14 +73,15 @@ getProductFromBasket(id: number, size?: string) {
       this.cartItems.push({ product, quantity });
     }
     console.log("In Service")
-    console.log(product)
+    console.log(this.cartItems)
     this.cartItemsSubject.next(this.cartItems);
     this.saveCartToLocalStorage();
   }
 
   removeFromCart(productId: number, variant?: string) {
-    this.cartItems = this.cartItems.filter(item => item.product.size !== variant || item.product.productId !== productId);
+    this.cartItems = this.cartItems.filter(item => item.product.size != variant || item.product.productId !== productId);
     this.cartItemsSubject.next(this.cartItems);
+    console.log(this.cartItems)
     this.saveCartToLocalStorage();
   }
 

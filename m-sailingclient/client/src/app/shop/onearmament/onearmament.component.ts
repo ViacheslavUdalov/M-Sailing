@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Equipment} from "../../models/equipment";
 import {ShopService} from "../shop.service";
 import {ActivatedRoute} from "@angular/router";
 import {Armament} from "../../models/armament";
@@ -30,12 +29,12 @@ export class OnearmamentComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    // this.titleService.setTitle('M-sailing | Магазин парусных яхт, парусного и яхтенного вооружения');
-    // this.metaService.addTags([
-    //   { name: 'description', content: 'Интернет-магазин парусной экипировки, парусных яхт, одежды и вооружения для яхтинга. Лучшие бренды, отличные цены.' },
-    //   { name: 'keywords', content: 'гик-оттяжка для лазера, верёвки, блочки, руль, рангоут, купить рангоут для лазера, купить вооружение для лазера, купить гик-оттяжку дёшево' },
-    //   { name: 'robots', content: 'index, follow' }
-    // ]);
+    this.titleService.setTitle('M-sailing | Магазин парусных яхт, парусного и яхтенного вооружения');
+    this.metaService.addTags([
+      { name: 'description', content: 'Интернет-магазин парусной экипировки, парусных яхт, одежды и вооружения для яхтинга. Лучшие бренды, отличные цены.' },
+      { name: 'keywords', content: 'гик-оттяжка для лазера, верёвки, блочки, руль, рангоут, купить рангоут для лазера, купить вооружение для лазера, купить гик-оттяжку дёшево, Optimist, Optiparts' },
+      { name: 'robots', content: 'index, follow' }
+    ]);
     this.activeRouter.paramMap.subscribe(params => {
       this.id = params.get('id') as string;
       this.getOneProduct();

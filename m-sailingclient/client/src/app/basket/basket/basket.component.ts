@@ -16,21 +16,25 @@ totalPrice: number = 0;
     this.cartService.getCartItems().subscribe(items => {
       this.cartItems = items;
       console.log(this.cartItems)
-      items.map(item => this.totalPrice += item.product.price * item.quantity);
+      this.totalPrice = this.cartService.getFullPrice(this.cartItems)
     });
   }
   increaseQuantity(productId: number,  size?: string): void {
     this.cartService.increaseQuantity(productId, size);
+    this.totalPrice = this.cartService.getFullPrice(this.cartItems)
   }
 
   decreaseQuantity(productId: number, size?: string): void {
     this.cartService.decreaseQuantity(productId, size);
+    this.totalPrice = this.cartService.getFullPrice(this.cartItems)
   }
   removeFromCart(productId: number,  size?: string) {
     this.cartService.removeFromCart(productId, size);
+    this.totalPrice = this.cartService.getFullPrice(this.cartItems)
   }
 
   clearCart() {
     this.cartService.clearCart();
+    this.totalPrice = 0
   }
 }

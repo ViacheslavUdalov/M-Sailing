@@ -9,8 +9,8 @@
     <div class="product-price">Цена Всего: {{ item.product.price * item.quantity }} ₽</div>
     <div class="product-quantity">Количество: {{ item.quantity }}</div>
     <div class="plus-minus">
-      <button (click)="increaseQuantity(item.product.productId, item.product.size)">+</button>
-      <button (click)="decreaseQuantity(item.product.productId, item.product.size)">-</button>
+<!--      <button [disabled]="item.quantity !=" (click)="increaseQuantity(item.product.productId, item.product.size)">+</button>-->
+<!--      <button (click)="decreaseQuantity(item.product.productId, item.product.size)">-</button>-->
     </div>
     <button (click)="removeFromCart(item.product.productId, item.product.size)">Удалить</button>
     </div>

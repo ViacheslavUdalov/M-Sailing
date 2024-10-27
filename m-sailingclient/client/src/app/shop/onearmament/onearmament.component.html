@@ -5,9 +5,9 @@
       <img [src]="armament.pictures" alt="{{ armament.name }}" class="equipment-image">
       <div class="info">
         <h2 class="name">{{ armament.name }}</h2>
-        <h3 class="textproduct" style="color: #34be02"><strong>Цена: </strong>  {{ armament.price }} Руб.</h3>
-        <h3 class="textproduct"><strong>Тип: </strong>  {{ armament.type }}</h3>
-        <h3 class="textproduct"><strong>Наличие товара: </strong>  <span [class.green]="armament.typeForBuy === 'Есть в наличии'" [class.red]="armament.typeForBuy === 'Под заказ'">{{ armament.typeForBuy }}</span></h3>
+        <h3 class="textproduct"><strong> {{ armament.price }} Руб.</strong></h3>
+        <span style="font-size: small">Тип товара: </span><strong><h3 class="textproduct" style="font-weight: bold"> {{ armament.type }}</h3></strong>
+        <h3 class="textproduct"><strong>Наличие товара: </strong> <span>{{armament.quantity}} шт. - </span> <span [class.green]="armament.typeForBuy === 'Есть в наличии'" [class.red]="armament.typeForBuy === 'Под заказ'">{{ armament.typeForBuy }}</span></h3>
         <div class="buttons">
           <div class="inside-buttons">
             <button (click)="addItem(armament)" style="margin-right: 10px">Добавить в Корзину</button>
