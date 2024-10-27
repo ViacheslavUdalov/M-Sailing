@@ -1,4 +1,4 @@
-<app-top-bar-filter (getEquipment)="getArmament()" [shopParams]="shopParams"
+<app-top-bar-filter (getArmament)="getArmament()" [shopParams]="shopParams"
                     [types]="types" [options]="sortOptions" [typesForBuy]="typesForBuy" ></app-top-bar-filter>
 <div style="display: flex; justify-content: center" *ngIf="armament.length === 0">Не найдено товаров с данным фильтром</div>
 <div class="products-container">

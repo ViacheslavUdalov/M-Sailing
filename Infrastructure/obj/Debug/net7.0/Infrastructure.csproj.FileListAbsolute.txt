@@ -1,3 +1,6 @@
+C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\armament.json
+C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\boats.json
+C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\equipment.json
 C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Infrastructure.deps.json
 C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Infrastructure.dll
 C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Infrastructure.pdb
@@ -8,12 +11,9 @@ C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastructure.Generated
 C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfoInputs.cache
 C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfo.cs
 C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastructure.sourcelink.json
+C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastr.15EFFBFE.Up2Date
 C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastructure.dll
 C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\refint\Infrastructure.dll
 C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
 C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll
-C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastructure.sourcelink.json
-C:\Production\M-sailing\Infrastructure\obj\Debug\net7.0\Infrastr.15EFFBFE.Up2Date
-C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\armament.json
-C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\boats.json
-C:\Production\M-sailing\Infrastructure\bin\Debug\net7.0\Data\SeedData\equipment.json

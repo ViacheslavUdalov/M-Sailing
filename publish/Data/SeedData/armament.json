@@ -4,9 +4,7 @@
   "Type": "вооружение",
   "Description": "Громкий сигнал, большой экран циферблата и таймер с синхронизацией - залог старта в первых рядах.\n- пластиковый противоударный корпус\n- поворотный корпус для размещения часов на такелаже яхты\n- громкий сигнал\n- не тонут\n- мягкий легкий ремешок",
   "Price": 11600,
-  "Colors": [
-    "Чёрный"
-  ],
+  "Quantity": 8,
   "Pictures": "assets/productsimages/clock.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -15,22 +13,25 @@
   "Type": "рангоут",
   "Description": "Оснащен самыми передовыми блоками Harken. С ним ты точно можешь быть уверен, что клепки не вылетят в самый не подходящий момент.",
   "Price": 35922,
+  "Quantity": 0,
   "Pictures": "assets/productsimages/geek.jpg",
-  "TypeForBuy": "Есть в наличии"
+  "TypeForBuy": "Под заказ"
 },
 {
   "Name": "Система шкотового угла 3 блока (18мм) + 2 веревки",
   "Type": "вооружение",
   "Description": "Система, где используются облегчённые, самые надёжные блоки Harken, а так же дайнима 3мм, длиной 3 метра и ходовая верёвка, длиной 3 метра.",
   "Price": 10100,
+  "Quantity": 0,
   "Pictures": "assets/productsimages/outhaulone.jpg",
-  "TypeForBuy": "Есть в наличии"
+  "TypeForBuy": "Под заказ"
 },
 {
   "Name": "Латы МК 2 Ilca 7",
   "Type": "вооружение",
   "Description": "Профилированные латы для лучшей формы паруса",
   "Price": 4880,
+  "Quantity": 7,
   "Pictures": "assets/productsimages/batten.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -39,6 +40,7 @@
   "Type": "парус",
   "Description": "Парус обладает радиальным покроем, для тех, кто хочет показать максильный результат в гонках.",
   "Price": 72115,
+  "Quantity": 10,
   "Pictures": "assets/productsimages/sailR.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -47,6 +49,7 @@
   "Type": "парус",
   "Description": "Современный парус, которые позволит развить максимальную скорость на воде и конкурировать с сильнейшими соперниками.",
   "Price": 78623,
+  "Quantity": 7,
   "Pictures": "assets/productsimages/sailSjpg.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -55,14 +58,16 @@
   "Type": "вооружение",
   "Description": "Шверт, который никогда не будет всплывать.",
   "Price": 71737,
+  "Quantity": 1,
   "Pictures": "assets/productsimages/shvert.jpg",
   "TypeForBuy": "Под заказ"
 },
 {
   "Name": "Перо руля Ilca",
   "Type": "вооружение",
-  "Description": "Перо руля, которое будет помогать подруливать в выгодную сторону.",
+  "Description": "Высококачественное литое перо руля GRP ILCA подходит к Баллеру ILCA с помощью мегаболта. Пожалуйста, используйте чехол ILCA - Laser, чтобы защитить перо руля от повреждений во время транспортировки.",
   "Price": 43189,
+  "Quantity": 1,
   "Pictures": "assets/productsimages/perorula.jpg",
   "TypeForBuy": "Под заказ"
 },
@@ -71,6 +76,7 @@
   "Type": "вооружение",
   "Description": "Балерная коробка, которая никогда не выпадет в самый неподходящий момент.",
   "Price": 21960,
+  "Quantity": 2,
   "Pictures": "assets/productsimages/Rudderhead.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -78,7 +84,8 @@
   "Name": "Удлинитель руля Карбоновый",
   "Type": "вооружение",
   "Description": "Тонкий и легкий удлинитель (1,2 м) для максимальной чувствительности нагрузки на руле.",
-  "Price": 14493,
+  "Price": 14893,
+  "Quantity": 3,
   "Pictures": "assets/productsimages/udlinitel.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -87,6 +94,7 @@
   "Type": "вооружение",
   "Description": "Дайнима, за счёт своей структуры, не тянется и хорошо крепится в стопоре, что позволяет лучше затягивать погон и точнее вести лодку.",
   "Price": 1100,
+  "Quantity": 1,
   "Pictures": "assets/productsimages/ropeForblock.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -95,6 +103,7 @@
   "Type": "вооружение",
   "Description": "Прочный и надежный блок, которого хватит на очень долгий срок и который не будет съезжать на центр погона.",
   "Price": 7026,
+  "Quantity": 9,
   "Pictures": "assets/productsimages/doubleblock.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -103,6 +112,7 @@
   "Type": "вооружение",
   "Description": "Выгоднее покупать, чем по-отдельности.",
   "Price": 7560,
+  "Quantity": 1,
   "Pictures": "assets/productsimages/traveller.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -111,30 +121,52 @@
   "Type": "вооружение",
   "Description": "Флюгер для верхней части мачты, вставляющийя.",
   "Price": 1762,
+  "Quantity": 5,
   "Pictures": "assets/productsimages/flugerone.jpg",
   "TypeForBuy": "Есть в наличии"
 },
 {
-  "Name": "Номера на парус Лазер 300ММ Красные и Чёрные",
+  "Name": "Номера на парус Лазер 300ММ Красные",
   "Type": "парус",
   "Description": "Номера, вырезанные из прочного материала.",
-  "Price": 350,
+  "Price": 380,
+  "Quantity": 12,
   "Pictures": "assets/productsimages/number.jpg",
   "TypeForBuy": "Есть в наличии"
 },
+  {
+    "Name": "Номера на парус Лазер 300ММ Чёрные",
+    "Type": "парус",
+    "Description": "Номера, вырезанные из прочного материала.",
+    "Price": 380,
+    "Quantity": 42,
+    "Pictures": "assets/productsimages/blacknumber.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
 {
-  "Name": "Номера на парус Лазер 230ММ Красные и Чёрные 1ШТ",
+  "Name": "Номера на парус Лазер 230ММ Красные",
   "Type": "парус",
   "Description": "Номера, вырезанные из прочного материала.",
-  "Price": 350,
+  "Price": 380,
+  "Quantity": 12,
   "Pictures": "assets/productsimages/sailnumbertwothree.jpg",
   "TypeForBuy": "Есть в наличии"
 },
+  {
+    "Name": "Номера на парус Лазер 230ММ Чёрные",
+    "Type": "парус",
+    "Description": "Номера, вырезанные из прочного материала.",
+    "Price": 380,
+    "Quantity": 42,
+    "Pictures": "assets/productsimages/blacknumber.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
 {
   "Name": "Пробка в корму Laser",
   "Type": "вооружение",
   "Description": "Пробка на транец, диаметр 22мм.",
   "Price": 881,
+  "Quantity": 2,
   "Pictures": "assets/productsimages/probka.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -142,7 +174,8 @@
   "Name": "Блок стопорной",
   "Type": "вооружение",
   "Description": "За счёт своей формы и трещётки, облегчает нагрузку на вашем шкоте, когда давление на парус становится очень высоким.",
-  "Price": 10540,
+  "Price": 11540,
+  "Quantity": 8,
   "Pictures": "assets/productsimages/ratchetblockone.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -150,7 +183,8 @@
   "Name": "Машинка для гикоттяжки",
   "Type": "вооружение",
   "Description": "Позволит вам добирать гикоттяжку до любого положения с минимальным приложением сил.",
-  "Price": 23419,
+  "Price": 23819,
+  "Quantity": 6,
   "Pictures": "assets/productsimages/vangsystem.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -158,7 +192,8 @@
   "Name": "Двойной блок на гикоттяжку",
   "Type": "вооружение",
   "Description": "Позволит вам добирать гикоттяжку до любого положения с минимальным приложением сил.",
-  "Price": 5123,
+  "Price": 6269,
+  "Quantity": 5,
   "Pictures": "assets/productsimages/vangdoubleblock.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -167,6 +202,7 @@
   "Type": "вооружение",
   "Description": "Долговечный, надёжный грибок, который не оторвётся в нужный момент.",
   "Price": 1024,
+  "Quantity": 15,
   "Pictures": "assets/productsimages/vangcurvedkey.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -174,7 +210,8 @@
   "Name": "Комплект верёвок для гик-оттяжки",
   "Type": "вооружение",
   "Description": "Долговечные, не тянущиеся верёвки, удобные для хвата руками, не режут пальцы, позволят максимально легко и просто добирать систему гик-оттяжки",
-  "Price": 1100,
+  "Price": 1200,
+  "Quantity": 0,
   "Pictures": "assets/productsimages/vangropeset.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -182,7 +219,8 @@
   "Name": "Верхний блок гик-оттяжки",
   "Type": "вооружение",
   "Description": "Верхний блок берёт на себя очень большую нагрузку, с хорошим блоком вы сможете тонко чуствовать натяжение всей системы гик-оттяжки.",
-  "Price": 6148,
+  "Price": 11122,
+  "Quantity": 0,
   "Pictures": "assets/productsimages/vangtopblock.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -190,7 +228,8 @@
   "Name": "Верхняя матча Карбон",
   "Type": "рангоут",
   "Description": "Карбоновая мачта, упругая, жёсткая, не сломается даже в самых суровых условиях.",
-  "Price": 85401,
+  "Price": 73401,
+  "Quantity": 3,
   "Pictures": "assets/productsimages/topmath.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -198,7 +237,8 @@
   "Name": "Нижняя матча Ilca 7",
   "Type": "рангоут",
   "Description": "Нижняя мачта для класса Ilca 7.",
-  "Price": 33211,
+  "Price": 33911,
+  "Quantity": 4,
   "Pictures": "assets/productsimages/downmathseven.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -206,7 +246,8 @@
   "Name": "Нижняя матча Ilca 6 Алюминиевая",
   "Type": "рангоут",
   "Description": "Нижняя мачта для класса Ilca 6, Алюминиевая.",
-  "Price": 24797,
+  "Price": 25797,
+  "Quantity": 2,
   "Pictures": "assets/productsimages/downmastsix.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -214,7 +255,8 @@
   "Name": "Нижняя матча Ilca 6 Карбон",
   "Type": "рангоут",
   "Description": "Нижняя мачта для класса Ilca 6, Карбон.",
-  "Price": 131762,
+  "Price": 134762,
+  "Quantity": 5,
   "Pictures": "assets/productsimages/downmastsixcarbon.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -223,6 +265,7 @@
   "Type": "рангоут",
   "Description": "Нижняя мачта для класса Ilca 4.",
   "Price": 26000,
+  "Quantity": 1,
   "Pictures": "assets/productsimages/ilca-4-lower-mast.jpg",
   "TypeForBuy": "Есть в наличии"
 },
@@ -231,38 +274,16 @@
   "Type": "вооружение",
   "Description": "Подставка под телегу для лазера поможет вам устанавливать яхты друг на друга для транспортировки, при этом не оказывая воздействия на лодку.",
   "Price": 5841,
+  "Quantity": 9,
   "Pictures": "assets/productsimages/fortelega.jpeg",
-  "TypeForBuy": "Есть в наличии"
-},
-{
-  "Name": "Парус Без лицензии Ilca 7 Китай в комплекте с латами",
-  "Type": "парус",
-  "Description": "Парус Ilca 7 Китай в комплекте с латами.",
-  "Price": 36369,
-  "Pictures": "assets/productsimages/sailSjpg.jpg",
-  "TypeForBuy": "Есть в наличии"
-},
-{
-  "Name": "Парус Без лицензии Ilca 6 Китай в комплекте с латами",
-  "Type": "парус",
-  "Description": "Парус Ilca 6 Китай в комплекте с латами.",
-  "Price": 33063,
-  "Pictures": "assets/productsimages/sailR.jpg",
-  "TypeForBuy": "Есть в наличии"
-},
-{
-  "Name": "Парус Без лицензии Ilca 4 Китай в комплекте с латами",
-  "Type": "парус",
-  "Description": "Парус Ilca 4 Китай в комплекте с латами.",
-  "Price": 29756,
-  "Pictures": "assets/productsimages/ilcafour.png",
   "TypeForBuy": "Есть в наличии"
 },
   {
     "Name": "Парус Hide Ilca 4",
     "Type": "парус",
     "Description": "Парус Лицензионный.",
-    "Price": 61679,
+    "Price": 62679,
+    "Quantity": 13,
     "Pictures": "assets/productsimages/ilcafour.png",
     "TypeForBuy": "Есть в наличии"
   },
@@ -271,6 +292,7 @@
     "Type": "вооружение",
     "Description": "Ремень откреночный Ilca нескользящий.",
     "Price": 4734,
+    "Quantity": 1,
     "Pictures": "assets/productsimages/dinghystrap.jpg",
     "TypeForBuy": "Есть в наличии"
   },
@@ -279,6 +301,7 @@
     "Type": "вооружение",
     "Description": "Длина - 14 метров. Толщина шкота - 5мм. Очень удобные",
     "Price": 2204,
+    "Quantity": 1,
     "Pictures": "assets/productsimages/mainsheet.jpg",
     "TypeForBuy": "Есть в наличии"
   },
@@ -286,23 +309,26 @@
     "Name": "Латты На Ilca 6, Ilca 4",
     "Type": "вооружение",
     "Description": "Латты На Ilca 6, Ilca 4",
-    "Price": 4066,
+    "Price": 4166,
+    "Quantity": 13,
     "Pictures": "assets/productsimages/battens.jpg",
     "TypeForBuy": "Есть в наличии"
   },
   {
-    "Name": "Полный набор гиккоттяжки",
+    "Name": "Набор гиккоттяжки с блочками, без верёвок",
     "Type": "вооружение",
-    "Description": "Полный комплект гик-оттяжки с двумя верёвками и двумя блочками.",
-    "Price": 35721,
+    "Description": "Комплект гик-оттяжки без верёвок, с двумя блочками.",
+    "Price": 37721,
+    "Quantity": 0,
     "Pictures": "assets/productsimages/fullvangset.jpg",
-    "TypeForBuy": "Есть в наличии"
+    "TypeForBuy": "Под заказ"
   },
   {
     "Name": "Румпель Карбоновый",
     "Type": "вооружение",
     "Description": "Облегчённый карбоновый румпель, за счёт своей формы не натягивает вверх пагон, что даёт большую лёгкость в рулении.",
     "Price": 33700,
+    "Quantity": 9,
     "Pictures": "assets/productsimages/TillerCarbon.jpg",
     "TypeForBuy": "Есть в наличии"
   },
@@ -310,7 +336,8 @@
     "Name": "Блок на шкотовый угол с мочкой ИЛКА/Лазер",
     "Type": "вооружение",
     "Description": "Быстро и надежно прикрепите оттяжку к шкотовому углу паруса. 16-миллиметровый шарикоподшипниковый блок Ronston и запирающаяся скоба обеспечивают плавность хода и отсутствие нежелательных отцеплений!",
-    "Price": 5179,
+    "Price": 5309,
+    "Quantity": 5,
     "Pictures": "assets/productsimages/clew.jpg",
     "TypeForBuy": "Есть в наличии"
   },
@@ -319,7 +346,180 @@
     "Type": "вооружение",
     "Description": "Модернизируйте свою ILCA гик-оттяжку с помощью этого нового блока с высокой нагрузкой от экспертов по оборудованию из Ronstan, представленный как часть коллекции блоков Series 30, представляет собой блок гик-оттяжки с низким коэффициентом трения и низким профилем, оснащенный штифтом для снятия блока с гика (входит в комплект).",
     "Price": 10910,
+    "Quantity": 0,
     "Pictures": "assets/productsimages/vangblockrons.jpg",
+    "TypeForBuy": "Под заказ"
+  },
+  {
+    "Name": "Верхний Чехол",
+    "Type": "чехлы",
+    "Description": "Прочный водонепроницаемый чехол",
+    "Price": 19885,
+    "Quantity": 1,
+    "Pictures": "assets/productsimages/top.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Чехол Нижний",
+    "Type": "чехлы",
+    "Description": "Прочный водонепроницаемый чехол",
+    "Price": 19885,
+    "Quantity": 1,
+    "Pictures": "assets/productsimages/bottom.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Чехол Ovington",
+    "Type": "чехлы",
+    "Description": "Самые надежные чехлы фирмы Ovington для перьев Лазера с защитой от ультрафиолета и падений. С таким чехлом руль со швертом будут чувствовать себя как дома. Идеально подходит для транспортировки и хранения.",
+    "Price": 13768,
+    "Quantity": 4,
+    "Pictures": "assets/productsimages/forruleOvington.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Парус OneSails <32kg",
+    "Type": "парус",
+    "Description": "Все гроты OneSails Optimist вырезаются лазером на управляемых компьютером плоттерах, что гарантирует максимально точную резку и сборку паруса. 7 широких швов тщательно расположены, чтобы обеспечить максимальный контроль над формой полета в каждой части паруса.",
+    "Price": 51500,
+    "Quantity": 2,
+    "Pictures": "assets/productsimages/onesails.jpeg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Парус OneSails <42kg",
+    "Type": "парус",
+    "Description": "Все гроты OneSails Optimist вырезаются лазером на управляемых компьютером плоттерах, что гарантирует максимально точную резку и сборку паруса. 7 широких швов тщательно расположены, чтобы обеспечить максимальный контроль над формой полета в каждой части паруса.",
+    "Price": 51500,
+    "Quantity": 10,
+    "Pictures": "assets/productsimages/onesails.jpeg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Парус OneSails 42kg - 47kg",
+    "Type": "парус",
+    "Description": "Все гроты OneSails Optimist вырезаются лазером на управляемых компьютером плоттерах, что гарантирует максимально точную резку и сборку паруса. 7 широких швов тщательно расположены, чтобы обеспечить максимальный контроль над формой полета в каждой части паруса.",
+    "Price": 51500,
+    "Quantity": 7,
+    "Pictures": "assets/productsimages/onesails.jpeg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Парус OneSails 42kg - >47kg",
+    "Type": "парус",
+    "Description": "Все гроты OneSails Optimist вырезаются лазером на управляемых компьютером плоттерах, что гарантирует максимально точную резку и сборку паруса. 7 широких швов тщательно расположены, чтобы обеспечить максимальный контроль над формой полета в каждой части паруса.",
+    "Price": 51500,
+    "Quantity": 2,
+    "Pictures": "assets/productsimages/onesails.jpeg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Рангоут Optiparts Silver Set",
+    "Type": "optimist",
+    "Description": "В комплект мачты Optimist SILVER Regatta входят:\n\nEX1005 – мачта Optimist SILVER\nEX1022 – гик Optimist SILVER 40 мм\nEX1041 – шприт Optimist SILVER 27 мм\nЭтот комплект рангоута Optimist менее жесткий, чем рангоут Blackgold, и идеально подходит для легких яхтсменов Optimist, которые только начали гонки. Мачта, гик и шпринт SILVER Optimist изготовлены из высококачественной алюминиевой трубы. Легкий гик SILVER Optimist 40 мм намного жестче, чем школьный гик Optimist 32 мм, и позволит яхтсмену сильнее натянуть заднюю шкаторину. Шпринт SILVER Optimist 27 мм имеет 15-сантиметровую защитную трубку от истирания.",
+    "Price": 48440,
+    "Quantity": 10,
+    "Pictures": "assets/productsimages/silverset.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "МК3 Optimax гоночная мачта - без вооружения",
+    "Type": "optimist",
+    "Description": "Эта универсальная гоночная мачта предназначена для яхтсменов среднего веса и может сочетаться со всеми гик-шпритами. Мачта MK3 для Optimist в основном подходит для яхтсменов весом от 35 до 45 кг.\n\nПревосходный сплав космического корабля Lanurep\nВысококачественная твердая анодированная поверхность толщиной 45 мкм\nТвердый анодированный алюминиевый Clamcleat\nАлюминиевый штифтовой упор\nКонцевой упор с низким коэффициентом трения",
+    "Price": 39900,
+    "Quantity": 2,
+    "Pictures": "assets/productsimages/optimaxmast.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Тележка для класса optimist",
+    "Type": "optimist",
+    "Description": "Легкая алюминиевая тележка с осями из нержавеющей стали и прочными опорами корпуса. Поставляется с Bow wow, который изготовлен из переработанного экологически чистого пластика, уникальной системой для фиксации носа на тележке одним быстрым и простым движением. Предотвращает соскальзывание корпуса на крутых спусковых рампах. Тележка была разработана, чтобы быть максимально функциональной из имеющихся. Пружинные быстросъемные замки всех частей позволяют разбирать тележку за считанные секунды для хранения и транспортировки. Рама имеет сварные соединения и анодирована для предотвращения коррозии. Тележка Optiparts поставляется с 8-миллиметровыми кнопочными замками колес из нержавеющей стали, которые установлены внутри осей из нержавеющей стали. Поставляется с большими проколостойкими колесами Durastar-lite.",
+    "Price": 34000,
+    "Quantity": 5,
+    "Pictures": "assets/productsimages/trolley.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "МК3 Flex Optimax гоночная мачта - без вооружения",
+    "Type": "optimist",
+    "Description": "Самая гибкая и активная мачта, предназначенная для легких яхтсменов. Мачта MK3 Flex для Optimist в основном подходит для яхтсменов весом менее 35 кг.\n\nПревосходный сплав Lanurep для космических кораблей\nВысококачественная твердая анодированная поверхность 45 мкм\nВетроуказатель PRO Windesign\nДержатели вымпела\nБлок крючка Harken\n3 мм основной фал Dyneema с кольцом с низким коэффициентом трения Windesign\nВторичный фал Technora / Dyneema\nТвердый анодированный алюминий Clamcleat\nАлюминиевый штифтовой упор\nРучка регулировки Sprit\nКонцевой упор с низким коэффициентом трения",
+    "Price": 39900,
+    "Quantity": 1,
+    "Pictures": "assets/productsimages/optimaxmast.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Optimax Set: МК3 Medium мачта, 45мм гик, МК3 Flex шпринт",
+    "Type": "optimist",
+    "Description": "Специальный набор лонжеронов Optimax MK3, настоятельно рекомендуется для яхтсменов весом до 47-48 кг, использующих самые современные гоночные паруса, такие как ONE или NORTH.\n\nВключает:\n\nГоночная мачта Optimax MK 3\nГик Optimax 45 мм\nШпринт Optimax Hyperflex",
+    "Price": 79000,
+    "Quantity": 2,
+    "Pictures": "assets/productsimages/optimaxmkthreespecial.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Optimax Set: МК3 Medium мачта, 45мм гик, МК3 Flex шпринт",
+    "Type": "optimist",
+    "Description": "Специальный набор лонжеронов Optimax MK3, настоятельно рекомендуется для яхтсменов весом до 47-48 кг, использующих самые современные гоночные паруса, такие как ONE или NORTH.\n\nВключает:\n\nГоночная мачта Optimax MK 3\nГик Optimax 45 мм\nШпринт Optimax Hyperflex",
+    "Price": 79000,
+    "Quantity": 2,
+    "Pictures": "assets/productsimages/optimaxmkthreespecial.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Optimax Set: МК3 Flex мачта, 48мм гик, МК3 HyperFlex шпринт",
+    "Type": "optimist",
+    "Description": "Рекомендуемый вес менее 35 кг\n\nMK3 flex mast, MK4 boom и MK3 hyperflex шпринт",
+    "Price": 81000,
+    "Quantity": 1,
+    "Pictures": "assets/productsimages/optimaxandboldboom.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Optimax Set: МК3 мачта, 48мм гик, МК3 HyperFlex шпринт",
+    "Type": "optimist",
+    "Description": "Рекомендуемый вес 47-48\n\nMK3 мачта, MK4 boom и MK3 hyperflex шпринт",
+    "Price": 81000,
+    "Quantity": 1,
+    "Pictures": "assets/productsimages/optimaxandboldboom.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Optimax Set: МК3 Flex мачта, 48мм гик, МК3 Flex шпринт",
+    "Type": "optimist",
+    "Description": "Рекомендуемый вес менее 35 кг\n\nMK3 flex mast, MK4 boom и MK3 Flex шпринт",
+    "Price": 81000,
+    "Quantity": 1,
+    "Pictures": "assets/productsimages/optimaxandboldboom.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Optimax Set: МК3  мачта, 48мм гик, МК3  шпринт",
+    "Type": "optimist",
+    "Description": "Рекомендуемый вес 35-45kg \n\nMK3  mast, MK4 boom и MK3  шпринт",
+    "Price": 81000,
+    "Quantity": 1,
+    "Pictures": "assets/productsimages/optimaxandboldboom.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Шверт One Design",
+    "Type": "optimist",
+    "Description": "Гоночные лодки Optimist One Design от Optiparts построены в соответствии с новыми правилами класса. Правила класса стандартизировали шверт и руль Optimist: размер, форму, эпоксидную смолу, пену и стекловолокно. Руль и шверт Optimist изготавливаются максимально допустимой толщины, чтобы сделать подводную лодку максимально жесткой в \u200B\u200Bсоответствии с данными правилами. Шверты One Design Optimist оснащены красиво отделанными рейками из тикового дерева.",
+    "Price": 32200,
+    "Quantity": 10,
+    "Pictures": "assets/productsimages/shvertoptimist.jpg",
+    "TypeForBuy": "Есть в наличии"
+  },
+  {
+    "Name": "Перо One Design(Только перо)",
+    "Type": "optimist",
+    "Description": "Гоночные перья Epoxy One Design.\nПостроены в соответствии с новыми правилами класса Optimist. Правила класса стандартизировали шверт и руль: размер, форму, эпоксидную смолу, пену и стекловолокно.\nПерья руля изготавливаются максимально допустимой толщины, чтобы сделать крыло максимально жестким в соответствии с данными правилами.",
+    "Price": 21550,
+    "Quantity": 10,
+    "Pictures": "assets/productsimages/rudderoptimist.png",
     "TypeForBuy": "Есть в наличии"
   }
+  
 ]

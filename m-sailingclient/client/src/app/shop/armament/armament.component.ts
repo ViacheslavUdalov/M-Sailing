@@ -48,6 +48,10 @@ export class ArmamentComponent implements OnInit{
     {
       value: 'чехлы',
       name: 'Чехлы'
+    },
+    {
+      value: 'optimist',
+      name: 'Optimist'
     }
   ]
   typesForBuy = [

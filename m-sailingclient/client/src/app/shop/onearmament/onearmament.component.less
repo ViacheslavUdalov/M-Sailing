@@ -8,12 +8,45 @@
 }
 .info {
   margin-left: 10%;
-
+  margin-top: 5%;
 }
 .buttons {
   display: flex;
   margin-top: 20px;
   flex-direction: column;
+}
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(222, 222, 222, 0.76);
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.addToCart {
+  margin: 0 10px;
+  background-color: @color-primary;
+  border-radius: 10px;
+  padding: 10px;
+  transition: color 1s ease, scale 1s ease;
+  color: white;
+}
+.addToCart.dis {
+  cursor: not-allowed;
+  opacity: 0.4;
+  scale: 1;
+}
+.addToCart:hover {
+  scale: 1.1;
+}
+.plus-minus {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap : 10px;
 }
 .inside-buttons {
   display: flex;
@@ -30,6 +63,7 @@
   width: 30px;
   cursor: pointer;
   color: white;
+  margin: 5px;
 }
 .delete-button:hover {
   scale: 1.1;
@@ -71,14 +105,14 @@ button {
 }
 
 .equipment-image {
-  width: 300px;
+  width: 500px;
   height: auto;
-  border-bottom: 1px solid black;
 }
 .name {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-style: italic;
+  margin-bottom: 20px;
 }
 .description {
   font-family: "Poppins", sans-serif;
@@ -121,6 +155,7 @@ button {
     width: 100%;
     height: auto;
   }
+
   .details {
     width: 100%;
   }
@@ -129,6 +164,7 @@ button {
     font-family: "Poppins", sans-serif;
     font-weight: 100;
     font-style: normal;
+    margin-bottom: 0;
   }
   .description {
     width: 100%;

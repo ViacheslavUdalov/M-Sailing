@@ -4,7 +4,7 @@ export interface  Armament {
   type: string,
   description: string
   price: number,
-  quantity: string,
+  quantity: number,
   pictures:  string,
   typeForBuy: string
 

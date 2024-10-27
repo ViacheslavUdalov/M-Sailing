@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {ShopService} from "../shop.service";
 import {ActivatedRoute} from "@angular/router";
 import {Armament} from "../../models/armament";
@@ -7,6 +7,8 @@ import { BasketService } from 'src/app/basket/basket.service';
 import { ProductToCreateOrder } from 'src/app/models/OrdersModels';
 import { Meta, Title } from '@angular/platform-browser';
 import {BreadcrumbService} from "xng-breadcrumb";
+import {ToastrService} from "ngx-toastr";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-onearmament',
@@ -21,10 +23,12 @@ export class OnearmamentComponent implements OnInit{
   isProductAddedToCart: boolean = false;
   quantityInBasket: number = 0;
   constructor(private shopService: ShopService,
+              @Inject(DOCUMENT) private document: Document,
               private activeRouter: ActivatedRoute,
               private basketService: BasketService,
               private metaService: Meta, private titleService: Title,
-              private bcService: BreadcrumbService) {
+              private bcService: BreadcrumbService,
+              private toastr: ToastrService) {
     this.bcService.set('@productDetails', '')
   }
 
@@ -40,13 +44,17 @@ export class OnearmamentComponent implements OnInit{
       this.getOneProduct();
     })
     this.getArmamentForHome();
+this.addJsonLd()
 
   }
   getOneProduct() {
     this.shopService.getOneArmament(Number(this.id)).subscribe(data => {
+      this.quantityInBasket = this.basketService.getQuantityOfProduct(Number(this.id))
       this.armament = data;
       this.activeRouter.queryParams.subscribe(params => {
-
+        console.log("OneArmament")
+        console.log(this.quantityInBasket)
+        console.log(this.armament?.quantity)
         let type = (`${params['type']}`).replace(/\./g, ' ').toUpperCase();
         console.log(type)
         // const parentRoute = this.activeRouter.snapshot.url[0].path;
@@ -67,10 +75,43 @@ export class OnearmamentComponent implements OnInit{
       ]);
     })
   }
+  addJsonLd(): void {
+    const jsonLd = {
+      "@context": "https://schema.org/",
+      "@type": "Armament",
+      "name": this.armament?.name,
+      "image": this.armament?.pictures,
+      "description": this.armament?.description,
+      "offers": {
+        "@type": "Offer",
+        "url": window.location.href,
+        "priceCurrency": "RUB",
+        "price": this.armament?.price,
+        "priceValidUntil": "2025-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock"
+      }
+    };
+    const script = this.document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(jsonLd);
+    this.document.head.appendChild(script);
+  }
+
   getArmamentForHome() {
     this.shopService.getRandomArmament().subscribe(data => {
       this.additional = data;
     })
+  }
+  increaseQuantity(productId: number): void {
+    console.log(productId)
+    this.basketService.increaseQuantity(productId);
+    this.checkoutQuantity(Number(productId))
+  }
+
+  decreaseQuantity(productId: number): void {
+    this.basketService.decreaseQuantity(productId);
+    this.checkoutQuantity(Number(productId))
   }
   checkoutQuantity(id: number) {
     this.quantityInBasket = this.basketService.getQuantityOfProduct(id);
@@ -87,11 +128,13 @@ export class OnearmamentComponent implements OnInit{
     this.basketService.addToCart(productForOrder, productForOrder.quantity);
     this.updateRemoveButtonVisibility(product.id)
     this.checkoutQuantity(product.id)
+    this.toastr.success("Товар добавлен в корзину")
   }
   removeFromCart(productId: number) {
     this.basketService.removeFromCart(productId);
     this.updateRemoveButtonVisibility(productId)
      this.checkoutQuantity(productId)
+    this.toastr.success("Товар удалён из корзины!")
   }
   clearCart() {
     this.basketService.clearCart()

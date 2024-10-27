@@ -6,17 +6,23 @@
       <div class="info">
         <h2 class="name">{{ armament.name }}</h2>
         <h3 class="textproduct"><strong> {{ armament.price }} Руб.</strong></h3>
-        <span style="font-size: small">Тип товара: </span><strong><h3 class="textproduct" style="font-weight: bold"> {{ armament.type }}</h3></strong>
+<!--        <span style="font-size: small">Тип товара: </span><strong><h3 class="textproduct" style="font-weight: bold"> {{ armament.type }}</h3></strong>-->
         <h3 class="textproduct"><strong>Наличие товара: </strong> <span>{{armament.quantity}} шт. - </span> <span [class.green]="armament.typeForBuy === 'Есть в наличии'" [class.red]="armament.typeForBuy === 'Под заказ'">{{ armament.typeForBuy }}</span></h3>
         <div class="buttons">
           <div class="inside-buttons">
-            <button (click)="addItem(armament)" style="margin-right: 10px">Добавить в Корзину</button>
+            <button (click)="addItem(armament)" [disabled]="armament.quantity == quantityInBasket" [class.dis]="armament.quantity == quantityInBasket" class="addToCart" style="margin: 0">Добавить в Корзину</button>
 
-            <a class="delete-button" *ngIf="isProductAddedToCart" (click)="removeFromCart(armament.id)"><span class="material-symbols-outlined">
+            <a class="delete-button" *ngIf="isProductAddedToCart || quantityInBasket !== 0" (click)="removeFromCart(armament.id)"><span class="material-symbols-outlined">
 delete
 </span></a>
           </div>
-          <span>Количество данного товара в корзине : {{quantityInBasket}}</span>
+<!--          <span>Количество данного товара в корзине : {{quantityInBasket}}</span>-->
+          <div class="plus-minus">
+            <button class="addToCart" style="margin: 0" [class.dis]="quantityInBasket == 0  || armament.quantity == quantityInBasket" [disabled]="quantityInBasket == 0  || armament.quantity == quantityInBasket" (click)="increaseQuantity(armament.id)">+</button>
+            <strong class="quantity">{{ quantityInBasket}}</strong>
+            <button class="addToCart" style="margin: 0" [class.dis]="quantityInBasket == 0" [disabled]="quantityInBasket == 0" (click)="decreaseQuantity(armament.id)">-</button>
+            <!--          <button class="addToCart" [class.dis]="!selectedSize || quantityInBasket == 0" [disabled]="!selectedSize || quantityInBasket == 0" (click)="removeFromCart(equipment.id)">Удалить</button>-->
+          </div>
           <a routerLink="/basket" style="font-size: smaller; margin-top: 5px">Перейти в корзину</a>
         </div>
 

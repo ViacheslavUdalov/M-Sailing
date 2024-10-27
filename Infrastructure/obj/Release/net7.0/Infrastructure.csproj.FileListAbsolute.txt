@@ -16,6 +16,4 @@ C:\Production\M-sailing\Infrastructure\obj\Release\net7.0\Infrastructure.pdb
 C:\Production\M-sailing\Infrastructure\obj\Release\net7.0\ref\Infrastructure.dll
 C:\Production\M-sailing\Infrastructure\bin\Release\net7.0\Data\SeedData\armament.json
 C:\Production\M-sailing\Infrastructure\bin\Release\net7.0\Data\SeedData\boats.json
-C:\Production\M-sailing\Infrastructure\bin\Release\net7.0\Data\SeedData\clothes.json
-C:\Production\M-sailing\Infrastructure\bin\Release\net7.0\Data\SeedData\covers.json
 C:\Production\M-sailing\Infrastructure\bin\Release\net7.0\Data\SeedData\equipment.json

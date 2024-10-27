@@ -59,6 +59,7 @@ text-decoration: none;" href="basket">Вернуться в корзину</a></
     <img [src]="item.product.pictures" alt="{{ item.product.name }}">
     <div class="product-info">
       <div class="product-name">{{ item.product.name }}</div>
+      <div class="product-quantity">{{ item.product?.size }}</div>
       <div class="product-price">Цена за шт. - {{ item.product.price }} ₽</div>
       <div class="product-quantity">Количество: {{ item.quantity }}</div>
     </div>

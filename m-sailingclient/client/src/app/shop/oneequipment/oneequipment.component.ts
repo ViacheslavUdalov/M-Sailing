@@ -56,7 +56,7 @@ export class OneequipmentComponent implements OnInit{
         "url": window.location.href,
         "priceCurrency": "RUB",
         "price": this.equipment?.price,
-        "priceValidUntil": "2024-12-31",
+        "priceValidUntil": "2025-12-31",
         "itemCondition": "https://schema.org/NewCondition",
         "availability": "https://schema.org/InStock"
       }
@@ -140,8 +140,6 @@ export class OneequipmentComponent implements OnInit{
   }
   checkoutQuantity(id: number) {
     this.quantityInBasket = this.basketService.getQuantityOfProduct(id, this.selectedSize.size);
-      if (this.quantityInBasket === this.selectedSize?.quantity) {
-      }
   }
   getOneProductFromBasket() {
     if (this.equipment?.id) {

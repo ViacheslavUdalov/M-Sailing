@@ -44,8 +44,6 @@ C:\Production\M-sailing\Api\obj\Release\net7.0\Api.genruntimeconfig.cache
 C:\Production\M-sailing\Api\obj\Release\net7.0\ref\Api.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\armament.json
 C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\boats.json
-C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\clothes.json
-C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\covers.json
 C:\Production\M-sailing\Api\bin\Release\net7.0\Data\SeedData\equipment.json
 C:\Production\M-sailing\Api\bin\Release\net7.0\Humanizer.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.EntityFrameworkCore.dll
@@ -57,3 +55,17 @@ C:\Production\M-sailing\Api\bin\Release\net7.0\Mono.TextTemplating.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\Npgsql.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Production\M-sailing\Api\bin\Release\net7.0\System.CodeDom.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.Extensions.Identity.Core.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.Extensions.Options.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.IdentityModel.Logging.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Production\M-sailing\Api\bin\Release\net7.0\System.IdentityModel.Tokens.Jwt.dll

@@ -21,6 +21,30 @@
       "PackagePath": "staticwebassets\\assets\\data\\equipment.json"
     },
     {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\IMG_0791.png",
+      "PackagePath": "staticwebassets\\assets\\images\\IMG_0791.png"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\IMG_0795.png",
+      "PackagePath": "staticwebassets\\assets\\images\\IMG_0795.png"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\IMG_0797.png",
+      "PackagePath": "staticwebassets\\assets\\images\\IMG_0797.png"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\IMG_0810.png",
+      "PackagePath": "staticwebassets\\assets\\images\\IMG_0810.png"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\IMG_6617.png",
+      "PackagePath": "staticwebassets\\assets\\images\\IMG_6617.png"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\cart.png",
+      "PackagePath": "staticwebassets\\assets\\images\\cart.png"
+    },
+    {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\download (1).png",
       "PackagePath": "staticwebassets\\assets\\images\\download (1).png"
     },
@@ -39,6 +63,10 @@
     {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\menslaser.jpg",
       "PackagePath": "staticwebassets\\assets\\images\\menslaser.jpg"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\msailing.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\msailing.jpg"
     },
     {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\images\\msailing.png",
@@ -111,6 +139,10 @@
     {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\blackSocks.jpg",
       "PackagePath": "staticwebassets\\assets\\productsimages\\blackSocks.jpg"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\blacknumber.jpg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\blacknumber.jpg"
     },
     {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\blackpants.jpg",
@@ -269,6 +301,22 @@
       "PackagePath": "staticwebassets\\assets\\productsimages\\number.jpg"
     },
     {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\onesails.jpeg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\onesails.jpeg"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\optimaxandboldboom.jpg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\optimaxandboldboom.jpg"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\optimaxmast.jpg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\optimaxmast.jpg"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\optimaxmkthreespecial.jpg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\optimaxmkthreespecial.jpg"
+    },
+    {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\pantsthreefour.jpg",
       "PackagePath": "staticwebassets\\assets\\productsimages\\pantsthreefour.jpg"
     },
@@ -295,6 +343,10 @@
     {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\ropeForblock.jpg",
       "PackagePath": "staticwebassets\\assets\\productsimages\\ropeForblock.jpg"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\rudderoptimist.png",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\rudderoptimist.png"
     },
     {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\rumpel.jpg",
@@ -345,6 +397,14 @@
       "PackagePath": "staticwebassets\\assets\\productsimages\\shvert.jpg"
     },
     {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\shvertoptimist.jpg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\shvertoptimist.jpg"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\silverset.jpg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\silverset.jpg"
+    },
+    {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\socksthree.jpg",
       "PackagePath": "staticwebassets\\assets\\productsimages\\socksthree.jpg"
     },
@@ -371,6 +431,10 @@
     {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\traveller.jpg",
       "PackagePath": "staticwebassets\\assets\\productsimages\\traveller.jpg"
+    },
+    {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\trolley.jpg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\trolley.jpg"
     },
     {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\trousers.jpg",
@@ -417,6 +481,10 @@
       "PackagePath": "staticwebassets\\assets\\productsimages\\women.jpg"
     },
     {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\zhiktop200.jpeg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\zhiktop200.jpeg"
+    },
+    {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -425,8 +493,8 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\main.4f1219fb88493d2b.js",
-      "PackagePath": "staticwebassets\\main.4f1219fb88493d2b.js"
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\main.8eb5b4c85878e038.js",
+      "PackagePath": "staticwebassets\\main.8eb5b4c85878e038.js"
     },
     {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\nt.494210bd57bed316.jpg",
@@ -441,16 +509,16 @@
       "PackagePath": "staticwebassets\\photo_2024-04-01_15-48-51.7701bf467ebf947a.jpg"
     },
     {
-      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\polyfills.9235a755e281251e.js",
-      "PackagePath": "staticwebassets\\polyfills.9235a755e281251e.js"
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\polyfills.4709fd955acb2242.js",
+      "PackagePath": "staticwebassets\\polyfills.4709fd955acb2242.js"
     },
     {
-      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\runtime.6a84378ee9791542.js",
-      "PackagePath": "staticwebassets\\runtime.6a84378ee9791542.js"
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\runtime.7ae29a296d479790.js",
+      "PackagePath": "staticwebassets\\runtime.7ae29a296d479790.js"
     },
     {
-      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\styles.23ea9fcb1357d4db.css",
-      "PackagePath": "staticwebassets\\styles.23ea9fcb1357d4db.css"
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\styles.912af76077a0a18f.css",
+      "PackagePath": "staticwebassets\\styles.912af76077a0a18f.css"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Api.Microsoft.AspNetCore.StaticWebAssets.props",

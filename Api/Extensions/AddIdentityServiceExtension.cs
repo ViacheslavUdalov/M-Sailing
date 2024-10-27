@@ -24,9 +24,10 @@ namespace Api.Extensions;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Tokenkey"])),
-                    ValidateIssuer = false,
-                    ValidateAudience = false
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Token:Key"])),
+                    ValidIssuer = configuration["Token:Issuer"],
+                    ValidateIssuer = true,
+                    ValidateAudience = true
                 };
             });
         services.AddAuthorization(opt =>
