@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpParams, HttpResponse} from "@angular/common/http";
-import {delay, Observable, of} from "rxjs";
+import {BehaviorSubject, delay, Observable, of} from "rxjs";
 import {Equipment} from "../models/equipment";
 import {Cover} from "../models/cover";
 import {Armament} from "../models/armament";
@@ -10,6 +10,9 @@ import {Boat} from "../models/boat";
 import {environment} from "../../environments/environment";
 import {ShopParams} from "../models/shopParams";
 import {Pagination, IPagination} from "../models/IPagination";
+import {NotExpr} from "@angular/compiler";
+import {reflectTypeEntityToDeclaration} from "@angular/compiler-cli/src/ngtsc/reflection";
+import {NavbarComponent} from "../core/navbar.component";
 @Injectable({
   providedIn: 'root'
 })
@@ -23,8 +26,30 @@ export class ShopService {
   covers: Cover[] = []
   clothes: Clothes[] = []
   boats: Boat[] = [];
-  constructor(private http: HttpClient) { }
+  private euroRateSubject = new BehaviorSubject<number>(0);
+  euroRate$ = this.euroRateSubject.asObservable();
+  // euroRate: number = 0;
+  constructor(private http: HttpClient) {
+    this.getEuro();
+  }
 
+  getEuro() {
+    return this.http.get<number>(this.apiUrl + 'main/geteuro').subscribe((rate) => {
+      console.log("EEEEEEEEUUUUUUUUUUUUUURRRRRRRRRRRRRROOOOOOOOOOOOOO")
+      console.log(rate)
+      this.euroRateSubject.next(rate);
+    })
+  }
+  convertToLocalCurrency(value: number) {
+   return  this.euroRateSubject.value * value;
+  }
+  setNewValueForEuro(value: number) {
+    this.euroRateSubject.next(value);
+    return this.http.put(this.apiUrl  + 'eurovalue/updateeuro/' + value, value, {
+      withCredentials: true
+    })
+
+  }
   private getItems(endpoint: string) {
     let params = new HttpParams();
     if (this.shopParams.type) {
@@ -51,6 +76,8 @@ export class ShopService {
 getEquipment(): Observable<IPagination> {
 return this.getItems('main/equipment')
 }
+
+
 setShopParams(params: ShopParams) {
     this.shopParams = params;
 }

@@ -40,6 +40,10 @@ export class OneboatComponent implements OnInit{
     })
     this.getEquipForHome();
   }
+
+  getPriceInLocalCurrency(priceInEuro: number) {
+    return this.shopService.convertToLocalCurrency(priceInEuro);
+  }
   getOneProduct() {
     this.shopService.getOneboat(Number(this.id)).subscribe(data => {
       this.boat = data;

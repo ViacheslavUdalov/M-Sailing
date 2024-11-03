@@ -1,16 +1,16 @@
 @color-primary: #007bff;
 .clear-cart-container {
   display: flex;
-  justify-content: center; /* Центрирование по горизонтали */
-  align-items: center; /* Центрирование по вертикали */
+  justify-content: center;
+  align-items: center;
   margin: 20px;
   gap: 20px;
 }
 
 .clear-cart-button {
   padding: 10px 20px;
-  background-color: #dc3545; /* Красный цвет для кнопки удаления */
-  color: #fff; /* Белый цвет для текста кнопки */
+  background-color: #dc3545;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -18,7 +18,7 @@
 }
 
 .clear-cart-button:hover {
-  background-color: #c82333; /* Темно-красный цвет при наведении на кнопку */
+  background-color: #c82333;
 }
 
 .cart-container {
@@ -26,22 +26,22 @@
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
-  justify-content: center; /* Центрируем элементы по горизонтали */
+  justify-content: center;
 }
 
 .cart-item {
-  flex: 1 1 calc(33.333%); /* Три элемента в ряд с учетом gap */
+  flex: 1 1 calc(33.333%);
   max-width: calc(33.333%);
-  box-sizing: border-box; /* Включаем padding и border в ширину */
+  box-sizing: border-box;
   margin-bottom: 20px;
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
   display: flex;
-  flex-direction: column; /* Вертикальная компоновка внутри элемента */
-  align-items: center; /* Центрируем контент по горизонтали */
-  text-align: center; /* Центрируем текст */
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 .follow-to-order {
   background-color: @color-primary;
@@ -100,17 +100,18 @@ flex-direction: row;
   margin-top: 20px;
   font-size: 18px;
   text-align: center;
+  margin-bottom: 50%;
 }
 
 @media (max-width: 768px) {
   .cart-item {
-    flex: 1 1 calc(50% - 10px); /* Два элемента в ряд на экранах до 768px */
+    flex: 1 1 calc(50% - 10px);
   }
 }
 
 @media (max-width: 480px) {
   .cart-item {
-    flex: 1 1 100%; /* Один элемент в ряд на экранах до 480px */
+    flex: 1 1 100%;
     max-width: 100%;
   }
   .clear-cart-container {

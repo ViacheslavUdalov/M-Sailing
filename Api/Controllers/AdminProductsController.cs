@@ -1,3 +1,4 @@
+using Api.Helpers;
 using Core.Entities;
 using Core.Interfaces;
 using DefaultNamespace;
@@ -10,10 +11,13 @@ namespace Api.Controllers;
 public class AdminProductsController : BaseApiController
 {
     private readonly IAdminProductsRepository _adminProductsRepository;
+    private readonly UrlResolver _urlResolver;
 
-    public AdminProductsController(IAdminProductsRepository adminProductsRepository)
+    public AdminProductsController(IAdminProductsRepository adminProductsRepository,
+        UrlResolver urlResolver)
     {
         _adminProductsRepository = adminProductsRepository;
+        _urlResolver = urlResolver;
     }
     
     
@@ -34,6 +38,7 @@ public class AdminProductsController : BaseApiController
     public async Task<ActionResult<Equipment>> UpdateEquip(Equipment equipment)
     {
         Console.WriteLine(equipment);
+        equipment.Pictures = _urlResolver.DeleteApiUrl(equipment.Pictures);
         var equip = await _adminProductsRepository.UpdateEq(equipment.Id, equipment);
         if (equip == null)
         {
@@ -56,5 +61,53 @@ public class AdminProductsController : BaseApiController
        }
        
        return Ok("Данные удалены.");
+    }
+    
+    
+    
+    
+    
+    
+    
+    [Authorize(Policy = "RequireAdminRole")]
+    [HttpPost("create-armam")]
+    public async Task<ActionResult<Armament>> CreateArmam(Armament armament)
+    {
+        var armam = await _adminProductsRepository.CreateAr(armament);
+        if (armam == null)
+        {
+            return BadRequest("Не найдены данные.");
+        }
+        return Ok(armam);
+    }
+    
+    [Authorize(Policy = "RequireAdminRole")]
+    [HttpPut("update-armam/{id}")]
+    public async Task<ActionResult<Armament>> UpdateArmam(Armament armament)
+    {
+        Console.WriteLine(armament);
+        armament.Pictures = _urlResolver.DeleteApiUrl(armament.Pictures);
+        var armam = await _adminProductsRepository.UpdateArmam(armament.Id, armament);
+        if (armam == null)
+        {
+            return BadRequest("Не найдены данные.");
+        }
+        
+        return Ok(armam);
+    }
+    
+    
+    [Authorize(Policy = "RequireAdminRole")]
+    [HttpDelete("delete-armam/{id}")]
+    public async Task<ActionResult> DeleteArmam(int id)
+    {
+        var success = await _adminProductsRepository.DeleteAr(id);
+
+        if (!success)
+        {
+            return NotFound("Товар не найден, Удаление не выполнено.");
+        }
+       
+        return Ok("Данные удалены.");
     }
 }

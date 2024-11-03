@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import {CartItem, ProductToCreateOrder } from '../models/OrdersModels';
 import {ProductVariant} from "../models/ProductVariant";
+import {ShopService} from "../shop/shop.service";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import {ProductVariant} from "../models/ProductVariant";
 export class BasketService {
   private cartItems: CartItem[] = [];
   private cartItemsSubject = new BehaviorSubject<CartItem[]>(this.cartItems);
-constructor() {
+constructor(private shopService: ShopService) {
   this.loadCartFromLocalStorage();
 }
   private saveCartToLocalStorage() {
@@ -27,11 +28,18 @@ constructor() {
     if (index !== -1) {
       this.cartItems[index].quantity += 1;
       this.cartItemsSubject.next(this.cartItems);
-      console.log(this.cartItems)
+      console.log(this.cartItems);
       this.saveCartToLocalStorage();
     }
   }
-
+  getPriceInLocalCurrency(priceInEuro: number) {
+    return this.shopService.convertToLocalCurrency(priceInEuro);
+  }
+updatePrice() {
+  this.cartItems.map((item) => {
+    item.product.price = this.getPriceInLocalCurrency(item.product.price)
+  })
+}
   decreaseQuantity(productId: number, size?: string) {
     const index = this.cartItems.findIndex(item => item.product.productId === productId && item.product.size == size);
     if (index !== -1 && this.cartItems[index].quantity > 1) {
@@ -70,6 +78,8 @@ getProductFromBasket(id: number, size?: string) {
     if (index !== -1) {
       this.cartItems[index].quantity += quantity;
     } else {
+      product.price = this.getPriceInLocalCurrency(product.price)
+      console.log(product.price)
       this.cartItems.push({ product, quantity });
     }
     console.log("In Service")

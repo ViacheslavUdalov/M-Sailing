@@ -11,13 +11,32 @@ public class MainController: BaseApiController
 {
     private readonly IProductsRepository _productsRepository;
     private readonly UrlResolver _urlResolver;
+    private readonly IEuroValueRepository _euroValueRepository;
     
-    public MainController(IProductsRepository productsRepository,  UrlResolver urlResolver)
+    public MainController(IProductsRepository productsRepository,
+        UrlResolver urlResolver,
+        IEuroValueRepository euroValueRepository)
     {
         _productsRepository = productsRepository;
         _urlResolver = urlResolver;
+        _euroValueRepository = euroValueRepository;
     }
     
+    
+  
+    [HttpGet("geteuro")]
+    public async Task<ActionResult<int>> GetEuroValue()
+    {
+        var euroValue = await _euroValueRepository.GetEuroCurrency();
+        if (euroValue == null) 
+        {
+            Console.WriteLine("Euro value not found");
+            return NotFound();
+        }
+
+        Console.WriteLine($"Retrieved euro value: {euroValue}");
+        return Ok(euroValue.EuroCurrency);
+    }
     
     [HttpGet("random-equipment")]
     public async Task<ActionResult<IReadOnlyList<Equipment>>> GetRandomEquipment()

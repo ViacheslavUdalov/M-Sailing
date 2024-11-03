@@ -11,6 +11,7 @@ import {CoreModule} from "../core/core.module";
 import {SharedModule} from "../shared/shared.module";
 import { OneboatComponent } from './oneboat/oneboat.component';
 import {BoatsComponent} from "./boats/boats.component";
+import { ChangeCurrencyValueComponent } from './change-currency-value/change-currency-value.component';
 
 
 
@@ -21,7 +22,8 @@ import {BoatsComponent} from "./boats/boats.component";
     OneequipmentComponent,
     OnearmamentComponent,
     OneboatComponent,
-    BoatsComponent
+    BoatsComponent,
+    ChangeCurrencyValueComponent
   ],
   exports: [
   ],

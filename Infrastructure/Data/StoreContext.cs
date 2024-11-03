@@ -15,6 +15,7 @@ public class StoreContext : DbContext
     public DbSet<Equipment> Equipment { get; set; }
     public DbSet<ProductVariants> ProductVariants { get; set; }
     public DbSet<Armament> Armament { get; set; }
+    public DbSet<EuroValue> EuroValue { get; set; }
     public DbSet<Boats>  Boats { get; set; }
     public DbSet<CreateOrderData>  Orders { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
@@ -31,8 +32,8 @@ public class StoreContext : DbContext
             .Property(e => e.OrderDate)
             .HasConversion(new DateTimeOffsetToStringConverter());
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-
+        builder.Entity<EuroValue>().HasKey(e => e.Id);
+        
         if (Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
         {
             foreach (var entityType in builder.Model.GetEntityTypes())

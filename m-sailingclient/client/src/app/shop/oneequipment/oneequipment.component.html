@@ -5,7 +5,7 @@
       <img [src]="equipment.pictures" alt="{{ equipment.name }}" class="equipment-image">
       <div class="info">
         <h2 class="name">{{ equipment.name }}</h2>
-        <h3 class="textproduct"><strong style="font-weight: bold">{{ equipment.price }} Руб.</strong></h3>
+        <h3 class="textproduct"><strong style="font-weight: bold">{{ getPriceInLocalCurrency(equipment.price) }} Руб.</strong></h3>
 <!--        <h3 class="textproduct"><strong>Тип товара: </strong>  {{ equipment.type }}</h3>-->
 
           <div style="margin-top: 40px" *ngIf="equipment.productVariants && equipment.productVariants.length > 0" >

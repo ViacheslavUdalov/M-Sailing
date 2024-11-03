@@ -113,6 +113,10 @@
       "PackagePath": "staticwebassets\\assets\\images\\unnamed.png"
     },
     {
+      "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\21-arctic_front-2.jpg",
+      "PackagePath": "staticwebassets\\assets\\productsimages\\21-arctic_front-2.jpg"
+    },
+    {
       "Id": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\AIRXLIGHT.jpg",
       "PackagePath": "staticwebassets\\assets\\productsimages\\AIRXLIGHT.jpg"
     },

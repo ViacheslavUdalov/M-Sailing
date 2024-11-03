@@ -7,6 +7,7 @@ import {ShopService} from "../shop.service";
 import { Meta, Title } from '@angular/platform-browser';
 import {BreadcrumbService} from "xng-breadcrumb";
 import {BcServicePrivateService} from "../../shared/bc-service-private.service";
+import {retry} from "rxjs";
 
 @Component({
   selector: 'app-equipment',
@@ -100,7 +101,9 @@ export class EquipmentComponent implements OnInit {
       this.getEquipment();
     })
   }
-
+getPriceInLocalCurrency(priceInEuro: number) {
+    return this.shopService.convertToLocalCurrency(priceInEuro);
+}
   getEquipment() {
     console.log(this.totalCount)
     this.shopService.getEquipment().subscribe(data => {

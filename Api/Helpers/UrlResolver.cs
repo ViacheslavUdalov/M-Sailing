@@ -21,4 +21,15 @@ public class UrlResolver
         // Console.WriteLine(urls);
         return fullUrl;
     }
+
+    public string DeleteApiUrl(string source)
+    {
+        string fullUrl = "";
+        if (!string.IsNullOrEmpty(source) && source.Contains(_configuration["ApiUrl"]))
+        {
+            return source.Replace(_configuration["ApiUrl"], string.Empty);
+        }
+
+        return source;
+    }
 }

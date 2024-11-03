@@ -16,6 +16,7 @@ import { CoreRoutingModule } from './core-routing.module';
 import {ToastrModule} from "ngx-toastr";
 import { CreateEquipComponent } from './create-edite-products/create-equip/create-equip.component';
 import {SharedModule} from "../shared/shared.module";
+import { CreateArmamentComponent } from './create-edite-products/create-armament/create-armament.component';
 
 
 
@@ -31,7 +32,8 @@ import {SharedModule} from "../shared/shared.module";
     PrivacyPolicyComponent,
     TermsOfServiceComponent,
     CookieComponent,
-    CreateEquipComponent
+    CreateEquipComponent,
+    CreateArmamentComponent
   ],
   imports: [
     CommonModule,

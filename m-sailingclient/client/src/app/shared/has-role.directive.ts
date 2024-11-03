@@ -22,15 +22,15 @@ export class HasRoleDirective implements OnInit {
   ngOnInit() {
     this.accountService.currentUser$.subscribe(user => {
       this.user = user;
-      console.log('User =>')
-    console.log(this.user)
+    //   console.log('User =>')
+    // console.log(this.user)
       if (!this.user?.roles || this.user == null) {
         this.viewContainerRef.clear()
         return;
       }
-      console.log("directive => ")
-      console.log(this.appHasRole)
-      console.log(this.user.roles)
+      // console.log("directive => ")
+      // console.log(this.appHasRole)
+      // console.log(this.user.roles)
       if (this.user.roles.some(r => this.appHasRole[0] = r)) {
         console.log(true)
         this.viewContainerRef.createEmbeddedView(this.templateRef)

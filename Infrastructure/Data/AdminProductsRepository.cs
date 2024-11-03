@@ -8,7 +8,7 @@ public class AdminProductsRepository : IAdminProductsRepository
 {
     
     private readonly StoreContext _context;
-
+    
     public AdminProductsRepository(StoreContext context)
     {
         _context = context;
@@ -79,11 +79,30 @@ public class AdminProductsRepository : IAdminProductsRepository
         return equip;
     }
 
-    public Task<Armament> UpdateAr(Armament armament)
+    public async Task<Armament> UpdateArmam(int Id, Armament armam)
     {
-        throw new NotImplementedException();
-    }
+        var armament = await _context.Armament.FirstOrDefaultAsync(e => e.Id == Id);
+        if (armament == null)
+        {
+            return null;
+        }
+
+        var trackedEntity = _context.Set<Armament>().Local.FirstOrDefault(e => e.Id == Id);
+        if (trackedEntity != null)
+        {
+            _context.Entry(trackedEntity).CurrentValues.SetValues(armam);
+        }
+
     
+        else
+        {
+            _context.Set<Armament>().Attach(armam);
+            _context.Entry(armam).State = EntityState.Modified;
+        }
+           
+        await _context.SaveChangesAsync();
+        return armam;
+    }
 
     public Task<Boats> UpdateBoat(Boats boats)
     {

@@ -44,6 +44,9 @@ export class OneequipmentComponent implements OnInit{
     this.addJsonLd();
 
   }
+  getPriceInLocalCurrency(priceInEuro: number) {
+    return this.shopService.convertToLocalCurrency(priceInEuro);
+  }
   addJsonLd(): void {
     const jsonLd = {
       "@context": "https://schema.org/",

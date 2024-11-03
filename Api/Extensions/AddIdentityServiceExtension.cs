@@ -27,7 +27,7 @@ namespace Api.Extensions;
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Token:Key"])),
                     ValidIssuer = configuration["Token:Issuer"],
                     ValidateIssuer = true,
-                    ValidateAudience = true
+                    ValidateAudience = false
                 };
             });
         services.AddAuthorization(opt =>

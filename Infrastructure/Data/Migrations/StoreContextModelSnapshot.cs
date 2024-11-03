@@ -166,6 +166,22 @@ namespace Infrastructure.Data.Migrations
                     b.ToTable("Equipment");
                 });
 
+            modelBuilder.Entity("Core.Entities.EuroValue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("EuroCurrency")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EuroValue");
+                });
+
             modelBuilder.Entity("Core.Entities.ProductVariants", b =>
                 {
                     b.Property<int>("Id")

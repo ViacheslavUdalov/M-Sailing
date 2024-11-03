@@ -14,7 +14,7 @@ handshake
       <img [src]="item.pictures" alt="{{ item.name }}" class="order-item-image">
       <div class="order-item-details">
         <div class="order-item-name">{{ item.name }}</div>
-        <div class="order-item-price">Цена за штуку: {{ item.price }} ₽</div>
+        <div class="order-item-price">Цена за штуку: {{ getPriceInLocalCurrency(item.price) }} ₽</div>
         <div class="order-item-quantity">Размер: {{ item.size }}</div>
         <div class="order-item-quantity">Количество: {{ item.quantity }}</div>
         <div style="margin-top: 5px">Цена Итого по товару: {{ item.price * item.quantity}} ₽</div>
@@ -22,7 +22,7 @@ handshake
     </div>
   </div>
   <div class="order-total">
-    <p>Общая стоимость: {{ orderData.totalPrice }} ₽</p>
+    <p *ngIf="orderData.totalPrice">Общая стоимость: {{ getPriceInLocalCurrency(orderData.totalPrice) }} ₽</p>
   </div>
   <button type="submit" routerLink="/">На главную</button>
 </div>

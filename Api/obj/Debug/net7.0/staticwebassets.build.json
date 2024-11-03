@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RugzKAfaeH1iDMLD/fd+UP6ikwCK5nds8Uj5vqEw4Xs=",
+  "Hash": "/d3hQuz98/0C8k4tjTCWut36UZxBIdQg8b+xc2qeJS4=",
   "Source": "Api",
   "BasePath": "_content/Api",
   "Mode": "Default",
@@ -547,6 +547,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\unnamed.png"
+    },
+    {
+      "Identity": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\21-arctic_front-2.jpg",
+      "SourceId": "Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Production\\M-sailing\\Api\\wwwroot\\",
+      "BasePath": "_content/Api",
+      "RelativePath": "assets/productsimages/21-arctic_front-2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\productsimages\\21-arctic_front-2.jpg"
     },
     {
       "Identity": "C:\\Production\\M-sailing\\Api\\wwwroot\\assets\\productsimages\\AIRXLIGHT.jpg",

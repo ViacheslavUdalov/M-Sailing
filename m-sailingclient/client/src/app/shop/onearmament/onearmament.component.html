@@ -5,7 +5,7 @@
       <img [src]="armament.pictures" alt="{{ armament.name }}" class="equipment-image">
       <div class="info">
         <h2 class="name">{{ armament.name }}</h2>
-        <h3 class="textproduct"><strong> {{ armament.price }} Руб.</strong></h3>
+        <h3 class="textproduct"><strong> {{ getPriceInLocalCurrency(armament.price) }} Руб.</strong></h3>
 <!--        <span style="font-size: small">Тип товара: </span><strong><h3 class="textproduct" style="font-weight: bold"> {{ armament.type }}</h3></strong>-->
         <h3 class="textproduct"><strong>Наличие товара: </strong> <span>{{armament.quantity}} шт. - </span> <span [class.green]="armament.typeForBuy === 'Есть в наличии'" [class.red]="armament.typeForBuy === 'Под заказ'">{{ armament.typeForBuy }}</span></h3>
         <div class="buttons">
@@ -24,6 +24,11 @@ delete
             <!--          <button class="addToCart" [class.dis]="!selectedSize || quantityInBasket == 0" [disabled]="!selectedSize || quantityInBasket == 0" (click)="removeFromCart(equipment.id)">Удалить</button>-->
           </div>
           <a routerLink="/basket" style="font-size: smaller; margin-top: 5px">Перейти в корзину</a>
+          <div style="margin: 10px; display: flex; flex-direction: column;">
+            <a class="edit" [routerLink] = "['/create-armament', armament.id]" *appHasRole="['Admin']">Редактировать товар</a>
+            <a class="edit" *appHasRole="['Admin']">Удалить(товар будет полностью удалён)</a>
+
+          </div>
         </div>
 
 

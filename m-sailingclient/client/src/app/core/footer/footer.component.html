@@ -51,7 +51,9 @@ mail
     <span><a href="/cookie-policy">Политика использования файлов cookie</a><span class="vertical"> |</span></span>
     <span *ngIf="!user"><a href="/login">Admins</a></span>
     <button *ngIf="user" (click)="logout()">Logout</button>
-    <span *appHasRole="['Admin']"><span class="vertical"> | </span><a  href="/create-equipment">Создать</a></span>
+    <span *appHasRole="['Admin']"><span class="vertical"> | </span><a  href="/create-equipment">Создать позицию экипировки</a></span>
+    <span *appHasRole="['Admin']"><span class="vertical"> | </span><a  href="/create-armament">Создать позицию воружения</a></span>
+    <span *appHasRole="['Admin']"><span class="vertical"> | </span><a  href="/edit-eurovalue">Изменить курс Евро</a></span>
   </div>
 
   <p class="text-center text-body-secondary" style="border-top: 1px solid black; margin-top: 10px; padding-top: 10px;">©

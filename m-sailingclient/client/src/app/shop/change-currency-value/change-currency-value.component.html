@@ -1,0 +1,15 @@
+<div class="currency-container">
+  <label for="euroRate" class="currency-label">Текущий курс евро:</label>
+  <div class="currency-input-group">
+    <input
+      type="number"
+      id="euroRate"
+      [(ngModel)]="currentRate"
+      class="currency-input"
+    />
+    <button (click)="onRateChange(currentRate)" class="save-button">
+      Сохранить курс
+    </button>
+  </div>
+  <p class="saved-rate">Курс евро сохранен: <strong>{{ currentRate }}</strong></p>
+</div>

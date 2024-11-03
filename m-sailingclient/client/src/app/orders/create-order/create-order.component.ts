@@ -5,6 +5,7 @@ import { BasketService } from 'src/app/basket/basket.service';
 import {CartItem, CreateOrderData } from 'src/app/models/OrdersModels';
 import { OrdersService } from '../orders.service';
 import {ToastrService} from "ngx-toastr";
+import {ShopService} from "../../shop/shop.service";
 
 @Component({
   selector: 'app-create-order',
@@ -20,7 +21,8 @@ error =''
     private cartService: BasketService,
     private orderService: OrdersService,
     private router: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private shopService: ShopService
   ) {
     this.orderForm = this.fb.group({
       phoneNumber: ['', [Validators.required, Validators.pattern(/^\+?\d{10,15}$/)]],
@@ -34,7 +36,9 @@ error =''
       nameOfGetter: ['', Validators.required]
     });
   }
-
+  getPriceInLocalCurrency(priceInEuro: number) {
+    return this.shopService.convertToLocalCurrency(priceInEuro);
+  }
   ngOnInit(): void {
     window.scrollTo({top: 0, behavior: "smooth"})
     this.cartService.getCartItems().subscribe(items => {
@@ -47,7 +51,8 @@ error =''
       const orderData: CreateOrderData = {
         ...this.orderForm.value,
         productToCreateOrder: this.cartItems.map(item => {
-          // const { productId, ...productWithoutId } = item.product;
+          // let { price, ...productWithoutId } = item.product;
+          // price = this.getPriceInLocalCurrency(price);
             return {
               ...item.product,
             quantity: item.quantity

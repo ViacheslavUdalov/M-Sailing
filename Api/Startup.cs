@@ -10,6 +10,7 @@ using Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.OpenApi.Models;
 
 namespace Api;
 
@@ -24,12 +25,14 @@ public class Startup
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(options =>
+            services.AddControllers(
+                options =>
             {
                 options.Filters.Add<ExceptionFilter>();
-            });
+            }
+                );
             services.AddDirectoryBrowser();
-            
+          
             
             services.AddDbContext<StoreContext>(x =>
                 x.UseNpgsql(_configuration.GetConnectionString("DefaultConnection")));
@@ -42,6 +45,7 @@ public class Startup
             services.AddTransient<IEmailService, EmailService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IAdminProductsRepository, AdminProductsRepository>();
+            services.AddScoped<IEuroValueRepository, EuroValueRepository>();
             // services.AddScoped<LogUserActivity>();
             services.AddScoped(typeof(IProductsRepository), typeof(ProductsRepository));
             services.AddScoped(typeof(IOrderRepository<>), typeof(OrderRepository<>));
@@ -82,6 +86,8 @@ public class Startup
 
             app.UseAuthentication();
             app.UseAuthorization();
+            
+           
             app.UseStaticFiles();
             app.UseStaticFiles(new StaticFileOptions
             {

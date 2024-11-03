@@ -64,7 +64,9 @@ export class ArmamentComponent implements OnInit{
               private metaService: Meta, private titleService: Title, private bcService: BreadcrumbService) {
     this.shopParams = this.shopService.getShopParams();
   }
-
+  getPriceInLocalCurrency(priceInEuro: number) {
+    return this.shopService.convertToLocalCurrency(priceInEuro);
+  }
   ngOnInit() {
     this.titleService.setTitle('M-sailing | Магазин яхтенного, парусного вооружения и экипировки');
     this.metaService.addTags([

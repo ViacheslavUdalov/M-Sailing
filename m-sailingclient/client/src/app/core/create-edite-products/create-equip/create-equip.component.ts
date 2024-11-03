@@ -5,10 +5,12 @@ import {ProductAdminService} from "../product-admin.service";
 import {Equipment} from "../../../models/equipment";
 import {ShopService} from "../../../shop/shop.service";
 import {ToastrService} from "ngx-toastr";
+import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-create-equip',
   templateUrl: './create-equip.component.html',
+  styleUrls: ['./create-equip.component.less']
 })
 export class CreateEquipComponent implements OnInit {
 
@@ -17,12 +19,17 @@ export class CreateEquipComponent implements OnInit {
   isEditMode = false;
   typeForBuy!: string;
   count = 0;
+  newImagePreview: SafeUrl | null = null;
+  newImageFile: File | null = null;
+  currentImage: string = '';
+
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private productAdminService: ProductAdminService,
     private productService: ShopService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -30,11 +37,9 @@ export class CreateEquipComponent implements OnInit {
 
     this.route.paramMap.subscribe(params => {
       this.productId = params.get('id') || 'Empty';
-      // console.log("!!!!!!!!!!!!!!! ProductID !!!!!!!!!!!!")
-      // console.log(this.productId)// Получаем ID из URL
       if (this.productId) {
-        this.isEditMode = true; // Устанавливаем флаг редактирования
-        this.loadProduct(Number(this.productId)); // Загружаем данные товара для редактирования
+        this.isEditMode = true;
+        this.loadProduct(Number(this.productId));
       }
     });
     this.productVariants.controls.forEach(control => {
@@ -43,12 +48,47 @@ export class CreateEquipComponent implements OnInit {
     this.updateCount();
   }
 
+
+  onFileSelect(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files[0]) {
+      const file = input.files[0];
+      this.newImageFile = file; // Сохраняем файл
+
+      // Создаем URL для превью
+      this.newImagePreview = this.sanitizer.bypassSecurityTrustUrl(
+        URL.createObjectURL(file)
+      );
+    }
+  }
+
+  // не используется
+  uploadImage() {
+    if (!this.newImageFile) {
+      console.log('No new image to upload');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('image', this.newImageFile, this.newImageFile.name);
+
+    this.productAdminService.uploadProductImage(formData).subscribe(
+      (response) => {
+        console.log('Image uploaded successfully');
+        this.currentImage = response.imageUrl;
+      },
+      (error) => {
+        console.error('Error uploading image', error);
+      }
+    );
+  }
+
   initForm(): void {
     this.productForm = this.fb.group({
       name: ['', Validators.required],
       type: ['', Validators.required],
       price: ['', [Validators.required, Validators.min(0)]],
-      pictures: ['', Validators.required],
+      pictures: this.currentImage ? this.currentImage : this.newImageFile,
       description: ['', Validators.required],
       productVariants: this.fb.array([])
     });
@@ -102,6 +142,7 @@ updateCount() {
           pictures: product.pictures,
           description: product.description,
         });
+        this.currentImage = product.pictures;
 
         product.productVariants.forEach(variant => {
           const variantForm = this.fb.group({
@@ -128,24 +169,51 @@ updateCount() {
     if (this.productForm.valid) {
       let productData: Equipment = this.productForm.value;
       productData.typeForBuy = this.typeForBuy;
-      console.log(productData)
+      if (this.newImageFile) {
+        productData.pictures =  `assets/productsimages/${this.newImageFile.name}`;
+        console.log(productData)
+      } else {
+        productData.pictures = this.currentImage
+      }
+
+
+
+
+
       if (this.isEditMode) {
-        this.productAdminService.updateProduct(Number(this.productId), productData).subscribe(
+        this.productAdminService.updateEquipProduct(Number(this.productId), productData).subscribe(
           response => {
             console.log('Product updated successfully', response);
-            this.toastr.success('Товар обновлён!')
-          },
+            if (this.newImageFile) {
+              const formData = new FormData();
+              formData.append('image', this.newImageFile, this.newImageFile.name);
+              this.productAdminService.uploadProductImage(formData).subscribe(() => {
+                this.toastr.success('Файл изображение загружен!')
+              }, error => {
+                console.log(error)
+                this.toastr.error('Ошибка загрузки файла!' + error.error)
+              })
+              this.toastr.success('Товар обновлён!')
+            } },
           error => {
             console.log('Error while updating product', error);
             this.toastr.error('Ошибка!' + error)
           }
         );
-      } else {
-        this.productAdminService.createProduct(productData).subscribe(
+          } else {
+        this.productAdminService.createEquipProduct(productData).subscribe(
           response => {
             console.log('Product created successfully', response);
-            this.toastr.success('Товар Создан!')
-          },
+            if (this.newImageFile) {
+              const formData = new FormData();
+              formData.append('image', this.newImageFile, this.newImageFile.name);
+              this.productAdminService.uploadProductImage(formData).subscribe(() => {
+                this.toastr.success('Файл изображение загружен!')
+              }, error => {
+                this.toastr.error('Ошибка загрузки файла!' + error)
+              })
+              this.toastr.success('Товар Создан!')
+          }},
           error => {
             console.log('Error while creating product', error);
             this.toastr.error('Ошибка!' + error)
@@ -156,5 +224,5 @@ updateCount() {
       console.log('Form is invalid');
       this.toastr.error('Form is invalid')
     }
-  }
-}
+
+}}

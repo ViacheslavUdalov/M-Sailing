@@ -17,6 +17,8 @@ import {CookieComponent} from "./core/cookie/cookie.component";
 import {TermsOfServiceComponent} from "./core/terms-of-service/terms-of-service.component";
 import {CreateEquipComponent} from "./core/create-edite-products/create-equip/create-equip.component";
 import {AuthAdminGuard} from "./guards/auth-admin.guard";
+import {ChangeCurrencyValueComponent} from "./shop/change-currency-value/change-currency-value.component";
+import {CreateArmamentComponent} from "./core/create-edite-products/create-armament/create-armament.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -35,6 +37,9 @@ const routes: Routes = [
   { path: 'terms-of-service', component: TermsOfServiceComponent },
   { path: 'create-equipment/:id', canActivate: [AuthAdminGuard], component: CreateEquipComponent },
   { path: 'create-equipment', canActivate: [AuthAdminGuard], component: CreateEquipComponent },
+  { path: 'create-armament/:id', canActivate: [AuthAdminGuard], component: CreateArmamentComponent },
+  { path: 'create-armament', canActivate: [AuthAdminGuard], component: CreateArmamentComponent },
+  { path: 'edit-eurovalue', canActivate: [AuthAdminGuard], component: ChangeCurrencyValueComponent },
   {path: '**', redirectTo: '/', pathMatch: "full"}
 ];
 @NgModule({

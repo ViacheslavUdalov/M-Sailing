@@ -65,7 +65,9 @@ export class BoatsComponent implements OnInit {
       this.getBoats();
     })
   }
-
+  getPriceInLocalCurrency(priceInEuro: number) {
+    return this.shopService.convertToLocalCurrency(priceInEuro);
+  }
   getBoats() {
     console.log(this.totalCount)
     this.shopService.getBoats().subscribe(data => {
